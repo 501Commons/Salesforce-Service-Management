@@ -1,0 +1,10 @@
+{
+  "orgName": "Salesforce-Service-Management - Dev Org",
+  "edition": "Developer",
+  "orgPreferences" : {
+    "enabled": [
+      "S1DesktopEnabled",
+      "ChatterEnabled"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+project:
+    name: Salesforce-Service-Management
+    package:
+        name:  Salesforce-Service-Management
+        api_version: '42.0'
+    dependencies:
+        - github: https://github.com/SalesforceFoundation/Cumulus
+

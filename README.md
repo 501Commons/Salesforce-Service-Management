@@ -1,2 +1,14 @@
-# Salesforce-Service-Management
-Managed external services within Salesforce
+# SFDX  App
+
+## Dev, Build and Test
+
+
+## Resources
+
+
+## Description of Files and Directories
+
+
+## Issues
+
+
