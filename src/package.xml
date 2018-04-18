@@ -28,6 +28,46 @@
     <types>
         <members>Account.Address__c</members>
         <members>Account.Adults__c</members>
+        <members>Account.C501_Account_LID__c</members>
+        <members>Account.C501_Affordable_Care_Act_Subsidy__c</members>
+        <members>Account.C501_Alimony_Other_Spousal_Support__c</members>
+        <members>Account.C501_Annual_Income__c</members>
+        <members>Account.C501_Child_Support__c</members>
+        <members>Account.C501_Childcare_Voucher__c</members>
+        <members>Account.C501_EITC__c</members>
+        <members>Account.C501_HH_Income_Level__c</members>
+        <members>Account.C501_HUD_VASH__c</members>
+        <members>Account.C501_Household_Income_Level__c</members>
+        <members>Account.C501_Household_Income_Sources__c</members>
+        <members>Account.C501_Household_Size__c</members>
+        <members>Account.C501_Household_Type__c</members>
+        <members>Account.C501_Housing_Choice_Voucher__c</members>
+        <members>Account.C501_Housing__c</members>
+        <members>Account.C501_ID_HH_Child__c</members>
+        <members>Account.C501_ID_HH_HMIS__c</members>
+        <members>Account.C501_ID_HH_HP__c</members>
+        <members>Account.C501_ID_HH_LIHEAP__c</members>
+        <members>Account.C501_ID_HH_SEAS__c</members>
+        <members>Account.C501_Income_Unknown_Not_Reported__c</members>
+        <members>Account.C501_LIHEAP__c</members>
+        <members>Account.C501_NonCash_Income_Unknown__c</members>
+        <members>Account.C501_Other_Income__c</members>
+        <members>Account.C501_Other_Non_Cash_Income__c</members>
+        <members>Account.C501_Pension__c</members>
+        <members>Account.C501_Permanent_Supportive_Housing__c</members>
+        <members>Account.C501_Private_Disability_Insurance__c</members>
+        <members>Account.C501_Public_Housing__c</members>
+        <members>Account.C501_Retirement_Income_Social_Security__c</members>
+        <members>Account.C501_SNAP__c</members>
+        <members>Account.C501_Social_Security_Disability_Income__c</members>
+        <members>Account.C501_Supplemental_Security_Income__c</members>
+        <members>Account.C501_TANF__c</members>
+        <members>Account.C501_Unemployment_Insurance__c</members>
+        <members>Account.C501_UniqueAccounts__c</members>
+        <members>Account.C501_VA_Non_Service_Disability_Pension__c</members>
+        <members>Account.C501_VA_Service_Connected_Disability__c</members>
+        <members>Account.C501_WIC__c</members>
+        <members>Account.C501_Worker_s_Compensation__c</members>
         <members>Account.Children__c</members>
         <members>Account.City__c</members>
         <members>Account.Client_Names__c</members>
@@ -56,6 +96,24 @@
         <members>Account.State__c</members>
         <members>Account.Tags__c</members>
         <members>Account.Total_Visits__c</members>
+        <members>C501_HH_Income_Settings__c.C501_Additional_Amount__c</members>
+        <members>C501_HH_Income_Settings__c.C501_Base_Level__c</members>
+        <members>C501_HH_Income_Settings__c.C501_Last_Updated_Date__c</members>
+        <members>C501_Other_Name__c.C501_Contact__c</members>
+        <members>C501_Other_Name__c.C501_End_Date__c</members>
+        <members>C501_Other_Name__c.C501_IsPreferred__c</members>
+        <members>C501_Other_Name__c.C501_Other_Name__c</members>
+        <members>C501_Other_Name__c.C501_Start_Date__c</members>
+        <members>C501_Other_Name__c.C501_Type__c</members>
+        <members>C501_Service_Record__c.C501_End_Date__c</members>
+        <members>C501_Service_Record__c.C501_Household__c</members>
+        <members>C501_Service_Record__c.C501_Housing__c</members>
+        <members>C501_Service_Record__c.C501_IsActive__c</members>
+        <members>C501_Service_Record__c.C501_ServiceRecord_LID__c</members>
+        <members>C501_Service_Record__c.C501_Service__c</members>
+        <members>C501_Service_Record__c.C501_Start_Date__c</members>
+        <members>C501_Service_Record__c.C501_UniqueServiceRecords__c</members>
+        <members>C501_Service_Record__c.Service_Name__c</members>
         <members>Client_Visit__c.Adults__c</members>
         <members>Client_Visit__c.Box_Type__c</members>
         <members>Client_Visit__c.Children__c</members>
@@ -82,12 +140,63 @@
         <members>Contact.Age_Entry_Date__c</members>
         <members>Contact.Age_Group__c</members>
         <members>Contact.Age__c</members>
+        <members>Contact.Additional_Languages__c</members>
+        <members>Contact.C501_Age__c</members>
+        <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
+        <members>Contact.C501_Asian__c</members>
+        <members>Contact.C501_Black_or_African_American__c</members>
+        <members>Contact.C501_Chronic_Health_Condition__c</members>
+        <members>Contact.C501_Contact_LID__c</members>
+        <members>Contact.C501_Currently_Attending_School__c</members>
+        <members>Contact.C501_Developmental_Disability__c</members>
+        <members>Contact.C501_Direct_Purchase__c</members>
+        <members>Contact.C501_Disability_Not_Applicable__c</members>
+        <members>Contact.C501_Disabling_Condition_Special_Needs__c</members>
+        <members>Contact.C501_Disconnected_Youth__c</members>
+        <members>Contact.C501_Education_Level__c</members>
+        <members>Contact.C501_Employment_Based__c</members>
+        <members>Contact.C501_Ethnicity__c</members>
+        <members>Contact.C501_HIV_AIDS__c</members>
+        <members>Contact.C501_Health_Insurance__c</members>
+        <members>Contact.C501_Id_Child__c</members>
+        <members>Contact.C501_Id_HH_Child__c</members>
+        <members>Contact.C501_Id_HH_HMIS__c</members>
+        <members>Contact.C501_Id_HH_HP__c</members>
+        <members>Contact.C501_Id_HH_LIHEAP__c</members>
+        <members>Contact.C501_Id_HH_SEAS__c</members>
+        <members>Contact.C501_Id_HMIS__c</members>
+        <members>Contact.C501_Id_HP__c</members>
+        <members>Contact.C501_Id_LIHEAP__c</members>
+        <members>Contact.C501_Id_SEAS__c</members>
+        <members>Contact.C501_Immigration_Status__c</members>
+        <members>Contact.C501_Insurance_Unknown_Not_Reported__c</members>
+        <members>Contact.C501_Medicaid__c</members>
+        <members>Contact.C501_Medicare__c</members>
+        <members>Contact.C501_Mental_Health_Problem__c</members>
+        <members>Contact.C501_Military_Health_Care__c</members>
+        <members>Contact.C501_Military_Status__c</members>
+        <members>Contact.C501_Native_Hawaiian_Pacific_Islander__c</members>
+        <members>Contact.C501_Physical_Disability__c</members>
+        <members>Contact.C501_Preferred_Name__c</members>
+        <members>Contact.C501_Preferred_Name_auto__c</members>
+        <members>Contact.C501_Race_Client_Doesn_t_Know__c</members>
+        <members>Contact.C501_Race_Client_Refused__c</members>
+        <members>Contact.C501_Race_Data_Not_Collected__c</members>
+        <members>Contact.C501_Race__c</members>
+        <members>Contact.C501_State_Children_s_Health_Insurance__c</members>
+        <members>Contact.C501_State_Health_Insurance_for_Adults__c</members>
+        <members>Contact.C501_Substance_Abuse__c</members>
+        <members>Contact.C501_UniqueContacts__c</members>
+        <members>Contact.C501_White__c</members>
+        <members>Contact.C501_Work_Status__c</members>
         <members>Contact.External_Created_Date__c</members>
         <members>Contact.External_Id__c</members>
         <members>Contact.External_Household_Id__c</members>
         <members>Contact.Gender__c</members>
+        <members>Contact.Has_Social_Security_Number__c</members>
         <members>Contact.Id_Number__c</members>
         <members>Contact.Id_Type__c</members>
+        <members>Contact.Preferred_Language__c</members>
         <members>Contact.Proof_of_Infant__c</members>
         <members>Service_Management_Box_Settings__c.Minimum_Family_Size__c</members>
         <members>Service_Management_Checkin__c.Box_Size__c</members>
@@ -115,12 +224,17 @@
         <members>Service_Management_Settings__c.Visit_Frequency_Limit__c</members>
         <members>Service_Management_Settings__c.Welcome_Alert__c</members>
         <members>Service_Management_Settings__c.Welcome_Message__c</members>
+        <members>npe5__Affiliation__c.Contact_Link__c</members>
+        <members>npe5__Affiliation__c.Contact_Name__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Account</members>
         <members>Client_Visit__c</members>
         <members>Contact</members>
+        <members>C501_Other_Name__c</members>
+        <members>C501_HH_Income_Settings__c</members>
+        <members>C501_Service_Record__c</members>
         <members>Service_Management_Box_Settings__c</members>
         <members>Service_Management_Checkin__c</members>
         <members>Service_Management_Commodity__c</members>
@@ -142,10 +256,23 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Account-Household Lightning Layout</members>
+        <members>Account-Service Lightning Layout</members>
+        <members>C501_Other_Name__c-Name Layout</members>
+        <members>C501_Service_Record__c-Service Record Layout</members>
         <members>Client_Visit__c-Client Visit Layout</members>
+        <members>Contact-Contact Lightning Layout</members>
+        <members>Contact-Service Contact Lightning Layout</members>
         <name>Layout</name>
     </types>
     <types>
+        <members>C501_Housing</members>
+        <members>C501_Languages</members>
+        <members>Y_N_U</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>Service Management Admin</members>
         <members>Service Management User</members>
         <members>Admin</members>
         <name>Profile</name>
@@ -161,6 +288,13 @@
     <types>
         <members>CustomLabels</members>
         <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Account.HH_Account</members>
+        <members>Account.Service</members>
+        <members>Contact.Contact</members>
+        <members>Contact.Service_Contact</members>
+        <name>RecordType</name>
     </types>
     <version>41.0</version>
 </Package>

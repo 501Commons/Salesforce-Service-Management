@@ -374,6 +374,599 @@
         <trackHistory>false</trackHistory>
         <type>Summary</type>
     </fields>
+    <fields>
+        <fullName>C501_Account_LID__c</fullName>
+        <description>18 character case-safe Id; used as external Id outside of Salesforce; not on page layouts</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account_LID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C501_Affordable_Care_Act_Subsidy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Affordable Care Act Subsidy</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Alimony_Other_Spousal_Support__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Alimony / Other Spousal Support</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Annual_Income__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Annual Income for the household - used to calculate Income Level</inlineHelpText>
+        <label>Annual Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>C501_Child_Support__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Child Support</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Childcare_Voucher__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Childcare Voucher</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_EITC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>EITC</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_HH_Income_Level__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <formula>IF ( 
+ AND ( NOT ( ISBLANK ( C501_Annual_Income__c )), NOT ( ISBLANK (  C501_Household_Size__c ))),
+    C501_Annual_Income__c / 
+   ( $Setup.C501_HH_Income_Settings__c.C501_Base_Level__c + 
+   (( C501_Household_Size__c - 1 )*  $Setup.C501_HH_Income_Settings__c.C501_Additional_Amount__c )),
+0 )
+
+
+/* (Base_Threshold + ((NumberInHH-1)*AdditionalValuePerPerson) */</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Formula - based on Household Size and Annual Income. Used in Module4 reporting</inlineHelpText>
+        <label>HH Income Level</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>C501_HUD_VASH__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>HUD-VASH</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Household_Income_Level__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Household Income Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Up to 50%</fullName>
+                    <default>false</default>
+                    <label>Up to 50%</label>
+                </value>
+                <value>
+                    <fullName>51% to 75%</fullName>
+                    <default>false</default>
+                    <label>51% to 75%</label>
+                </value>
+                <value>
+                    <fullName>76% to 100%</fullName>
+                    <default>false</default>
+                    <label>76% to 100%</label>
+                </value>
+                <value>
+                    <fullName>101% to 125%</fullName>
+                    <default>false</default>
+                    <label>101% to 125%</label>
+                </value>
+                <value>
+                    <fullName>126% to 150%</fullName>
+                    <default>false</default>
+                    <label>126% to 150%</label>
+                </value>
+                <value>
+                    <fullName>151% to 175%</fullName>
+                    <default>false</default>
+                    <label>151% to 175%</label>
+                </value>
+                <value>
+                    <fullName>176% to 200%</fullName>
+                    <default>false</default>
+                    <label>176% to 200%</label>
+                </value>
+                <value>
+                    <fullName>201% to 250%</fullName>
+                    <default>false</default>
+                    <label>201% to 250%</label>
+                </value>
+                <value>
+                    <fullName>Over 250%</fullName>
+                    <default>false</default>
+                    <label>Over 250%</label>
+                </value>
+                <value>
+                    <fullName>Unknown/ Not Reported</fullName>
+                    <default>false</default>
+                    <label>Unknown/ Not Reported</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_Household_Income_Sources__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Household Income Sources</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Income from Employment Only</fullName>
+                    <default>false</default>
+                    <label>Income from Employment Only</label>
+                </value>
+                <value>
+                    <fullName>Income from Employment and Other Income Source</fullName>
+                    <default>false</default>
+                    <label>Income from Employment and Other Income Source</label>
+                </value>
+                <value>
+                    <fullName>Income from Employment, Other Income Source, and Non-Cash Benefits</fullName>
+                    <default>false</default>
+                    <label>Income from Employment, Other Income Source, and Non-Cash Benefits</label>
+                </value>
+                <value>
+                    <fullName>Income from Employment and Non-Cash Benefits</fullName>
+                    <default>false</default>
+                    <label>Income from Employment and Non-Cash Benefits</label>
+                </value>
+                <value>
+                    <fullName>Other Income Source Only</fullName>
+                    <default>false</default>
+                    <label>Other Income Source Only</label>
+                </value>
+                <value>
+                    <fullName>Other Income Source and Non-Cash Benefits</fullName>
+                    <default>false</default>
+                    <label>Other Income Source and Non-Cash Benefits</label>
+                </value>
+                <value>
+                    <fullName>No Income</fullName>
+                    <default>false</default>
+                    <label>No Income</label>
+                </value>
+                <value>
+                    <fullName>Non-Cash Benefits Only</fullName>
+                    <default>false</default>
+                    <label>Non-Cash Benefits Only</label>
+                </value>
+                <value>
+                    <fullName>Unknown/ Not Reported</fullName>
+                    <default>false</default>
+                    <label>Unknown/ Not Reported</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_Household_Size__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of people in the household - including those who are not listed as Contacts. Used to calculate HH Income Level and in Module4 reporting.</inlineHelpText>
+        <label>Household Size</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C501_Household_Type__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Household Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Person</fullName>
+                    <default>false</default>
+                    <label>Single Person</label>
+                </value>
+                <value>
+                    <fullName>Two Adults NO Children</fullName>
+                    <default>false</default>
+                    <label>Two Adults NO Children</label>
+                </value>
+                <value>
+                    <fullName>Single Parent Female</fullName>
+                    <default>false</default>
+                    <label>Single Parent Female</label>
+                </value>
+                <value>
+                    <fullName>Single Parent Male</fullName>
+                    <default>false</default>
+                    <label>Single Parent Male</label>
+                </value>
+                <value>
+                    <fullName>Two Parent Household</fullName>
+                    <default>false</default>
+                    <label>Two Parent Household</label>
+                </value>
+                <value>
+                    <fullName>Non-related Adults with Children</fullName>
+                    <default>false</default>
+                    <label>Non-related Adults with Children</label>
+                </value>
+                <value>
+                    <fullName>Multigenerational Household</fullName>
+                    <default>false</default>
+                    <label>Multigenerational Household</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown/Not Reported</fullName>
+                    <default>false</default>
+                    <label>Unknown/Not Reported</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_Housing_Choice_Voucher__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Housing Choice Voucher</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Housing__c</fullName>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Housing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Own</fullName>
+                    <default>false</default>
+                    <label>Own</label>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                    <label>Rent</label>
+                </value>
+                <value>
+                    <fullName>Other permanent housing</fullName>
+                    <default>false</default>
+                    <label>Other permanent housing</label>
+                </value>
+                <value>
+                    <fullName>Homeless</fullName>
+                    <default>false</default>
+                    <label>Homeless</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown/ Not Reported</fullName>
+                    <default>false</default>
+                    <label>Unknown/ Not Reported</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_ID_HH_Child__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>CoreId</description>
+        <externalId>true</externalId>
+        <label>Child+ Household ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>C501_ID_HH_HMIS__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>CoreId</description>
+        <externalId>true</externalId>
+        <label>HMIS Household ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>C501_ID_HH_HP__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>CoreId</description>
+        <externalId>true</externalId>
+        <label>HP Household ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>C501_ID_HH_LIHEAP__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>CoreId</description>
+        <externalId>true</externalId>
+        <label>LIHEAP Household ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>C501_ID_HH_SEAS__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>CoreId</description>
+        <externalId>true</externalId>
+        <label>SEAS Household ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>C501_Income_Unknown_Not_Reported__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Income Unknown / Not Reported</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_LIHEAP__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>LIHEAP</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_NonCash_Income_Unknown__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>NonCash Income Unknown / Not Reported</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Other_Income__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Other Income</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Other_Non_Cash_Income__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Other Non-Cash Income</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Pension__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Pension</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Permanent_Supportive_Housing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Permanent Supportive Housing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Private_Disability_Insurance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Private Disability Insurance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Public_Housing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Public Housing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Retirement_Income_Social_Security__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Retirement Income - Social Security</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_SNAP__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>SNAP</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Social_Security_Disability_Income__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Social Security Disability Income (SSDI)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Supplemental_Security_Income__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Supplemental Security Income (SSI)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_TANF__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>TANF</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Unemployment_Insurance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Unemployment Insurance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_UniqueAccounts__c</fullName>
+        <description>Used in summary reporting; Not on page layouts</description>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UniqueAccounts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C501_VA_Non_Service_Disability_Pension__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>VA Non-Service Disability Pension</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_VA_Service_Connected_Disability__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>VA Service-Connected Disability Comp</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_WIC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>WIC</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Worker_s_Compensation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Module4</description>
+        <externalId>false</externalId>
+        <label>Worker’s Compensation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
     <listViews>
         <fullName>Active</fullName>
         <columns>Client_Names__c</columns>
@@ -400,4 +993,687 @@
         <filterScope>Everything</filterScope>
         <label>All Households</label>
     </listViews>
+    <recordTypes>
+        <fullName>HH_Account</fullName>
+        <active>true</active>
+        <description>An Account representing a Household containing one or more individuals</description>
+        <label>Household Account</label>
+        <picklistValues>
+            <picklist>AccountSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Income_Level__c</picklist>
+            <values>
+                <fullName>101%25 to 125%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>126%25 to 150%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>151%25 to 175%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>176%25 to 200%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201%25 to 250%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51%25 to 75%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>76%25 to 100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over 250%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Up to 50%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Income_Sources__c</picklist>
+            <values>
+                <fullName>Income from Employment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Other Income Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment%2C Other Income Source%2C and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Cash Benefits Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Type__c</picklist>
+            <values>
+                <fullName>Multigenerational Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-related Adults with Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Adults NO Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Parent Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Housing__c</picklist>
+            <values>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other permanent housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry</picklist>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food %26 Beverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ownership</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating</picklist>
+            <values>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service</fullName>
+        <active>true</active>
+        <label>Service</label>
+        <picklistValues>
+            <picklist>AccountSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Income_Level__c</picklist>
+            <values>
+                <fullName>101%25 to 125%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>126%25 to 150%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>151%25 to 175%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>176%25 to 200%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201%25 to 250%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51%25 to 75%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>76%25 to 100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over 250%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Up to 50%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Income_Sources__c</picklist>
+            <values>
+                <fullName>Income from Employment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Other Income Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment%2C Other Income Source%2C and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Cash Benefits Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Type__c</picklist>
+            <values>
+                <fullName>Multigenerational Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-related Adults with Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Adults NO Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Parent Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Housing__c</picklist>
+            <values>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other permanent housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2F Not Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry</picklist>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food %26 Beverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ownership</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating</picklist>
+            <values>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
 </CustomObject>

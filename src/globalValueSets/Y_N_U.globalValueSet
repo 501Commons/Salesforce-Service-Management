@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Yes</fullName>
+        <default>false</default>
+        <label>Yes</label>
+    </customValue>
+    <customValue>
+        <fullName>No</fullName>
+        <default>false</default>
+        <label>No</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown / Not Reported</fullName>
+        <default>false</default>
+        <label>Unknown / Not Reported</label>
+    </customValue>
+    <description>Yes; No; Unknown / Not Reported - heavily used in Module4 reporting</description>
+    <masterLabel>Y/N/U</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
