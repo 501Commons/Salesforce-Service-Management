@@ -1,5 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <label>Service Contact</label>
+    <nameField>
+        <label>Service Contact Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Service Contacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>C501_Service_Household_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Current household where service info is located</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current household where service info is located</inlineHelpText>
+        <label>Household</label>
+        <referenceTo>C501_Service_Household__c</referenceTo>
+        <relationshipLabel>Service Records (Service)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <fields>
         <fullName>C501_Additional_Languages__c</fullName>
         <description>CoreId</description>
@@ -19,7 +95,7 @@
         <fullName>C501_Age__c</fullName>
         <description>CoreId/Module4</description>
         <externalId>false</externalId>
-        <formula>FLOOR (( TODAY() - Birthdate ) / 365.2425 )</formula>
+        <formula>FLOOR (( TODAY() - TODAY() ) / 365.2425 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Age</label>
         <precision>18</precision>
@@ -58,6 +134,16 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Birthdate__c</fullName>
+        <description>CoreId - maps to Child+ database; not on page layouts</description>
+        <externalId>false</externalId>
+        <label>Birthdate</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>C501_Chronic_Health_Condition__c</fullName>
@@ -280,7 +366,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Id_HH_Child__c</fullName>
         <description>CoreId - household Id in Child+ database; not on page layouts</description>
         <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_Child__c</formula>
+        <formula>"C501_Service_Household__c.C501_ID_HH_Child__c"</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Child+ Household ID</label>
         <required>false</required>
@@ -292,7 +378,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Id_HH_HMIS__c</fullName>
         <description>Household ID in HMIS database - pulled from household record</description>
         <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_HMIS__c</formula>
+        <formula>"C501_Service_Household__c.C501_ID_HH_HMIS__c"</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>HMIS Household ID</label>
         <required>false</required>
@@ -304,7 +390,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Id_HH_HP__c</fullName>
         <description>Household ID in HP database - pulled from household record</description>
         <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_HP__c</formula>
+        <formula>"C501_Service_Household__c.C501_ID_HH_HP__c"</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>HP Household ID</label>
         <required>false</required>
@@ -316,7 +402,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Id_HH_LIHEAP__c</fullName>
         <description>Household ID in LIHEAP database - pulled from household record</description>
         <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_LIHEAP__c</formula>
+        <formula>"C501_Service_Household__c.C501_ID_HH_LIHEAP__c"</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>LIHEAP Household ID</label>
         <required>false</required>
@@ -328,7 +414,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Id_HH_SEAS__c</fullName>
         <description>Household ID in SEAS database - pulled from household record</description>
         <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_SEAS__c</formula>
+        <formula>"C501_Service_Household__c.C501_ID_HH_SEAS__c"</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>SEAS Household ID</label>
         <required>false</required>
@@ -683,20 +769,6 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>C501_UniqueContacts__c</fullName>
-        <description>Used in summary reporting; Not on page layouts</description>
-        <externalId>false</externalId>
-        <formula>1</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>UniqueContacts</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_White__c</fullName>

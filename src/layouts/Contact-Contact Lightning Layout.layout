@@ -23,6 +23,10 @@
         <label>Contact Details</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RecordTypeId</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
@@ -52,11 +56,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Has_Social_Security_Number__c</field>
+                <field>C501_Has_Social_Security_Number__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Preferred_Language__c</field>
+                <field>C501_Preferred_Language__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -91,7 +95,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Additional_Languages__c</field>
+                <field>C501_Additional_Languages__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -104,7 +108,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Gender__c</field>
+                <field>C501_Gender__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -581,9 +585,6 @@
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>Contact.npsp__New_Affiliation</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>Contact.npsp__New_Recurring_Donation</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>FeedItem.ContentPost</quickActionName>

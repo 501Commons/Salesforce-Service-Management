@@ -2,18 +2,10 @@
 .settings
 salesforce.schema
 Referenced Packages
-salesforce-service-management.sublime-project
-salesforce-service-management.sublime-settings
-salesforce-service-management.sublime-workspace
-/resource-bundles/Angular.resource/mm.log
 /config/
 /apex-scripts/
 /.DS_Store
-/resource-bundles/.DS_Store
-/resource-bundles/Angular.resource/mmui.log
-/resource-bundles/Angular.resource/mmst.log
-/resource-bundles/Angular.resource/bower_components*
-/resource-bundles/Jon-Angular
 .sfdx/
 .vscode/
 temp/
+main/

@@ -65,19 +65,18 @@
     </fields>
     <fields>
         <fullName>C501_Household__c</fullName>
-        <description>consider filtering to allow only HH Accounts as parent</description>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Current household where service info is aggregated</description>
         <externalId>false</externalId>
-        <inlineHelpText>The HH that received the services</inlineHelpText>
+        <inlineHelpText>Current household where service info is aggregated</inlineHelpText>
         <label>Household</label>
         <referenceTo>Account</referenceTo>
-        <relationshipLabel>Service Records</relationshipLabel>
-        <relationshipName>Service_Records</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <relationshipLabel>Service Records (Service)</relationshipLabel>
+        <relationshipName>Services</relationshipName>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>C501_Housing__c</fullName>
@@ -94,6 +93,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>C501_ID_HH__c</fullName>
+        <externalId>true</externalId>
+        <label>C501 ID HH</label>
+        <length>20</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_IsActive__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -104,30 +114,45 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_ServiceRecord_LID__c</fullName>
-        <description>case-insensitive 18 character Id; used in reporting and on exports; not on page layouts</description>
+        <fullName>C501_Program__c</fullName>
         <externalId>false</externalId>
-        <formula>CASESAFEID(Id)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>ServiceRecord_LID</label>
+        <label>Program</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>LIHEAP</fullName>
+                    <default>false</default>
+                    <label>LIHEAP</label>
+                </value>
+                <value>
+                    <fullName>HELP Island</fullName>
+                    <default>false</default>
+                    <label>HELP Island</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
-        <fullName>C501_Service__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <fullName>C501_Service_Household__c</fullName>
+        <description>Household info specific to the service</description>
         <externalId>false</externalId>
-        <label>Service</label>
-        <referenceTo>Account</referenceTo>
-        <relationshipLabel>Service Records (Service)</relationshipLabel>
-        <relationshipName>Services</relationshipName>
-        <required>false</required>
+        <inlineHelpText>Household info specific to the service</inlineHelpText>
+        <label>Service Household</label>
+        <referenceTo>C501_Service_Household__c</referenceTo>
+        <relationshipLabel>Service Records</relationshipLabel>
+        <relationshipName>Service_Records</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>C501_Start_Date__c</fullName>
@@ -140,26 +165,11 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>C501_UniqueServiceRecords__c</fullName>
-        <description>Power of One field - used in reporting; not on page layouts</description>
+        <fullName>Household_Name__c</fullName>
         <externalId>false</externalId>
-        <formula>1</formula>
+        <formula>C501_Household__r.Name</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>UniqueServiceRecords</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Service_Name__c</fullName>
-        <externalId>false</externalId>
-        <formula>C501_Service__r.Name</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Service Name</label>
+        <label>Household Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

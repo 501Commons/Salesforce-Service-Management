@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>salesforce-service-management</fullName>
+    <fullName>Service_Management</fullName>
     <types>
-        <members>ServiceManagementHouseholds</members>
-        <members>ServiceManagementHouseholdsTest</members>
-        <members>ServiceManagement</members>
-        <members>ServiceManagementTest</members>
-        <members>ServiceManagementSettings</members>
-        <members>ServiceManagementStats</members>
-        <members>ServiceManagementStatsTest</members>
-        <members>ServiceManagementTrigger</members>
-        <members>ServiceManagementTriggerTest</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>ServiceManagementApp</members>
-        <members>ServiceManagementStats</members>
-        <members>JasmineTestRunner</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>AccountTrigger</members>
-        <members>ContactTrigger</members>
-        <members>VisitTrigger</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>Account.Address__c</members>
-        <members>Account.Adults__c</members>
-        <members>Account.C501_Account_LID__c</members>
         <members>Account.C501_Affordable_Care_Act_Subsidy__c</members>
         <members>Account.C501_Alimony_Other_Spousal_Support__c</members>
         <members>Account.C501_Annual_Income__c</members>
@@ -63,39 +36,49 @@
         <members>Account.C501_Supplemental_Security_Income__c</members>
         <members>Account.C501_TANF__c</members>
         <members>Account.C501_Unemployment_Insurance__c</members>
-        <members>Account.C501_UniqueAccounts__c</members>
         <members>Account.C501_VA_Non_Service_Disability_Pension__c</members>
         <members>Account.C501_VA_Service_Connected_Disability__c</members>
         <members>Account.C501_WIC__c</members>
         <members>Account.C501_Worker_s_Compensation__c</members>
-        <members>Account.Children__c</members>
-        <members>Account.City__c</members>
-        <members>Account.Client_Names__c</members>
-        <members>Account.Commodity_Usage_JSON__c</members>
-        <members>Account.Current_Points_Remaining__c</members>
-        <members>Account.Current_Points_Used__c</members>
-        <members>Account.External_Created_Date__c</members>
-        <members>Account.External_Id__c</members>
-        <members>Account.First_Visit__c</members>
-        <members>Account.Full_Address__c</members>
-        <members>Account.Homeless__c</members>
-        <members>Account.Out_Of_Area__c</members>
-        <members>Account.Inactive__c</members>
-        <members>Account.Infant_Card_Expires__c</members>
-        <members>Account.Infants__c</members>
-        <members>Account.Monthly_Points_Available__c</members>
-        <members>Account.Most_Recent_Visit__c</members>
-        <members>Account.Notes__c</members>
-        <members>Account.Phone__c</members>
-        <members>Account.Postal_Code__c</members>
-        <members>Account.Proof_of_Address_Date__c</members>
-        <members>Account.Proof_of_Address__c</members>
-        <members>Account.Seniors__c</members>
-        <members>Account.Source__c</members>
-        <members>Account.Staff_Notes__c</members>
-        <members>Account.State__c</members>
-        <members>Account.Tags__c</members>
-        <members>Account.Total_Visits__c</members>
+        <members>Account.Level__c</members>
+        <members>C501_Service_Household__c.C501_Affordable_Care_Act_Subsidy__c</members>
+        <members>C501_Service_Household__c.C501_Alimony_Other_Spousal_Support__c</members>
+        <members>C501_Service_Household__c.C501_Annual_Income__c</members>
+        <members>C501_Service_Household__c.C501_Child_Support__c</members>
+        <members>C501_Service_Household__c.C501_Childcare_Voucher__c</members>
+        <members>C501_Service_Household__c.C501_EITC__c</members>
+        <members>C501_Service_Household__c.C501_HH_Income_Level__c</members>
+        <members>C501_Service_Household__c.C501_HUD_VASH__c</members>
+        <members>C501_Service_Household__c.C501_Household_Income_Level__c</members>
+        <members>C501_Service_Household__c.C501_Household_Income_Sources__c</members>
+        <members>C501_Service_Household__c.C501_Household_Size__c</members>
+        <members>C501_Service_Household__c.C501_Household_Type__c</members>
+        <members>C501_Service_Household__c.C501_Housing_Choice_Voucher__c</members>
+        <members>C501_Service_Household__c.C501_Housing__c</members>
+        <members>C501_Service_Household__c.C501_ID_HH_Child__c</members>
+        <members>C501_Service_Household__c.C501_ID_HH_HMIS__c</members>
+        <members>C501_Service_Household__c.C501_ID_HH_HP__c</members>
+        <members>C501_Service_Household__c.C501_ID_HH_LIHEAP__c</members>
+        <members>C501_Service_Household__c.C501_ID_HH_SEAS__c</members>
+        <members>C501_Service_Household__c.C501_Income_Unknown_Not_Reported__c</members>
+        <members>C501_Service_Household__c.C501_LIHEAP__c</members>
+        <members>C501_Service_Household__c.C501_NonCash_Income_Unknown__c</members>
+        <members>C501_Service_Household__c.C501_Other_Income__c</members>
+        <members>C501_Service_Household__c.C501_Other_Non_Cash_Income__c</members>
+        <members>C501_Service_Household__c.C501_Pension__c</members>
+        <members>C501_Service_Household__c.C501_Permanent_Supportive_Housing__c</members>
+        <members>C501_Service_Household__c.C501_Private_Disability_Insurance__c</members>
+        <members>C501_Service_Household__c.C501_Public_Housing__c</members>
+        <members>C501_Service_Household__c.C501_Retirement_Income_Social_Security__c</members>
+        <members>C501_Service_Household__c.C501_SNAP__c</members>
+        <members>C501_Service_Household__c.C501_Social_Security_Disability_Income__c</members>
+        <members>C501_Service_Household__c.C501_Supplemental_Security_Income__c</members>
+        <members>C501_Service_Household__c.C501_TANF__c</members>
+        <members>C501_Service_Household__c.C501_Unemployment_Insurance__c</members>
+        <members>C501_Service_Household__c.C501_VA_Non_Service_Disability_Pension__c</members>
+        <members>C501_Service_Household__c.C501_VA_Service_Connected_Disability__c</members>
+        <members>C501_Service_Household__c.C501_WIC__c</members>
+        <members>C501_Service_Household__c.C501_Worker_s_Compensation__c</members>
         <members>C501_HH_Income_Settings__c.C501_Additional_Amount__c</members>
         <members>C501_HH_Income_Settings__c.C501_Base_Level__c</members>
         <members>C501_HH_Income_Settings__c.C501_Last_Updated_Date__c</members>
@@ -108,45 +91,18 @@
         <members>C501_Service_Record__c.C501_End_Date__c</members>
         <members>C501_Service_Record__c.C501_Household__c</members>
         <members>C501_Service_Record__c.C501_Housing__c</members>
+        <members>C501_Service_Record__c.C501_ID_HH__c</members>
         <members>C501_Service_Record__c.C501_IsActive__c</members>
-        <members>C501_Service_Record__c.C501_ServiceRecord_LID__c</members>
-        <members>C501_Service_Record__c.C501_Service__c</members>
+        <members>C501_Service_Record__c.C501_Program__c</members>
+        <members>C501_Service_Record__c.C501_Service_Household__c</members>
         <members>C501_Service_Record__c.C501_Start_Date__c</members>
-        <members>C501_Service_Record__c.C501_UniqueServiceRecords__c</members>
-        <members>C501_Service_Record__c.Service_Name__c</members>
-        <members>Client_Visit__c.Adults__c</members>
-        <members>Client_Visit__c.Box_Type__c</members>
-        <members>Client_Visit__c.Children__c</members>
-        <members>Client_Visit__c.Commodity_Usage_JSON__c</members>
-        <members>Client_Visit__c.External_Created_Date__c</members>
-        <members>Client_Visit__c.External_Id__c</members>
-        <members>Client_Visit__c.External_Household_Id__c</members>
-        <members>Client_Visit__c.First_Visit_This_Year__c</members>
-        <members>Client_Visit__c.Out_Of_Area_Counter__c</members>
-        <members>Client_Visit__c.Out_Of_Area__c</members>
-        <members>Client_Visit__c.Homeless_Counter__c</members>
-        <members>Client_Visit__c.Homeless__c</members>
-        <members>Client_Visit__c.Household__c</members>
-        <members>Client_Visit__c.Visitor__c</members>
-        <members>Client_Visit__c.Infants__c</members>
-        <members>Client_Visit__c.More_Than_One_Person__c</members>
-        <members>Client_Visit__c.Notes__c</members>
-        <members>Client_Visit__c.Points_Used__c</members>
-        <members>Client_Visit__c.Visit_Type__c</members>
-        <members>Client_Visit__c.Checkout_Weight__c</members>
-        <members>Client_Visit__c.Seniors__c</members>
-        <members>Client_Visit__c.Total_People__c</members>
-        <members>Client_Visit__c.Visit_Date__c</members>
-        <members>Contact.Age_Entry_Date__c</members>
-        <members>Contact.Age_Group__c</members>
-        <members>Contact.Age__c</members>
-        <members>Contact.Additional_Languages__c</members>
+        <members>C501_Service_Record__c.Household_Name__c</members>
+        <members>Contact.C501_Additional_Languages__c</members>
         <members>Contact.C501_Age__c</members>
         <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
         <members>Contact.C501_Asian__c</members>
         <members>Contact.C501_Black_or_African_American__c</members>
         <members>Contact.C501_Chronic_Health_Condition__c</members>
-        <members>Contact.C501_Contact_LID__c</members>
         <members>Contact.C501_Currently_Attending_School__c</members>
         <members>Contact.C501_Developmental_Disability__c</members>
         <members>Contact.C501_Direct_Purchase__c</members>
@@ -156,6 +112,8 @@
         <members>Contact.C501_Education_Level__c</members>
         <members>Contact.C501_Employment_Based__c</members>
         <members>Contact.C501_Ethnicity__c</members>
+        <members>Contact.C501_Gender__c</members>
+        <members>Contact.C501_Has_Social_Security_Number__c</members>
         <members>Contact.C501_HIV_AIDS__c</members>
         <members>Contact.C501_Health_Insurance__c</members>
         <members>Contact.C501_Id_Child__c</members>
@@ -177,6 +135,7 @@
         <members>Contact.C501_Military_Status__c</members>
         <members>Contact.C501_Native_Hawaiian_Pacific_Islander__c</members>
         <members>Contact.C501_Physical_Disability__c</members>
+        <members>Contact.C501_Preferred_Language__c</members>
         <members>Contact.C501_Preferred_Name__c</members>
         <members>Contact.C501_Preferred_Name_auto__c</members>
         <members>Contact.C501_Race_Client_Doesn_t_Know__c</members>
@@ -189,81 +148,70 @@
         <members>Contact.C501_UniqueContacts__c</members>
         <members>Contact.C501_White__c</members>
         <members>Contact.C501_Work_Status__c</members>
-        <members>Contact.External_Created_Date__c</members>
-        <members>Contact.External_Id__c</members>
-        <members>Contact.External_Household_Id__c</members>
-        <members>Contact.Gender__c</members>
-        <members>Contact.Has_Social_Security_Number__c</members>
-        <members>Contact.Id_Number__c</members>
-        <members>Contact.Id_Type__c</members>
-        <members>Contact.Preferred_Language__c</members>
-        <members>Contact.Proof_of_Infant__c</members>
-        <members>Service_Management_Box_Settings__c.Minimum_Family_Size__c</members>
-        <members>Service_Management_Checkin__c.Box_Size__c</members>
-        <members>Service_Management_Checkin__c.Check_In_Time__c</members>
-        <members>Service_Management_Checkin__c.Client_Name__c</members>
-        <members>Service_Management_Checkin__c.Visitor__c</members>
-        <members>Service_Management_Checkin__c.Points_Remaining__c</members>
-        <members>Service_Management_Commodity__c.Allow_Overage__c</members>
-        <members>Service_Management_Commodity__c.Monthly_Limit__c</members>
-        <members>Service_Management_Commodity__c.Sort_Order__c</members>
-        <members>Service_Management_Settings__c.Allow_Box_Size_Override__c</members>
-        <members>Service_Management_Settings__c.Allow_Overage__c</members>
-        <members>Service_Management_Settings__c.Check_in_Required__c</members>
-        <members>Service_Management_Settings__c.Monthly_Base_Points__c</members>
-        <members>Service_Management_Settings__c.Monthly_Points_Per_Adult__c</members>
-        <members>Service_Management_Settings__c.Monthly_Points_Per_Child__c</members>
-        <members>Service_Management_Settings__c.Proof_of_Address_Required__c</members>
-        <members>Service_Management_Settings__c.Proof_of_Address_Update_Interval__c</members>
-        <members>Service_Management_Settings__c.Proof_of_Infant_Required__c</members>
-        <members>Service_Management_Settings__c.Require_Unique_Address__c</members>
-        <members>Service_Management_Settings__c.Show_Id__c</members>
-        <members>Service_Management_Settings__c.Tags__c</members>
-        <members>Service_Management_Settings__c.Track_Checkout_Weight__c</members>
-        <members>Service_Management_Settings__c.Track_Points__c</members>
-        <members>Service_Management_Settings__c.Visit_Frequency_Limit__c</members>
-        <members>Service_Management_Settings__c.Welcome_Alert__c</members>
-        <members>Service_Management_Settings__c.Welcome_Message__c</members>
+        <members>C501_Service_Contact__c.C501_Service_Household_Id__c</members>
+        <members>C501_Service_Contact__c.C501_Additional_Languages__c</members>
+        <members>C501_Service_Contact__c.C501_Age__c</members>
+        <members>C501_Service_Contact__c.C501_American_Indian_or_Alaska_Native__c</members>
+        <members>C501_Service_Contact__c.C501_Asian__c</members>
+        <members>C501_Service_Contact__c.C501_Birthdate__c</members>
+        <members>C501_Service_Contact__c.C501_Black_or_African_American__c</members>
+        <members>C501_Service_Contact__c.C501_Chronic_Health_Condition__c</members>
+        <members>C501_Service_Contact__c.C501_Currently_Attending_School__c</members>
+        <members>C501_Service_Contact__c.C501_Developmental_Disability__c</members>
+        <members>C501_Service_Contact__c.C501_Direct_Purchase__c</members>
+        <members>C501_Service_Contact__c.C501_Disability_Not_Applicable__c</members>
+        <members>C501_Service_Contact__c.C501_Disabling_Condition_Special_Needs__c</members>
+        <members>C501_Service_Contact__c.C501_Disconnected_Youth__c</members>
+        <members>C501_Service_Contact__c.C501_Education_Level__c</members>
+        <members>C501_Service_Contact__c.C501_Employment_Based__c</members>
+        <members>C501_Service_Contact__c.C501_Ethnicity__c</members>
+        <members>C501_Service_Contact__c.C501_Gender__c</members>
+        <members>C501_Service_Contact__c.C501_Has_Social_Security_Number__c</members>
+        <members>C501_Service_Contact__c.C501_HIV_AIDS__c</members>
+        <members>C501_Service_Contact__c.C501_Health_Insurance__c</members>
+        <members>C501_Service_Contact__c.C501_Id_Child__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HH_Child__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HH_HMIS__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HH_HP__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HH_LIHEAP__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HH_SEAS__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HMIS__c</members>
+        <members>C501_Service_Contact__c.C501_Id_HP__c</members>
+        <members>C501_Service_Contact__c.C501_Id_LIHEAP__c</members>
+        <members>C501_Service_Contact__c.C501_Id_SEAS__c</members>
+        <members>C501_Service_Contact__c.C501_Immigration_Status__c</members>
+        <members>C501_Service_Contact__c.C501_Insurance_Unknown_Not_Reported__c</members>
+        <members>C501_Service_Contact__c.C501_Medicaid__c</members>
+        <members>C501_Service_Contact__c.C501_Medicare__c</members>
+        <members>C501_Service_Contact__c.C501_Mental_Health_Problem__c</members>
+        <members>C501_Service_Contact__c.C501_Military_Health_Care__c</members>
+        <members>C501_Service_Contact__c.C501_Military_Status__c</members>
+        <members>C501_Service_Contact__c.C501_Native_Hawaiian_Pacific_Islander__c</members>
+        <members>C501_Service_Contact__c.C501_Physical_Disability__c</members>
+        <members>C501_Service_Contact__c.C501_Preferred_Language__c</members>
+        <members>C501_Service_Contact__c.C501_Preferred_Name__c</members>
+        <members>C501_Service_Contact__c.C501_Preferred_Name_auto__c</members>
+        <members>C501_Service_Contact__c.C501_Race_Client_Doesn_t_Know__c</members>
+        <members>C501_Service_Contact__c.C501_Race_Client_Refused__c</members>
+        <members>C501_Service_Contact__c.C501_Race_Data_Not_Collected__c</members>
+        <members>C501_Service_Contact__c.C501_Race__c</members>
+        <members>C501_Service_Contact__c.C501_State_Children_s_Health_Insurance__c</members>
+        <members>C501_Service_Contact__c.C501_State_Health_Insurance_for_Adults__c</members>
+        <members>C501_Service_Contact__c.C501_Substance_Abuse__c</members>
+        <members>C501_Service_Contact__c.C501_White__c</members>
+        <members>C501_Service_Contact__c.C501_Work_Status__c</members>
+        <members>npe01__OppPayment__c.Payment_Status__c</members>
         <members>npe5__Affiliation__c.Contact_Link__c</members>
         <members>npe5__Affiliation__c.Contact_Name__c</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>Account</members>
-        <members>Client_Visit__c</members>
-        <members>Contact</members>
-        <members>C501_Other_Name__c</members>
         <members>C501_HH_Income_Settings__c</members>
+        <members>C501_Other_Name__c</members>
+        <members>C501_Service_Contact__c</members>
+        <members>C501_Service_Household__c</members>
         <members>C501_Service_Record__c</members>
-        <members>Service_Management_Box_Settings__c</members>
-        <members>Service_Management_Checkin__c</members>
-        <members>Service_Management_Commodity__c</members>
-        <members>Service_Management_Settings__c</members>
         <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Account.Active</members>
-        <members>Account.AllHH</members>
-        <members>Client_Visit__c.All</members>
-        <members>Client_Visit__c.All1</members>
-        <members>Client_Visit__c.Past7</members>
-        <members>Client_Visit__c.Visits_Today</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>Service_Management_App</members>
-        <members>Service_Management_Stats</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Account-Household Lightning Layout</members>
-        <members>Account-Service Lightning Layout</members>
-        <members>C501_Other_Name__c-Name Layout</members>
-        <members>C501_Service_Record__c-Service Record Layout</members>
-        <members>Client_Visit__c-Client Visit Layout</members>
-        <members>Contact-Contact Lightning Layout</members>
-        <members>Contact-Service Contact Lightning Layout</members>
-        <name>Layout</name>
     </types>
     <types>
         <members>C501_Housing</members>
@@ -272,29 +220,18 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
-        <members>Service Management Admin</members>
-        <members>Service Management User</members>
-        <members>Admin</members>
+        <members>Account-Household Lightning Layout</members>
+        <members>C501_Other_Name__c-Name Layout</members>
+        <members>C501_Service_Contact__c-Service Contact Layout</members>
+        <members>C501_Service_Household__c-Service Household Layout</members>
+        <members>C501_Service_Record__c-Service Record Layout</members>
+        <members>Contact-Contact Lightning Layout</members>
+        <members>Contact-Service Contact Lightning Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Service Admin</members>
         <name>Profile</name>
     </types>
-    <types>
-        <members>Angular</members>
-        <name>StaticResource</name>
-    </types>
-    <types>
-        <members>Service_Management_Box_Type</members>
-        <name>CustomLabel</name>
-    </types>
-    <types>
-        <members>CustomLabels</members>
-        <name>CustomLabels</name>
-    </types>
-    <types>
-        <members>Account.HH_Account</members>
-        <members>Account.Service</members>
-        <members>Contact.Contact</members>
-        <members>Contact.Service_Contact</members>
-        <name>RecordType</name>
-    </types>
-    <version>41.0</version>
+    <version>42.0</version>
 </Package>
