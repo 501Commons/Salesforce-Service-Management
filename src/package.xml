@@ -214,6 +214,16 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>C501_TriggerHelper</members>
+        <members>C501_TriggerHelperTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>C501_ServiceHousehold__cTrigger</members>
+        <members>C501_ServiceRecord__cTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>C501_Housing</members>
         <members>C501_Languages</members>
         <members>Y_N_U</members>
