@@ -9,15 +9,15 @@ public with sharing class C501_TriggerHelper {
 
 	public void updateAggregateContact( list<C501_Service_Contact__c> scList, map<id, C501_Service_Contact__c> oldMap, Boolean isDelete ) {
 
-		map<id, list<C501_Service_Contact__c>> triggerSHMap = new map<id, list<C501_Service_Contact__c>>();
+		map<String, list<C501_Service_Contact__c>> triggerSCMap = new map<String, list<C501_Service_Contact__c>>();
 		
 		if ( scList != null ) {
 			// Avoid SOQL query limits by collecting all the required info in the trigger from a single SOQL call
-			for ( C501_Service_Household__c sh :scList ) {
-				if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
-					triggerSHMap.put(sh.C501_Household__c, new list<C501_Service_Contact__c>{ sh });
+			for ( C501_Service_Contact__c sc :scList ) {
+				if (!triggerSCMap.containsKey(sc.C501_Contact_Id__c)) {
+					triggerSCMap.put(sc.C501_Contact_Id__c, new list<C501_Service_Contact__c>{ sc });
 				} else {
-					triggerSHMap.get(sh.C501_Household__c).add(sh);
+					triggerSCMap.get(sc.C501_Contact_Id__c).add(sc);
 				}
 			}
 		}
@@ -25,14 +25,14 @@ public with sharing class C501_TriggerHelper {
 		list<Contact> cToUpdate = new list<Contact>();
 
 		for ( Contact c : 
-				[select Id, Name, 
-					FirstName, LastName, MiddleName, C501_Nickname__c,
-					C501_Gender__c, Birthdate, C501_Partial_Social_Security_Id__c,
+				[select Id, C501_Contact_Id__c, Name, 
+					FirstName, LastName, MiddleName, C501_Nickname__c, C501_Last_Name_Preferred__c,
+					Birthdate, C501_Partial_Social_Security_Id__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
-					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, C501_Gender__c
-					from Contact where id in : triggerSHMap.keyset()] ) {
+					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
+					from Contact where C501_Contact_Id__c in : triggerSCMap.keyset()] ) {
 
-			list<C501_Service_Contact__c> scGroup = triggerSHMap.get( c.Id );
+			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.C501_Contact_Id__c );
 
 			if (isDelete) {
 				// ToDo - Add Delete Support - maybe just a no action since probably delete is just triggered by automation
@@ -185,7 +185,7 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			hh.Phone = sh.C501_Phone__c;
 		}
-		if (hh.C501_OtherPhone__c != sh.C501_Other_Phone__c) {
+		if (hh.C501_Other_Phone__c != sh.C501_Other_Phone__c) {
 			updateRecord = true;
 			hh.Phone = sh.C501_Phone__c;
 		}
@@ -231,9 +231,9 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.C501_Nickname__c = sc.C501_Nickname__c;
 		}
-		if (c.C501_Gender__c != sc.C501_Gender__c) {
+		if (c.C501_Last_Name_Preferred__c != sc.C501_Last_Name_Preferred__c) {
 			updateRecord = true;
-			c.C501_Gender__c = sc.C501_Gender__c;
+			c.C501_Last_Name_Preferred__c = sc.C501_Last_Name_Preferred__c;
 		}
 		if (c.Birthdate != sc.C501_Birthdate__c) {
 			updateRecord = true;
@@ -271,9 +271,9 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.C501_Ethnicity__c = sc.C501_Ethnicity__c;
 		}
-		if (c.C501_Gender__c != sc.C501_Gender__c) {
+		if (c.Gender__c != sc.C501_Gender__c) {
 			updateRecord = true;
-			c.C501_Gender__c = sc.C501_Gender__c;
+			c.Gender__c = sc.C501_Gender__c;
 		}
 		
 		return updateRecord;
