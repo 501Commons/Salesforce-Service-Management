@@ -26,7 +26,7 @@ public with sharing class C501_TriggerHelper {
 
 		for ( Contact c : 
 				[select Id, C501_Contact_Id__c, Name, 
-					FirstName, LastName, MiddleName, C501_Nickname__c, C501_Last_Name_Preferred__c,
+					FirstName, LastName, MiddleName,
 					Birthdate, C501_Partial_Social_Security_Id__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
@@ -69,7 +69,7 @@ public with sharing class C501_TriggerHelper {
 				[select Id, Name, 
 					BillingStreet, BillingCity, BillingState, BillingPostalCode,
 					ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode,
-					C501_SNAP__c, C501_Other_Income__c, C501_Unemployment_Insurance__c, C501_Child_Support__c,
+					C501_SNAP__c, C501_Other_Income__c, C501_Earned_Income__c, C501_Self_Employed__c, C501_Unemployment_Insurance__c, C501_Child_Support__c,
 					C501_Pension__c, C501_Retirement_Income_Social_Security__c, C501_Supplemental_Security_Income__c,
 					C501_TANF__c, C501_Household_Income_Sources__c, C501_Annual_Income__c, C501_Housing__c,
 					C501_Household_Size__c, C501_Household_Type__c, Phone, C501_Other_Phone__c,
@@ -136,6 +136,14 @@ public with sharing class C501_TriggerHelper {
 		if (hh.C501_Other_Income__c != sh.C501_Other_Income__c) {
 			updateRecord = true;
 			hh.C501_Other_Income__c = sh.C501_Other_Income__c;
+		}
+		if (hh.C501_Earned_Income__c != sh.C501_Earned_Income__c) {
+			updateRecord = true;
+			hh.C501_Earned_Income__c = sh.C501_Earned_Income__c;
+		}
+		if (hh.C501_Self_Employed__c != sh.C501_Self_Employed__c) {
+			updateRecord = true;
+			hh.C501_Self_Employed__c = sh.C501_Self_Employed__c;
 		}
 		if (hh.C501_Unemployment_Insurance__c != sh.C501_Unemployment_Insurance__c) {
 			updateRecord = true;
@@ -215,25 +223,33 @@ public with sharing class C501_TriggerHelper {
 
 		Boolean updateRecord = false;
 
-		if (c.FirstName != sc.C501_First_Name__c) {
-			updateRecord = true;
-			c.FirstName = sc.C501_First_Name__c;
+		if (!String.IsEmpty(sc.C501_Nickname__c)) {
+			if (c.FirstName != sc.C501_Nickname__c) {
+				updateRecord = true;
+				c.FirstName = sc.C501_Nickname__c;
+			}
 		}
-		if (c.LastName != sc.C501_Last_Name__c) {
-			updateRecord = true;
-			c.LastName = sc.C501_Last_Name__c;
+		else {
+			if (c.FirstName != sc.C501_First_Name__c) {
+				updateRecord = true;
+				c.FirstName = sc.C501_First_Name__c;
+			}
+		}
+		if (!String.IsEmpty(sc.C501_Last_Name_Other__c)) {
+			if (c.LastName != sc.C501_Last_Name_Other__c) {
+				updateRecord = true;
+				c.LastName = sc.C501_Last_Name_Other__c;
+			}
+        }
+		else {
+			if (c.LastName != sc.C501_Last_Name__c) {
+				updateRecord = true;
+				c.LastName = sc.C501_Last_Name__c;
+			}
 		}
 		if (c.MiddleName != sc.C501_Middle_Name__c) {
 			updateRecord = true;
 			c.MiddleName = sc.C501_Middle_Name__c;
-		}
-		if (c.C501_Nickname__c != sc.C501_Nickname__c) {
-			updateRecord = true;
-			c.C501_Nickname__c = sc.C501_Nickname__c;
-		}
-		if (c.C501_Last_Name_Preferred__c != sc.C501_Last_Name_Preferred__c) {
-			updateRecord = true;
-			c.C501_Last_Name_Preferred__c = sc.C501_Last_Name_Preferred__c;
 		}
 		if (c.Birthdate != sc.C501_Birthdate__c) {
 			updateRecord = true;
