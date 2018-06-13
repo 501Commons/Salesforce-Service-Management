@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>C501_Contact_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AccountId</fields>
+        <label>C501 Contact Compact Layout</label>
+    </compactLayouts>
     <fields>
         <fullName>C501_Additional_Languages__c</fullName>
         <description>CoreId</description>
@@ -16,15 +22,27 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
-        <fullName>C501_Age__c</fullName>
+        <fullName>C501_Age_Calculate__c</fullName>
         <description>CoreId/Module4</description>
         <externalId>false</externalId>
         <formula>FLOOR (( TODAY() - Birthdate ) / 365.2425 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age Calculated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C501_Age__c</fullName>
+        <externalId>false</externalId>
         <label>Age</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -68,6 +86,18 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Contact_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Contact Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <fields>
         <fullName>C501_Currently_Attending_School__c</fullName>
@@ -166,9 +196,9 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
                     <label>Grades 9-12/Non-Graduate</label>
                 </value>
                 <value>
-                    <fullName>High School Graduate/ Equivalency Diploma</fullName>
+                    <fullName>High School Graduate/Equivalency Diploma</fullName>
                     <default>false</default>
-                    <label>High School Graduate/ Equivalency Diploma</label>
+                    <label>High School Graduate/Equivalency Diploma</label>
                 </value>
                 <value>
                     <fullName>12 Grade + Some Post-Secondary</fullName>
@@ -227,9 +257,9 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
                     <label>Not Hispanic/Latino</label>
                 </value>
                 <value>
-                    <fullName>Unknown</fullName>
+                    <fullName>Unknown/Not Reported</fullName>
                     <default>false</default>
-                    <label>Unknown</label>
+                    <label>Unknown/Not Reported</label>
                 </value>
                 <value>
                     <fullName>Refused</fullName>
@@ -250,6 +280,20 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Has_Social_Security_Number__c</fullName>
+        <description>CoreId</description>
+        <externalId>false</externalId>
+        <label>Has Social Security Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Y_N_U</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>C501_Health_Insurance__c</fullName>
         <description>Module4</description>
         <externalId>false</externalId>
@@ -262,131 +306,6 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
             <restricted>true</restricted>
             <valueSetName>Y_N_U</valueSetName>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_Id_Child__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId - maps to Child+ database; not on page layouts</description>
-        <externalId>true</externalId>
-        <label>Child+ ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HH_Child__c</fullName>
-        <description>CoreId - household Id in Child+ database; not on page layouts</description>
-        <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_Child__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Child+ Household ID</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HH_HMIS__c</fullName>
-        <description>Household ID in HMIS database - pulled from household record</description>
-        <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_HMIS__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>HMIS Household ID</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HH_HP__c</fullName>
-        <description>Household ID in HP database - pulled from household record</description>
-        <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_HP__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>HP Household ID</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HH_LIHEAP__c</fullName>
-        <description>Household ID in LIHEAP database - pulled from household record</description>
-        <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_LIHEAP__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>LIHEAP Household ID</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HH_SEAS__c</fullName>
-        <description>Household ID in SEAS database - pulled from household record</description>
-        <externalId>false</externalId>
-        <formula>Account.C501_ID_HH_SEAS__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>SEAS Household ID</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HMIS__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId - maps to HMIS database; not on page layouts</description>
-        <externalId>true</externalId>
-        <label>HMIS Id</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_HP__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId - maps to HP database; not on page layouts</description>
-        <externalId>true</externalId>
-        <label>HP Id</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_LIHEAP__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId - maps to LIHEAP database; not on page layouts</description>
-        <externalId>true</externalId>
-        <label>LIHEAP Id</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_Id_SEAS__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId - maps to SEAS database; not on page layouts</description>
-        <externalId>true</externalId>
-        <label>SEAS Id</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
     </fields>
     <fields>
         <fullName>C501_Immigration_Status__c</fullName>
@@ -503,9 +422,9 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
                     <label>No Military Service</label>
                 </value>
                 <value>
-                    <fullName>Unknown / Not Reported</fullName>
+                    <fullName>Unknown/Not Reported</fullName>
                     <default>false</default>
-                    <label>Unknown / Not Reported</label>
+                    <label>Unknown/Not Reported</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -521,6 +440,17 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Partial_Social_Security_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Partial Social Security Id</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Physical_Disability__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Disabling Condition picklist</description>
@@ -531,42 +461,18 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_Preferred_Name__c</fullName>
+        <fullName>C501_Preferred_Language__c</fullName>
         <description>CoreId</description>
         <externalId>false</externalId>
-        <label>Preferred Name</label>
+        <label>Preferred Language</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Name</fullName>
-                    <default>false</default>
-                    <label>Name</label>
-                </value>
-                <value>
-                    <fullName>Nickname</fullName>
-                    <default>false</default>
-                    <label>Nickname</label>
-                </value>
-            </valueSetDefinition>
+            <valueSetName>C501_Languages</valueSetName>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_Preferred_Name_auto__c</fullName>
-        <description>CoreId - to be populated automatically when one of the contact&apos;s Other Names is selected as preferred; otherwise, defaults to the value in the standard FirstName field</description>
-        <externalId>false</externalId>
-        <label>Preferred Name (auto)</label>
-        <length>80</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_Race_Client_Doesn_t_Know__c</fullName>
@@ -651,8 +557,24 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
                     <default>false</default>
                     <label>Other</label>
                 </value>
+                <value>
+                    <fullName>Unknown/Not Reported</fullName>
+                    <default>false</default>
+                    <label>Unknown/Not Reported</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_Service_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Service Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_State_Children_s_Health_Insurance__c</fullName>
@@ -683,20 +605,6 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>C501_UniqueContacts__c</fullName>
-        <description>Used in summary reporting; Not on page layouts</description>
-        <externalId>false</externalId>
-        <formula>1</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>UniqueContacts</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_White__c</fullName>
@@ -765,7 +673,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         </valueSet>
     </fields>
     <fields>
-        <fullName>C501_Gender__c</fullName>
+        <fullName>Gender__c</fullName>
         <description>CoreId/Module4; for Module4, combine T options into Other
 
 This field is configured in NPSP Settings &gt; Relationships &gt; Relationships as the Gender field. Do not delete this field unless you remove the reference or select another Gender field there.</description>
@@ -804,34 +712,6 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
                     <label>Other</label>
                 </value>
             </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_Has_Social_Security_Number__c</fullName>
-        <description>CoreId</description>
-        <externalId>false</externalId>
-        <label>Has Social Security Number</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>Y_N_U</valueSetName>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_Preferred_Language__c</fullName>
-        <description>CoreId</description>
-        <externalId>false</externalId>
-        <label>Preferred Language</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>C501_Languages</valueSetName>
         </valueSet>
     </fields>
 </CustomObject>

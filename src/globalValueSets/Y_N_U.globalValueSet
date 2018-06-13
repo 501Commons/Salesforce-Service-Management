@@ -11,9 +11,9 @@
         <label>No</label>
     </customValue>
     <customValue>
-        <fullName>Unknown / Not Reported</fullName>
+        <fullName>Unknown/Not Reported</fullName>
         <default>false</default>
-        <label>Unknown / Not Reported</label>
+        <label>Unknown/Not Reported</label>
     </customValue>
     <description>Yes; No; Unknown / Not Reported - heavily used in Module4 reporting</description>
     <masterLabel>Y/N/U</masterLabel>

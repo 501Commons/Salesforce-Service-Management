@@ -2,148 +2,96 @@
 public with sharing class C501_TriggerHelperTest {
 
 	@isTest
-	private static void testClientTrigger() {
-		Account hh = new Account(
-            Name = 'Test Account'
+	private static void testTriggers() {
+
+		Account hh = new Account (
+			Name = 'Account.Name',
+			C501_Service_Id__c = 'sh1'
 		);
 		insert hh;
 
-		Contact c = new Contact( AccountId = hh.id, LastName = 'Test', Birthdate = system.today().addyears(-50) );
+		Contact c = new Contact(
+			LastName = 'Contact.LastName',
+			C501_Contact_Id__c = 'sc1',
+			C501_Service_Id__c = hh.C501_Service_Id__c,
+			AccountId = hh.Id
+		);
 		insert c;
 
-		Contact c1 = [select id, age__c, name, Account.Name from Contact where id =: c.id];
-		System.assertEquals('Test', c1.name );
-		System.assertEquals('Test', c1.Account.Name );
-		System.assertEquals(50, c1.age__c ); 
-
-		c.FirstName = 'Jane';
-		c.Birthdate = system.today().addyears(-45);
-		update c;
-
-		Contact c2 = [select id, age__c, name, Account.Name from Contact where id =: c.id];
-		System.assertEquals('Jane Test', c2.name );
-		System.assertEquals('Jane Test', c2.Account.Name );	
-		System.assertEquals(45, c2.age__c );
-
-		Contact c3 = new Contact(  AccountId = hh.id, FirstName = 'Bob', LastName = 'Test', age__c = 40 );
-		insert c3;
-
-		Contact c4 = [select id, age__c, name, Account.Name from Contact where id =: c3.id];
-		System.assertEquals('Bob Test', c4.name );
-		System.assertEquals('Jane and Bob Test', c4.Account.Name );
-		System.assertEquals(40, c4.age__c );
-
-		Contact c5 = new Contact(  AccountId = hh.id, FirstName = 'Peter', LastName = 'Test', age__c = 5 );
-		Contact c6 = new Contact(  AccountId = hh.id, FirstName = 'Andrew', LastName = 'Testy' );
-		insert new list<Contact>{ c5, c6 };
-
-		Contact c7 = [select id, age__c, name, Account.Name, Account.adults__c, Account.children__c
-							from Contact where id =: c6.id];
-		System.assertEquals('Andrew Testy', c7.name );
-		System.assertEquals('Jane and Bob Test', c7.Account.Name );
-		System.assertEquals(3, c7.Account.adults__c );
-		System.assertEquals(1, c7.Account.children__c );
-
-		delete new list<Contact>{ c4, c5 };
-
-		Contact c8 = [select id, age__c, name, Account.Name, Account.adults__c, Account.children__c 
-							from Contact where id =: c1.id];
-		System.assertEquals('Jane Test', c8.name );
-		System.assertEquals('Jane Test and Andrew Testy', c8.Account.Name );		
-		System.assertEquals(2, c8.Account.adults__c );
-		System.assertEquals(0, c8.Account.children__c );
-	}
-
-	@isTest static void testChangeProofOfAddress() {
-		Account household = new Account(
-			Name = 'Test Account',
-			BillingStreet = '123 Main Street',
-            BillingCity = 'Seattle',
-            BillingState = 'WA',
-            BillingPostalCode = '98103',
-            Proof_of_Address__c = 'Utility bill',
-            Proof_of_Address_Date__c = System.today().addYears(-2)
+		C501_Service_Household__c sh = new C501_Service_Household__c(
+            Name = 'C501_Service_Household__c.Name',
+			C501_Household__c = hh.Id,
+			C501_Service_Id__c = hh.C501_Service_Id__c
 		);
-        insert household;
+		insert sh;
 
-        household.Proof_of_Address__c = 'Staff verified - JS';
-        update household;
+		// Call update to execute trigger
+		sh.C501_BillingStreet__c = 'C501_BillingStreet__c';
+		sh.C501_BillingCity__c = 'C501_BillingCity__c';
+		sh.C501_BillingState__c = 'C501_BillingState__c';
+		sh.C501_BillingPostalCode__c = '54321';
+		sh.C501_ShippingStreet__c = 'C501_ShippingStreet__c';
+		sh.C501_ShippingCity__c = 'C501_ShippingCity__c';
+		sh.C501_ShippingState__c = 'C501_ShippingState__c';
+		sh.C501_ShippingPostalCode__c = '12345';
+		sh.C501_SNAP__c = TRUE;
+		sh.C501_Other_Income__c = TRUE;
+		sh.C501_Earned_Income__c = TRUE;
+		sh.C501_Self_Employed__c = TRUE;
+		sh.C501_Unemployment_Insurance__c = TRUE;
+		sh.C501_Child_Support__c = TRUE;
+		sh.C501_Pension__c = TRUE;
+		sh.C501_Retirement_Income_Social_Security__c = TRUE;
+		sh.C501_Supplemental_Security_Income__c = TRUE;
+		sh.C501_TANF__c = TRUE;
+		sh.C501_Household_Income_Sources__c = 'Unknown/Not Reported';
+		sh.C501_Annual_Income__c = 1000;
+		sh.C501_Housing__c = 'Unknown/Not Reported';
+		sh.C501_Household_Size__c = 2;
+		sh.C501_Household_Type__c = 'Unknown/Not Reported';
+		sh.C501_Phone__c = 'Phone';
+		sh.C501_Other_Phone__c = 'OtherPhone';
+		sh.C501_Years_At_Current_Address__c = 5;
+		sh.C501_Current_Address_Move_In_Year__c = date.today();
 
-        household = [ SELECT Proof_of_Address_Date__c FROM Account WHERE Id = :household.Id ];
+		update sh;
 
-        System.assertEquals(System.today(), household.Proof_of_Address_Date__c, 'Proof of Address date should update to current date');
-	}
+		// Check trigger replication from C501_Service_Household__c to Account
+		Account hh_update = [select ShippingStreet from Account where id =: hh.id];
+		System.assertEquals(hh_update.ShippingStreet, sh.C501_ShippingStreet__c);
 
-	@isTest static void testupdateContactAge() {
-		Account household = new Account(
-            Name = 'Test Account'
+		C501_Service_Contact__c sc = new C501_Service_Contact__c(
+			Name = 'C501_Service_Contact__c.Name',
+			C501_Contact_Id__c = c.C501_Contact_Id__c,
+			C501_Service_Id__c = hh.C501_Service_Id__c,
+			C501_Service_Household_Id__c = sh.Id,
+			C501_Contact__c = c.Id
 		);
-        insert household;
+		insert sc;
 
-        Contact c1 = new Contact(
-        	AccountId = household.Id, 
-        	FirstName = 'Amber', 
-        	LastName = 'Smith', 
-        	Age__c = 55
-        ); 
-        insert c1;
+		// Call update to execute trigger
+		sc.C501_Last_Name__c = 'C501_Service_Contact__c.C501_Last_Name__c';
+		sc.C501_Nickname__c = 'C501_Service_Contact__c.C501_Nickname__c';
+		sc.C501_First_Name__c = 'C501_Service_Contact__c.C501_First_Name__c';
+		sc.C501_Last_Name_Other__c = 'C501_Service_Contact__c.C501_Last_Name_Other__c';
+		sc.C501_Last_Name__c = 'C501_Service_Contact__c.C501_Last_Name__c';
+		sc.C501_Middle_Name__c = 'C501_Middle_Name__c';
+		sc.C501_Birthdate__c = date.today();
+		sc.C501_Partial_Social_Security_Id__c = 'xxx-xx-xxxx';
+		sc.C501_Age__c = 10;
+		sc.C501_Military_Status__c = 'Unknown/Not Reported';
+		sc.C501_Disabling_Condition_Special_Needs__c = 'Unknown/Not Reported';
+		sc.C501_Education_Level__c = 'Unknown/Not Reported';
+		sc.C501_Health_Insurance__c = 'Unknown/Not Reported';
+		sc.C501_Race__c = 'Unknown/Not Reported';
+		sc.C501_Ethnicity__c = 'Unknown/Not Reported';
+		sc.C501_Gender__c = 'Unknown/Not Reported';
 
-        c1.Age__c = 55;
-        c1.Age_Entry_Date__c = System.today().addYears(-2);
-        update c1;
+		update sc;
 
-        c1 = [ SELECT Age__c, Age_Entry_Date__c FROM Contact WHERE Id = :c1.Id ];
-        System.assertEquals(57, c1.Age__c, 'If age was 55 and was entered 2 years ago, age should be recalculated to 57');
-
-	}
-
-	@isTest
-	private static void testVisitTrigger() {
-
-		Boolean todayIsJan1 = (System.today().month() == 1 && System.today().day() == 1);
-		Integer dateOffset = (todayIsJan1 ? -1 : 0);
-
-		Account hh = new Account(
-            Name = 'Test Account'
-		);
-		insert hh;
-
-		Client_Visit__c cv = new Client_Visit__c(Household__c = hh.id, Visit_Date__c = System.today().addDays(dateOffset - 1));
-		insert cv;
-
-		cv = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv.Id ];
-		System.assertEquals(true, cv.First_Visit_This_Year__c);
-
-		Client_Visit__c cv2 = new Client_Visit__c(Household__c = hh.id, Visit_Date__c = System.today().addDays(dateOffset));
-		insert cv2;
-
-		cv = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv.Id ];
-		System.assertEquals(true, cv.First_Visit_This_Year__c);
-
-		cv2 = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv2.Id ];
-		System.assertEquals(todayIsJan1, cv2.First_Visit_This_Year__c);
-	}
-
-	@isTest
-	private static void testVisitTriggerNoDates() {
-
-		Account hh = new Account(
-            Name = 'Test Account'
-		);
-		insert hh;
-
-		Client_Visit__c cv = new Client_Visit__c(Household__c = hh.id);
-		insert cv;
-
-		cv = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv.Id ];
-		System.assertEquals(true, cv.First_Visit_This_Year__c);
-
-		Client_Visit__c cv2 = new Client_Visit__c(Household__c = hh.id);
-		insert cv2;
-
-		cv = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv.Id ];
-		cv2 = [ SELECT First_Visit_This_Year__c FROM Client_Visit__c WHERE Id = :cv2.Id ];
-		System.assertEquals(true, cv.First_Visit_This_Year__c);
-		System.assertEquals(false, cv2.First_Visit_This_Year__c);
+		// Check trigger replication from C501_Service_Contact__c to Contact
+		Contact c_update = [select LastName, FirstName from Contact where id =: c.id];
+		System.assertEquals(c_update.LastName, sc.C501_Last_Name_Other__c);
+		System.assertEquals(c_update.FirstName, sc.C501_Nickname__c);
 	}
 }

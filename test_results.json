@@ -1,0 +1,14 @@
+[
+    {
+        "ClassName": "C501_TriggerHelperTest", 
+        "StackTrace": null, 
+        "Stats": {
+            "duration": 2082
+        }, 
+        "TestTimestamp": "2018-06-13T08:03:58.000+0000", 
+        "Message": null, 
+        "Outcome": "Pass", 
+        "Children": null, 
+        "Method": "testTriggers"
+    }
+]

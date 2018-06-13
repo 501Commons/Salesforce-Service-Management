@@ -195,7 +195,7 @@ public with sharing class C501_TriggerHelper {
 		}
 		if (hh.C501_Other_Phone__c != sh.C501_Other_Phone__c) {
 			updateRecord = true;
-			hh.Phone = sh.C501_Phone__c;
+			hh.Phone = sh.C501_Other_Phone__c;
 		}
 		if (hh.C501_Years_At_Current_Address__c != sh.C501_Years_At_Current_Address__c) {
 			updateRecord = true;

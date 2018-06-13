@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>C501_Household_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>npe01__One2OneContact__c</fields>
+        <label>C501 Household Compact Layout</label>
+    </compactLayouts>
     <fields>
         <fullName>C501_Affordable_Care_Act_Subsidy__c</fullName>
         <defaultValue>false</defaultValue>
@@ -48,6 +54,14 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Current_Address_Move_In_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Address Move In Year</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>C501_EITC__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>
@@ -57,25 +71,12 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_HH_Income_Level__c</fullName>
-        <description>Module4</description>
+        <fullName>C501_Earned_Income__c</fullName>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <formula>IF ( 
- AND ( NOT ( ISBLANK ( C501_Annual_Income__c )), NOT ( ISBLANK (  C501_Household_Size__c ))),
-    C501_Annual_Income__c / 
-   ( $Setup.C501_HH_Income_Settings__c.C501_Base_Level__c + 
-   (( C501_Household_Size__c - 1 )*  $Setup.C501_HH_Income_Settings__c.C501_Additional_Amount__c )),
-0 )
-
-
-/* (Base_Threshold + ((NumberInHH-1)*AdditionalValuePerPerson) */</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Formula - based on Household Size and Annual Income. Used in Module4 reporting</inlineHelpText>
-        <label>HH Income Level</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <type>Percent</type>
+        <label>Earned Income</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>C501_HUD_VASH__c</fullName>
@@ -204,9 +205,9 @@
                     <label>Non-Cash Benefits Only</label>
                 </value>
                 <value>
-                    <fullName>Unknown/ Not Reported</fullName>
+                    <fullName>Unknown/Not Reported</fullName>
                     <default>false</default>
-                    <label>Unknown/ Not Reported</label>
+                    <label>Unknown/Not Reported</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -242,9 +243,9 @@
                     <label>Single Person</label>
                 </value>
                 <value>
-                    <fullName>Two Adults NO Children</fullName>
+                    <fullName>Two Adults No Children</fullName>
                     <default>false</default>
-                    <label>Two Adults NO Children</label>
+                    <label>Two Adults No Children</label>
                 </value>
                 <value>
                     <fullName>Single Parent Female</fullName>
@@ -331,72 +332,12 @@
                     <label>Other</label>
                 </value>
                 <value>
-                    <fullName>Unknown/ Not Reported</fullName>
+                    <fullName>Unknown/Not Reported</fullName>
                     <default>false</default>
-                    <label>Unknown/ Not Reported</label>
+                    <label>Unknown/Not Reported</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_ID_HH_Child__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId</description>
-        <externalId>true</externalId>
-        <label>Child+ Household ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_ID_HH_HMIS__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId</description>
-        <externalId>true</externalId>
-        <label>HMIS Household ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_ID_HH_HP__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId</description>
-        <externalId>true</externalId>
-        <label>HP Household ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_ID_HH_LIHEAP__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId</description>
-        <externalId>true</externalId>
-        <label>LIHEAP Household ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>C501_ID_HH_SEAS__c</fullName>
-        <caseSensitive>true</caseSensitive>
-        <description>CoreId</description>
-        <externalId>true</externalId>
-        <label>SEAS Household ID</label>
-        <length>20</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>true</unique>
     </fields>
     <fields>
         <fullName>C501_Income_Unknown_Not_Reported__c</fullName>
@@ -408,13 +349,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_LIHEAP__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Module4</description>
+        <fullName>C501_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Sample Level field for use with Level feature. May be deleted or edited as needed.</description>
         <externalId>false</externalId>
-        <label>LIHEAP</label>
+        <label>Level</label>
+        <referenceTo>npsp__Level__c</referenceTo>
+        <relationshipLabel>Household Levels</relationshipLabel>
+        <relationshipName>Levels</relationshipName>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Checkbox</type>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>C501_NonCash_Income_Unknown__c</fullName>
@@ -444,6 +389,14 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Other_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>C501_Pension__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>
@@ -460,6 +413,18 @@
         <label>Permanent Supportive Housing</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Previous_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Previous Level</label>
+        <referenceTo>npsp__Level__c</referenceTo>
+        <relationshipLabel>Household Previous Levels</relationshipLabel>
+        <relationshipName>PreviousLevels</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>C501_Private_Disability_Insurance__c</fullName>
@@ -496,6 +461,25 @@
         <label>SNAP</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Self_Employed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Self Employed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Service_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Service Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <fields>
         <fullName>C501_Social_Security_Disability_Income__c</fullName>
@@ -570,16 +554,14 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Level__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Sample Level field for use with Level feature. May be deleted or edited as needed.</description>
+        <fullName>C501_Years_at_Current_Address__c</fullName>
         <externalId>false</externalId>
-        <label>Level</label>
-        <referenceTo>npsp__Level__c</referenceTo>
-        <relationshipLabel>Households</relationshipLabel>
-        <relationshipName>Accounts</relationshipName>
+        <label>Years at Current Address</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>
