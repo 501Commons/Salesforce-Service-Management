@@ -97,6 +97,9 @@ public with sharing class C501_TriggerHelper {
 
 		Boolean updateRecord = false;
 
+		// NPSP feature set Name = REPLACE will trigger NPSP Household rename logic
+		hh.Name = 'REPLACE';
+
 		if (hh.BillingStreet != sh.C501_BillingStreet__c) {
 			updateRecord = true;
 			hh.BillingStreet = sh.C501_BillingStreet__c;
