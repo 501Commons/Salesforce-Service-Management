@@ -59,6 +59,8 @@
         <members>Account.C501_WIC__c</members>
         <members>Account.C501_Worker_s_Compensation__c</members>
         <members>Account.C501_Years_at_Current_Address__c</members>
+        <members>Account.Level__c</members>
+        <members>Account.Previous_Level__c</members>
         <members>C501_Other_Name__c.C501_Contact__c</members>
         <members>C501_Other_Name__c.C501_End_Date__c</members>
         <members>C501_Other_Name__c.C501_IsPreferred__c</members>
@@ -73,7 +75,6 @@
         <members>C501_Service_Contact__c.C501_Birthdate__c</members>
         <members>C501_Service_Contact__c.C501_Black_or_African_American__c</members>
         <members>C501_Service_Contact__c.C501_Chronic_Health_Condition__c</members>
-        <members>C501_Service_Contact__c.C501_Contact_Created__c</members>
         <members>C501_Service_Contact__c.C501_Contact_Id__c</members>
         <members>C501_Service_Contact__c.C501_Contact__c</members>
         <members>C501_Service_Contact__c.C501_Currently_Attending_School__c</members>
@@ -129,7 +130,6 @@
         <members>C501_Service_Household__c.C501_Earned_Income__c</members>
         <members>C501_Service_Household__c.C501_End_Date__c</members>
         <members>C501_Service_Household__c.C501_HUD_VASH__c</members>
-        <members>C501_Service_Household__c.C501_Household_Created__c</members>
         <members>C501_Service_Household__c.C501_Household_Income_Sources__c</members>
         <members>C501_Service_Household__c.C501_Household_Size__c</members>
         <members>C501_Service_Household__c.C501_Household_Type__c</members>
@@ -222,6 +222,10 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>C501_Other_Name__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
         <members>C501_Languages</members>
         <members>Y_N_U</members>
         <name>GlobalValueSet</name>
@@ -235,8 +239,28 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>C501_Other_Name__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Chatter External User</members>
+        <members>Chatter Free User</members>
+        <members>Chatter Moderator User</members>
+        <members>ContractManager</members>
+        <members>MarketingProfile</members>
+        <members>ReadOnly</members>
         <members>Service Admin</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        <members>StandardAul</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>C501_Service_Contact__c.C501_Service_Contact</members>
+        <members>C501_Service_Household__c.C501_Service_Household</members>
+        <members>C501_Service_Household__c.C501_Service_Household_Merged</members>
+        <name>RecordType</name>
     </types>
     <version>42.0</version>
 </Package>

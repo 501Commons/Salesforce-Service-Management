@@ -45,6 +45,9 @@
     <compactLayouts>
         <fullName>C501_Other_Name_Company_Layout</fullName>
         <fields>Name</fields>
+        <fields>C501_Other_Name__c</fields>
+        <fields>C501_IsPreferred__c</fields>
+        <fields>C501_Contact__c</fields>
         <label>C501 Other Name Company Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -146,6 +149,11 @@
         </valueSet>
     </fields>
     <label>Other Name</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>N-{0000}</displayFormat>
         <label>Other Name Id</label>
@@ -153,7 +161,12 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Other Names</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchResultsAdditionalFields>C501_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>C501_Other_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>C501_IsPreferred__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>C501_Contact__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>

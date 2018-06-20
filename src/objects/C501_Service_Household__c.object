@@ -188,15 +188,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_Household_Created__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>System Field used to track whether the initial Household aggregate object created.</description>
-        <externalId>false</externalId>
-        <label>Household Created</label>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>C501_Household_Income_Sources__c</fullName>
         <description>Module4</description>
         <externalId>false</externalId>
@@ -331,7 +322,7 @@
     </fields>
     <fields>
         <fullName>C501_Household__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
         <label>Household</label>
         <referenceTo>Account</referenceTo>
@@ -602,11 +593,11 @@
     </fields>
     <fields>
         <fullName>C501_Service_Id__c</fullName>
-        <caseSensitive>true</caseSensitive>
+        <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
         <label>Service Id</label>
         <length>20</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>true</unique>
@@ -811,6 +802,354 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Service Households</pluralLabel>
+    <recordTypes>
+        <fullName>C501_Service_Household</fullName>
+        <active>true</active>
+        <label>Service Household</label>
+        <picklistValues>
+            <picklist>C501_Household_Income_Sources__c</picklist>
+            <values>
+                <fullName>Income from Employment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Other Income Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment%2C Other Income Source%2C and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Cash Benefits Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Type__c</picklist>
+            <values>
+                <fullName>Multigenerational Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-related Adults with Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Adults No Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Parent Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Housing__c</picklist>
+            <values>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other permanent housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Outcomes__c</picklist>
+            <values>
+                <fullName>Disconnect Averted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eviction Prevention Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Repair Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Replacement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Restored</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Program__c</picklist>
+            <values>
+                <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>LIHEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIHEAP Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Sub_Service__c</picklist>
+            <values>
+                <fullName>Eviction Prevention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Replace</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>C501_Service_Household_Merged</fullName>
+        <active>true</active>
+        <label>Service Household Merged</label>
+        <picklistValues>
+            <picklist>C501_Household_Income_Sources__c</picklist>
+            <values>
+                <fullName>Income from Employment Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment and Other Income Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income from Employment%2C Other Income Source%2C and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Cash Benefits Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Income Source and Non-Cash Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Household_Type__c</picklist>
+            <values>
+                <fullName>Multigenerational Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-related Adults with Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Parent Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Adults No Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two Parent Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Housing__c</picklist>
+            <values>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other permanent housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Outcomes__c</picklist>
+            <values>
+                <fullName>Disconnect Averted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eviction Prevention Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Repair Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Replacement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Restored</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Program__c</picklist>
+            <values>
+                <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>LIHEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIHEAP Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Sub_Service__c</picklist>
+            <values>
+                <fullName>Eviction Prevention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furnace Replace</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

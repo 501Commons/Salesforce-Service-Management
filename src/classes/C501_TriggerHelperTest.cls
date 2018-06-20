@@ -65,7 +65,8 @@ public with sharing class C501_TriggerHelperTest {
 			C501_Contact_Id__c = c.C501_Contact_Id__c,
 			C501_Service_Id__c = hh.C501_Service_Id__c,
 			C501_Service_Household_Id__c = sh.Id,
-			C501_Contact__c = c.Id
+			C501_Contact__c = c.Id,
+			C501_Last_Name__c = 'C501_Service_Contact__c.C501_Last_Name__c'
 		);
 		insert sc;
 

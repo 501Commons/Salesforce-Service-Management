@@ -14,10 +14,10 @@ public with sharing class C501_TriggerHelper {
 		if ( scList != null ) {
 			// Avoid SOQL query limits by collecting all the required info in the trigger from a single SOQL call
 			for ( C501_Service_Contact__c sc :scList ) {
-				if (!triggerSCMap.containsKey(sc.C501_Contact_Id__c)) {
-					triggerSCMap.put(sc.C501_Contact_Id__c, new list<C501_Service_Contact__c>{ sc });
+				if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
+					triggerSCMap.put(sc.C501_Contact__c, new list<C501_Service_Contact__c>{ sc });
 				} else {
-					triggerSCMap.get(sc.C501_Contact_Id__c).add(sc);
+					triggerSCMap.get(sc.C501_Contact__c).add(sc);
 				}
 			}
 		}
@@ -25,14 +25,14 @@ public with sharing class C501_TriggerHelper {
 		list<Contact> cToUpdate = new list<Contact>();
 
 		for ( Contact c : 
-				[select Id, C501_Contact_Id__c, Name, 
+				[select Id, Name, 
 					FirstName, LastName, MiddleName,
 					Birthdate, C501_Partial_Social_Security_Id__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
-					from Contact where C501_Contact_Id__c in : triggerSCMap.keyset()] ) {
+					from Contact where Id in : triggerSCMap.keyset()] ) {
 
-			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.C501_Contact_Id__c );
+			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.Id );
 
 			if (isDelete) {
 				// ToDo - Add Delete Support - maybe just a no action since probably delete is just triggered by automation

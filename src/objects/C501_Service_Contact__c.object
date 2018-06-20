@@ -148,29 +148,20 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_Contact_Created__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>System Field used to track whether the initial Contact aggregate object created.</description>
-        <externalId>false</externalId>
-        <label>Contact Created</label>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>C501_Contact_Id__c</fullName>
         <caseSensitive>false</caseSensitive>
         <description>External Contact Id</description>
         <externalId>true</externalId>
         <label>Contact_Id</label>
         <length>20</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>true</unique>
     </fields>
     <fields>
         <fullName>C501_Contact__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
         <label>Contact</label>
         <referenceTo>Contact</referenceTo>
@@ -479,7 +470,7 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
         <externalId>false</externalId>
         <label>Last Name</label>
         <length>80</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -707,7 +698,7 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
     </fields>
     <fields>
         <fullName>C501_Service_Household_Id__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <deleteConstraint>Restrict</deleteConstraint>
         <description>Current household where service info is located</description>
         <externalId>false</externalId>
         <inlineHelpText>Current household where service info is located</inlineHelpText>
@@ -715,7 +706,7 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <referenceTo>C501_Service_Household__c</referenceTo>
         <relationshipLabel>Service Contacts</relationshipLabel>
         <relationshipName>ServiceContacts</relationshipName>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -725,7 +716,7 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <externalId>true</externalId>
         <label>Service Id</label>
         <length>20</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -827,6 +818,310 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <type>Text</type>
     </nameField>
     <pluralLabel>Service Contacts</pluralLabel>
+    <recordTypes>
+        <fullName>C501_Service_Contact</fullName>
+        <active>true</active>
+        <label>Service Contact</label>
+        <picklistValues>
+            <picklist>C501_Additional_Languages__c</picklist>
+            <values>
+                <fullName>ASL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Punjabi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Currently_Attending_School__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Disabling_Condition_Special_Needs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Disconnected_Youth__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Education_Level__c</picklist>
+            <values>
+                <fullName>12 Grade %2B Some Post-Secondary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 or 4 years College Graduate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grades 0-8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grades 9-12%2FNon-Graduate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graduate or other post-secondary school</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High School Graduate%2FEquivalency Diploma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Ethnicity__c</picklist>
+            <values>
+                <fullName>Hispanic%2FLatino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Hispanic%2FLatino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Gender__c</picklist>
+            <values>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transgender</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Health_Insurance__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Immigration_Status__c</picklist>
+            <values>
+                <fullName>Immigrant%2FRefugee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Immigrant%2FRefugee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refused</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Military_Status__c</picklist>
+            <values>
+                <fullName>Active Military</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Military Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veteran</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Preferred_Language__c</picklist>
+            <values>
+                <fullName>ASL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Punjabi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Race__c</picklist>
+            <values>
+                <fullName>American Indian%2FAlaska Native</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bi%2FMulti-Racial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Black%2FAfrican-American</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Native Hawaiian%2FPacific Islander</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unspecified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Work_Status__c</picklist>
+            <values>
+                <fullName>Employed Full-Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employed Part-Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrant Seasonal Farm Worker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unemployed %28Long-Term%2C more than 6 months%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unemployed %28Not in Labor Force%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unemployed %28Short-Term%2C 6 months or less%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
