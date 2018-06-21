@@ -23,6 +23,7 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		list<Contact> cToUpdate = new list<Contact>();
+		list<Account> aToUpdate = new list<Account>();
 
 		for ( Contact c : 
 				[select 
@@ -44,10 +45,19 @@ public with sharing class C501_TriggerHelper {
 			// Copy Fields and add to update if successful 
 			if (copyFieldsContact( c, scGroup[0] ))
 				cToUpdate.add( c );
+
+			// Check to update Account Primary Contact
+			if (scGroup[0].C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
+				c.Account.npe01__One2OneContact__c = c.Id;
+				aToUpdate.add( c.Account );
+			}
 		}
 
 		if (!cToUpdate.isEmpty())
 			update cToUpdate;
+
+		if (!aToUpdate.isEmpty())
+			update aToUpdate;
 	}
 
 	public void updateAggregateHousehold( list<C501_Service_Household__c> shList, map<id, C501_Service_Household__c> oldMap, Boolean isDelete ) {
@@ -255,10 +265,6 @@ public with sharing class C501_TriggerHelper {
 		if (c.MiddleName != sc.C501_Middle_Name__c) {
 			updateRecord = true;
 			c.MiddleName = sc.C501_Middle_Name__c;
-		}
-		if (sc.C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
-			updateRecord = true;
-			c.Account.npe01__One2OneContact__c = c.Id;
 		}
 		if (c.Birthdate != sc.C501_Birthdate__c) {
 			updateRecord = true;
