@@ -389,14 +389,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_Other_Phone__c</fullName>
-        <externalId>false</externalId>
-        <label>Other Phone</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Phone</type>
-    </fields>
-    <fields>
         <fullName>C501_Pension__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>

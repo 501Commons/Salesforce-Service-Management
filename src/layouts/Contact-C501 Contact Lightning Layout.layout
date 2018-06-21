@@ -500,7 +500,6 @@
         <fields>ACCOUNT.NAME</fields>
         <fields>ACCOUNT.ADDRESS1_CITY</fields>
         <fields>ACCOUNT.PHONE1</fields>
-        <fields>C501_Other_Phone__c</fields>
         <relatedList>Account.npe01__One2OneContact__c</relatedList>
     </relatedLists>
     <relatedLists>

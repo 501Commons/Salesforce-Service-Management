@@ -111,11 +111,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.C501_Other_Phone__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.C501_Pension__c</field>
         <readable>false</readable>
     </fieldPermissions>

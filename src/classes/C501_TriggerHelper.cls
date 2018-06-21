@@ -84,7 +84,7 @@ public with sharing class C501_TriggerHelper {
 					C501_SNAP__c, C501_Other_Income__c, C501_Earned_Income__c, C501_Self_Employed__c, C501_Unemployment_Insurance__c, C501_Child_Support__c,
 					C501_Pension__c, C501_Retirement_Income_Social_Security__c, C501_Supplemental_Security_Income__c,
 					C501_TANF__c, C501_Household_Income_Sources__c, C501_Annual_Income__c, C501_Housing__c,
-					C501_Household_Size__c, C501_Household_Type__c, Phone, C501_Other_Phone__c,
+					C501_Household_Size__c, C501_Household_Type__c, Phone, npo02__HouseholdPhone__c,
 					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c,
 					C501_Level__c, C501_Previous_Level__c
 					from Account where id in : triggerSHMap.keyset()] ) {
@@ -208,9 +208,9 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			hh.Phone = sh.C501_Phone__c;
 		}
-		if (hh.C501_Other_Phone__c != sh.C501_Other_Phone__c) {
+		if (hh.npo02__HouseholdPhone__c != sh.C501_Other_Phone__c) {
 			updateRecord = true;
-			hh.Phone = sh.C501_Other_Phone__c;
+			hh.npo02__HouseholdPhone__c = sh.C501_Other_Phone__c;
 		}
 		if (hh.C501_Years_At_Current_Address__c != sh.C501_Years_At_Current_Address__c) {
 			updateRecord = true;
