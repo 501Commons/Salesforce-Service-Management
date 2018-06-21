@@ -416,6 +416,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>C501_Service_Contact__c.C501_Primary_Contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>C501_Service_Contact__c.C501_Race_Client_Doesn_t_Know__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -975,6 +980,10 @@
         <recordType>C501_Service_Household__c.C501_Service_Household_Merged</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>C501_Other_Name__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <userLicense>Chatter External</userLicense>
     <userPermissions>
         <enabled>true</enabled>

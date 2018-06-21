@@ -105,6 +105,7 @@
         <members>C501_Service_Contact__c.C501_Partial_Social_Security_Id__c</members>
         <members>C501_Service_Contact__c.C501_Physical_Disability__c</members>
         <members>C501_Service_Contact__c.C501_Preferred_Language__c</members>
+        <members>C501_Service_Contact__c.C501_Primary_Contact__c</members>
         <members>C501_Service_Contact__c.C501_Race_Client_Doesn_t_Know__c</members>
         <members>C501_Service_Contact__c.C501_Race_Client_Refused__c</members>
         <members>C501_Service_Contact__c.C501_Race_Data_Not_Collected__c</members>

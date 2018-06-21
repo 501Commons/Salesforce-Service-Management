@@ -25,7 +25,9 @@ public with sharing class C501_TriggerHelper {
 		list<Contact> cToUpdate = new list<Contact>();
 
 		for ( Contact c : 
-				[select Id, Name, 
+				[select 
+					Account.Id, Account.npe01__One2OneContact__c,
+					AccountId, Id, Name, 
 					FirstName, LastName, MiddleName,
 					Birthdate, C501_Partial_Social_Security_Id__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
@@ -253,6 +255,10 @@ public with sharing class C501_TriggerHelper {
 		if (c.MiddleName != sc.C501_Middle_Name__c) {
 			updateRecord = true;
 			c.MiddleName = sc.C501_Middle_Name__c;
+		}
+		if (sc.C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
+			updateRecord = true;
+			c.Account.npe01__One2OneContact__c = c.Id;
 		}
 		if (c.Birthdate != sc.C501_Birthdate__c) {
 			updateRecord = true;
