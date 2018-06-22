@@ -556,30 +556,4 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>Level__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Sample Level field for use with Level feature. May be deleted or edited as needed.</description>
-        <externalId>false</externalId>
-        <label>Level</label>
-        <referenceTo>npsp__Level__c</referenceTo>
-        <relationshipLabel>Households</relationshipLabel>
-        <relationshipName>Accounts</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Previous_Level__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Sample Previous Level field for use with new Level feature. May be edited or deleted as needed.</description>
-        <externalId>false</externalId>
-        <label>Previous Level</label>
-        <referenceTo>npsp__Level__c</referenceTo>
-        <relationshipLabel>Households (Previous Level)</relationshipLabel>
-        <relationshipName>Accounts1</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
 </CustomObject>

@@ -40,7 +40,6 @@
         <members>Account.C501_NonCash_Income_Unknown__c</members>
         <members>Account.C501_Other_Income__c</members>
         <members>Account.C501_Other_Non_Cash_Income__c</members>
-        <members>Account.C501_Other_Phone__c</members>
         <members>Account.C501_Pension__c</members>
         <members>Account.C501_Permanent_Supportive_Housing__c</members>
         <members>Account.C501_Previous_Level__c</members>
@@ -59,8 +58,6 @@
         <members>Account.C501_WIC__c</members>
         <members>Account.C501_Worker_s_Compensation__c</members>
         <members>Account.C501_Years_at_Current_Address__c</members>
-        <members>Account.Level__c</members>
-        <members>Account.Previous_Level__c</members>
         <members>C501_Other_Name__c.C501_Contact__c</members>
         <members>C501_Other_Name__c.C501_End_Date__c</members>
         <members>C501_Other_Name__c.C501_IsPreferred__c</members>
@@ -130,6 +127,7 @@
         <members>C501_Service_Household__c.C501_EITC__c</members>
         <members>C501_Service_Household__c.C501_Earned_Income__c</members>
         <members>C501_Service_Household__c.C501_End_Date__c</members>
+        <members>C501_Service_Household__c.C501_Federal_Poverty_Level__c</members>
         <members>C501_Service_Household__c.C501_HUD_VASH__c</members>
         <members>C501_Service_Household__c.C501_Household_Income_Sources__c</members>
         <members>C501_Service_Household__c.C501_Household_Size__c</members>

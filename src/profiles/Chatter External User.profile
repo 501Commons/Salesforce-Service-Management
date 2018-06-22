@@ -201,16 +201,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Level__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Previous_Level__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>C501_Other_Name__c.C501_End_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -522,6 +512,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>C501_Service_Household__c.C501_End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>C501_Service_Household__c.C501_Federal_Poverty_Level__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

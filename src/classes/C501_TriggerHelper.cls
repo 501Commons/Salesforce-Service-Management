@@ -23,7 +23,7 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		list<Contact> cToUpdate = new list<Contact>();
-		list<Account> aToUpdate = new list<Account>();
+		map<Id, Account> aToUpdate = new map<Id, Account>();
 
 		for ( Contact c : 
 				[select 
@@ -49,15 +49,17 @@ public with sharing class C501_TriggerHelper {
 			// Check to update Account Primary Contact
 			if (scGroup[0].C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
 				c.Account.npe01__One2OneContact__c = c.Id;
-				aToUpdate.add( c.Account );
+				if (!aToUpdate.containsKey(c.Account.Id)) {
+					aToUpdate.put( c.Account.Id, c.Account );
+				}
 			}
 		}
 
 		if (!cToUpdate.isEmpty())
 			update cToUpdate;
 
-		if (!aToUpdate.isEmpty())
-			update aToUpdate;
+		if (!aToUpdate.values().isEmpty())
+			update aToUpdate.values();
 	}
 
 	public void updateAggregateHousehold( list<C501_Service_Household__c> shList, map<id, C501_Service_Household__c> oldMap, Boolean isDelete ) {
