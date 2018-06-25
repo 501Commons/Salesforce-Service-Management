@@ -412,6 +412,17 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Partial_Social_Security_Id__c</fullName>
         <externalId>false</externalId>
         <label>Partial Social Security Id</label>

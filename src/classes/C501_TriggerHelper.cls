@@ -94,8 +94,7 @@ public with sharing class C501_TriggerHelper {
 					C501_Pension__c, C501_Retirement_Income_Social_Security__c, C501_Supplemental_Security_Income__c,
 					C501_TANF__c, C501_Household_Income_Sources__c, C501_Annual_Income__c, C501_Housing__c,
 					C501_Household_Size__c, C501_Household_Type__c, Phone, npo02__HouseholdPhone__c,
-					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c,
-					C501_Level__c, C501_Previous_Level__c
+					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c
 					from Account where id in : triggerSHMap.keyset()] ) {
 
 			list<C501_Service_Household__c> shGroup = triggerSHMap.get( hh.Id );
@@ -228,16 +227,6 @@ public with sharing class C501_TriggerHelper {
 		if (hh.C501_Current_Address_Move_In_Year__c != sh.C501_Current_Address_Move_In_Year__c) {
 			updateRecord = true;
 			hh.C501_Current_Address_Move_In_Year__c = sh.C501_Current_Address_Move_In_Year__c;
-		}
-
-		// Nightly Batch process fields (i.e., Level, Previous Level)
-		if (hh.C501_Level__c != sh.C501_Level__c) {
-			updateRecord = true;
-			hh.C501_Level__c = sh.C501_Level__c;
-		}
-		if (hh.C501_Previous_Level__c != sh.C501_Previous_Level__c) {
-			updateRecord = true;
-			hh.C501_Previous_Level__c = sh.C501_Previous_Level__c;
 		}
 
 		return updateRecord;
