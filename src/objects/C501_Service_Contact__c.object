@@ -576,6 +576,17 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>C501_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Partial_Social_Security_Id__c</fullName>
         <description>Partial Social Security Id
 IMPORTANT: Do not save the full Social Security Number.  If the full number is required then need to setup a new field with the proper security.</description>

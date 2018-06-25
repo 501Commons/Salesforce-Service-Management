@@ -99,6 +99,7 @@
         <members>C501_Service_Contact__c.C501_Military_Status__c</members>
         <members>C501_Service_Contact__c.C501_Native_Hawaiian_Pacific_Islander__c</members>
         <members>C501_Service_Contact__c.C501_Nickname__c</members>
+        <members>C501_Service_Contact__c.C501_Order__c</members>
         <members>C501_Service_Contact__c.C501_Partial_Social_Security_Id__c</members>
         <members>C501_Service_Contact__c.C501_Physical_Disability__c</members>
         <members>C501_Service_Contact__c.C501_Preferred_Language__c</members>
@@ -198,6 +199,7 @@
         <members>Contact.C501_Military_Health_Care__c</members>
         <members>Contact.C501_Military_Status__c</members>
         <members>Contact.C501_Native_Hawaiian_Pacific_Islander__c</members>
+        <members>Contact.C501_Order__c</members>
         <members>Contact.C501_Partial_Social_Security_Id__c</members>
         <members>Contact.C501_Physical_Disability__c</members>
         <members>Contact.C501_Preferred_Language__c</members>

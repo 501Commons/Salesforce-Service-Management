@@ -386,6 +386,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>C501_Service_Contact__c.C501_Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>C501_Service_Contact__c.C501_Partial_Social_Security_Id__c</field>
         <readable>false</readable>
     </fieldPermissions>
