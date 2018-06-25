@@ -28,9 +28,9 @@ public with sharing class C501_TriggerHelper {
 		for ( Contact c : 
 				[select 
 					Account.Id, Account.npe01__One2OneContact__c,
-					AccountId, Id, Name, 
+					AccountId, Id, Name,
 					FirstName, LastName, MiddleName,
-					Birthdate, C501_Partial_Social_Security_Id__c,
+					Birthdate, C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
 					from Contact where Id in : triggerSCMap.keyset()] ) {
@@ -51,6 +51,10 @@ public with sharing class C501_TriggerHelper {
 				c.Account.npe01__One2OneContact__c = c.Id;
 				if (!aToUpdate.containsKey(c.Account.Id)) {
 					aToUpdate.put( c.Account.Id, c.Account );
+				}
+				else {
+					// ToDo - Merge Logic for Contact
+					//handleMergeContact();
 				}
 			}
 		}
@@ -73,6 +77,9 @@ public with sharing class C501_TriggerHelper {
 					triggerSHMap.put(sh.C501_Household__c, new list<C501_Service_Household__c>{ sh });
 				} else {
 					triggerSHMap.get(sh.C501_Household__c).add(sh);
+
+					// ToDo - Handle Merge Logic Household
+					// handleMergeAccount();
 				}
 			}
 		}
@@ -275,6 +282,10 @@ public with sharing class C501_TriggerHelper {
 		if (c.C501_Partial_Social_Security_Id__c != sc.C501_Partial_Social_Security_Id__c) {
 			updateRecord = true;
 			c.C501_Partial_Social_Security_Id__c = sc.C501_Partial_Social_Security_Id__c;
+		}
+		if (c.C501_Order__c != sc.C501_Order__c) {
+			updateRecord = true;
+			c.C501_Order__c = sc.C501_Order__c;
 		}
 		if (c.C501_Age__c != sc.C501_Age__c) {
 			updateRecord = true;
