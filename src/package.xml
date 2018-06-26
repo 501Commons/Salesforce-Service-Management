@@ -28,6 +28,7 @@
         <members>Account.C501_Current_Address_Move_In_Year__c</members>
         <members>Account.C501_EITC__c</members>
         <members>Account.C501_Earned_Income__c</members>
+        <members>Account.C501_Federal_Poverty_Level__c</members>
         <members>Account.C501_HUD_VASH__c</members>
         <members>Account.C501_Household_Income_Level__c</members>
         <members>Account.C501_Household_Income_Sources__c</members>

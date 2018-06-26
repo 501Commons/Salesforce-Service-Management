@@ -79,6 +79,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Federal_Poverty_Level__c</fullName>
+        <externalId>false</externalId>
+        <formula>C501_Annual_Income__c / (12140 + ((C501_Household_Size__c - 1) * 4320))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Federal Poverty Level</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>C501_HUD_VASH__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>

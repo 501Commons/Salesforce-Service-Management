@@ -51,6 +51,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.C501_Federal_Poverty_Level__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.C501_HUD_VASH__c</field>
         <readable>false</readable>
     </fieldPermissions>
