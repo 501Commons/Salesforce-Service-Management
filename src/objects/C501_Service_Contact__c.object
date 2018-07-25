@@ -79,10 +79,11 @@
     </fields>
     <fields>
         <fullName>C501_Age_Calculate__c</fullName>
-        <description>CoreId/Module4</description>
+        <description>Age Calculated is generated from the Birthdate field.</description>
         <externalId>false</externalId>
         <formula>FLOOR (( TODAY() -  C501_Birthdate__c  ) / 365.2425 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Age Calculated is generated from the Birthdate field.</inlineHelpText>
         <label>Age Calculated</label>
         <precision>18</precision>
         <required>false</required>
@@ -93,7 +94,9 @@
     </fields>
     <fields>
         <fullName>C501_Age__c</fullName>
+        <description>Age at the time of service.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Age at the time of service.</inlineHelpText>
         <label>Age</label>
         <precision>18</precision>
         <required>false</required>
@@ -830,6 +833,19 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Contact_Unique_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Contact Unique Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <label>Service Contact</label>
     <nameField>

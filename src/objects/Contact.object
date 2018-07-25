@@ -22,10 +22,11 @@
     </fields>
     <fields>
         <fullName>C501_Age_Calculate__c</fullName>
-        <description>CoreId/Module4</description>
+        <description>Age Calculated is generated from the Birthdate field.</description>
         <externalId>false</externalId>
         <formula>FLOOR (( TODAY() - Birthdate ) / 365.2425 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Age Calculated is generated from the Birthdate field.</inlineHelpText>
         <label>Age Calculated</label>
         <precision>18</precision>
         <required>false</required>
@@ -35,7 +36,9 @@
     </fields>
     <fields>
         <fullName>C501_Age__c</fullName>
+        <description>Age is the Age at the time of the most current service.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Age is the Age at the time of the most current service.</inlineHelpText>
         <label>Age</label>
         <precision>18</precision>
         <required>false</required>
