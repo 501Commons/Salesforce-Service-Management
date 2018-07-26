@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Oppco-Master</fullName>
     <types>
         <members>C501_TriggerHelper</members>
         <members>C501_TriggerHelperTest</members>
@@ -109,6 +108,7 @@
         <members>C501_Service_Contact__c.C501_Race_Client_Refused__c</members>
         <members>C501_Service_Contact__c.C501_Race_Data_Not_Collected__c</members>
         <members>C501_Service_Contact__c.C501_Race__c</members>
+        <members>C501_Service_Contact__c.C501_Service_Contact_Unique_Count__c</members>
         <members>C501_Service_Contact__c.C501_Service_Household_Id__c</members>
         <members>C501_Service_Contact__c.C501_Service_Id__c</members>
         <members>C501_Service_Contact__c.C501_State_Children_s_Health_Insurance__c</members>
@@ -155,6 +155,7 @@
         <members>C501_Service_Household__c.C501_Retirement_Income_Social_Security__c</members>
         <members>C501_Service_Household__c.C501_SNAP__c</members>
         <members>C501_Service_Household__c.C501_Self_Employed__c</members>
+        <members>C501_Service_Household__c.C501_Service_Household_Unique_Count__c</members>
         <members>C501_Service_Household__c.C501_Service_Id__c</members>
         <members>C501_Service_Household__c.C501_Service__c</members>
         <members>C501_Service_Household__c.C501_ShippingCity__c</members>

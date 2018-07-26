@@ -461,7 +461,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>C501_Service_Contact__c.Service_Contact_Unique_Count__c</field>
+        <field>C501_Service_Contact__c.C501_Service_Contact_Unique_Count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -741,7 +741,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>C501_Service_Household__c.Service_Household_Unique_Count__c</field>
+        <field>C501_Service_Household__c.C501_Service_Household_Unique_Count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1425,10 +1425,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ManageSandboxes</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ManageSharing</name>
     </userPermissions>
     <userPermissions>
@@ -1482,10 +1478,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>Packaging2</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>Packaging2PromoteVersion</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
