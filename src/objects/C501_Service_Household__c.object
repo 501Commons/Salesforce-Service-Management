@@ -809,7 +809,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>C501_Service_Household_Unique_Count__c</fullName>
+        <fullName>Service_Household_Unique_Count__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
