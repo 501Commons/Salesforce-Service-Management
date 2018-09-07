@@ -608,7 +608,7 @@
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
         <label>Service Id</label>
-        <length>20</length>
+        <length>64</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

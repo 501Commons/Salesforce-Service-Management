@@ -156,7 +156,7 @@
         <description>External Contact Id</description>
         <externalId>true</externalId>
         <label>Contact_Id</label>
-        <length>20</length>
+        <length>64</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -737,7 +737,7 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <description>External Service Id</description>
         <externalId>true</externalId>
         <label>Service Id</label>
-        <length>20</length>
+        <length>64</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

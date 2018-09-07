@@ -88,7 +88,7 @@
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
         <label>Contact Id</label>
-        <length>20</length>
+        <length>64</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -548,7 +548,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <fullName>C501_Service_Id__c</fullName>
         <externalId>true</externalId>
         <label>Service Id</label>
-        <length>20</length>
+        <length>64</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
