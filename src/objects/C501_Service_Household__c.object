@@ -498,6 +498,46 @@
                     <default>false</default>
                     <label>Service Restored</label>
                 </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Drop/Wait</fullName>
+                    <default>false</default>
+                    <label>Drop/Wait</label>
+                </value>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Enrolled</fullName>
+                    <default>false</default>
+                    <label>Enrolled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Dropped</fullName>
+                    <default>false</default>
+                    <label>Dropped</label>
+                </value>
+                <value>
+                    <fullName>Waitlisted</fullName>
+                    <default>false</default>
+                    <label>Waitlisted</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -939,7 +979,31 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Disconnect Averted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop%2FWait</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dropped</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrolled</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -955,7 +1019,15 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Service Restored</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waitlisted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1113,7 +1185,31 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
+                <fullName>Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Disconnect Averted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop%2FWait</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dropped</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrolled</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1129,7 +1225,15 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Service Restored</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waitlisted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

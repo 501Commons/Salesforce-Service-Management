@@ -32,6 +32,7 @@ public with sharing class C501_TriggerHelper {
 					FirstName, LastName, MiddleName,
 					Birthdate, C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
+					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
 					from Contact where Id in : triggerSCMap.keyset()] ) {
 
@@ -92,7 +93,7 @@ public with sharing class C501_TriggerHelper {
 					ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode,
 					C501_SNAP__c, C501_Other_Income__c, C501_Earned_Income__c, C501_Self_Employed__c, C501_Unemployment_Insurance__c, C501_Child_Support__c,
 					C501_Pension__c, C501_Retirement_Income_Social_Security__c, C501_Supplemental_Security_Income__c,
-					C501_TANF__c, C501_Household_Income_Sources__c, C501_Annual_Income__c, C501_Housing__c,
+					C501_TANF__c, C501_WIC__c, C501_Household_Income_Sources__c, C501_Annual_Income__c, C501_Housing__c,
 					C501_Household_Size__c, C501_Household_Type__c, Phone, npo02__HouseholdPhone__c,
 					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c
 					from Account where id in : triggerSHMap.keyset()] ) {
@@ -191,6 +192,10 @@ public with sharing class C501_TriggerHelper {
 		if (hh.C501_TANF__c != sh.C501_TANF__c) {
 			updateRecord = true;
 			hh.C501_TANF__c = sh.C501_TANF__c;
+		}
+		if (hh.C501_WIC__c != sh.C501_WIC__c) {
+			updateRecord = true;
+			hh.C501_WIC__c = sh.C501_WIC__c;
 		}
 		if (hh.C501_Household_Income_Sources__c != sh.C501_Household_Income_Sources__c) {
 			updateRecord = true;
@@ -291,6 +296,18 @@ public with sharing class C501_TriggerHelper {
 		if (c.C501_Education_Level__c != sc.C501_Education_Level__c) {
 			updateRecord = true;
 			c.C501_Education_Level__c = sc.C501_Education_Level__c;
+		}
+		if (c.C501_Developmental_Disability__c != sc.C501_Developmental_Disability__c) {
+			updateRecord = true;
+			c.C501_Developmental_Disability__c = sc.C501_Developmental_Disability__c;
+		}
+		if (c.C501_Medicare__c != sc.C501_Medicare__c) {
+			updateRecord = true;
+			c.C501_Medicare__c = sc.C501_Medicare__c;
+		}
+		if (c.C501_Medicaid__c != sc.C501_Medicaid__c) {
+			updateRecord = true;
+			c.C501_Medicaid__c = sc.C501_Medicaid__c;
 		}
 		if (c.C501_Health_Insurance__c != sc.C501_Health_Insurance__c) {
 			updateRecord = true;
