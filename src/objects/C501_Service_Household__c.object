@@ -605,6 +605,12 @@
                     <default>false</default>
                     <label>Energy Assistance</label>
                 </value>
+                <value>
+                    <fullName>Early Learning</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Early Learning</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -684,6 +690,18 @@
                     <fullName>LIHEAP Denied</fullName>
                     <default>false</default>
                     <label>LIHEAP Denied</label>
+                </value>
+                <value>
+                    <fullName>Early Head Start</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Early Head Start</label>
+                </value>
+                <value>
+                    <fullName>Head Start</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Head Start</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -849,7 +867,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Service_Household_Unique_Count__c</fullName>
+        <fullName>C501_Service_Household_Unique_Count__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

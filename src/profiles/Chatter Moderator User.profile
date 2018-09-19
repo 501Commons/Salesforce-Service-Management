@@ -461,7 +461,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>C501_Service_Contact__c.Service_Contact_Unique_Count__c</field>
+        <field>C501_Service_Contact__c.C501_Service_Contact_Unique_Count__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -741,7 +741,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>C501_Service_Household__c.Service_Household_Unique_Count__c</field>
+        <field>C501_Service_Household__c.C501_Service_Household_Unique_Count__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
