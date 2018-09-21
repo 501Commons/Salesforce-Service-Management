@@ -33,7 +33,8 @@ public with sharing class C501_TriggerHelper {
 					Birthdate, C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
-					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c
+					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
+					C501_Preferred_Language__c, C501_Additional_Languages__c
 					from Contact where Id in : triggerSCMap.keyset()] ) {
 
 			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.Id );
@@ -324,6 +325,14 @@ public with sharing class C501_TriggerHelper {
 		if (c.Gender__c != sc.C501_Gender__c) {
 			updateRecord = true;
 			c.Gender__c = sc.C501_Gender__c;
+		}
+		if (c.C501_Preferred_Language__c != sc.C501_Preferred_Language__c) {
+			updateRecord = true;
+			c.C501_Preferred_Language__c = sc.C501_Preferred_Language__c;
+		}
+		if (c.C501_Additional_Languages__c != sc.C501_Additional_Languages__c) {
+			updateRecord = true;
+			c.C501_Additional_Languages__c = sc.C501_Additional_Languages__c;
 		}
 		
 		return updateRecord;
