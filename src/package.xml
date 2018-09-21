@@ -180,6 +180,7 @@
         <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
         <members>Contact.C501_Asian__c</members>
         <members>Contact.C501_Black_or_African_American__c</members>
+        <members>Contact.C501_Case_Worker__c</members>
         <members>Contact.C501_Chronic_Health_Condition__c</members>
         <members>Contact.C501_Contact_Id__c</members>
         <members>Contact.C501_Currently_Attending_School__c</members>

@@ -334,6 +334,14 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.C501_Additional_Languages__c = sc.C501_Additional_Languages__c;
 		}
+		if (c.C501_Work_Status__c != sc.C501_Work_Status__c) {
+			updateRecord = true;
+			c.C501_Work_Status__c = sc.C501_Work_Status__c;
+		}
+		if (c.C501_Case_Worker__c != sc.C501_Case_Worker__c) {
+			updateRecord = true;
+			c.C501_Case_Worker__c = sc.C501_Case_Worker__c;
+		}
 		
 		return updateRecord;
 	}
