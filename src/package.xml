@@ -71,6 +71,7 @@
         <members>C501_Service_Contact__c.C501_Asian__c</members>
         <members>C501_Service_Contact__c.C501_Birthdate__c</members>
         <members>C501_Service_Contact__c.C501_Black_or_African_American__c</members>
+        <members>C501_Service_Contact__c.C501_Case_Worker__c</members>
         <members>C501_Service_Contact__c.C501_Chronic_Health_Condition__c</members>
         <members>C501_Service_Contact__c.C501_Contact_Id__c</members>
         <members>C501_Service_Contact__c.C501_Contact__c</members>
