@@ -25,11 +25,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>C501_Order__c</field>
+                <field>C501_Case_Worker__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>C501_Case_Worker__c</field>
+                <field>C501_Order__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
