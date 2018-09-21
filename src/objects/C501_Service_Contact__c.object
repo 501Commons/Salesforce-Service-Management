@@ -719,6 +719,19 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         </valueSet>
     </fields>
     <fields>
+        <fullName>C501_Service_Contact_Unique_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Contact Unique Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Service_Household_Id__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <description>Current household where service info is located</description>
@@ -833,19 +846,6 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>C501_Service_Contact_Unique_Count__c</fullName>
-        <externalId>false</externalId>
-        <formula>1</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Service Contact Unique Count</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <label>Service Contact</label>
     <nameField>

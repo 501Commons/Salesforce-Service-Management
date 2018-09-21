@@ -538,6 +538,11 @@
                     <default>false</default>
                     <label>New</label>
                 </value>
+                <value>
+                    <fullName>Drop/Accept</fullName>
+                    <default>false</default>
+                    <label>Drop/Accept</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -608,7 +613,6 @@
                 <value>
                     <fullName>Early Learning</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>Early Learning</label>
                 </value>
             </valueSetDefinition>
@@ -648,6 +652,19 @@
         <label>Self Employed</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C501_Service_Household_Unique_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Household Unique Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_Service_Id__c</fullName>
@@ -694,14 +711,17 @@
                 <value>
                     <fullName>Early Head Start</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>Early Head Start</label>
                 </value>
                 <value>
                     <fullName>Head Start</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>Head Start</label>
+                </value>
+                <value>
+                    <fullName>ECEAP</fullName>
+                    <default>false</default>
+                    <label>ECEAP</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -866,19 +886,6 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>C501_Service_Household_Unique_Count__c</fullName>
-        <externalId>false</externalId>
-        <formula>1</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Service Household Unique Count</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
     <label>Service Household</label>
     <nameField>
         <label>Service Household Name</label>
@@ -1013,6 +1020,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Drop%2FAccept</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Drop%2FWait</fullName>
                 <default>false</default>
             </values>
@@ -1058,6 +1069,10 @@
         </picklistValues>
         <picklistValues>
             <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>ECEAP</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>LIHEAP</fullName>
                 <default>false</default>
@@ -1219,6 +1234,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Drop%2FAccept</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Drop%2FWait</fullName>
                 <default>false</default>
             </values>
@@ -1264,6 +1283,10 @@
         </picklistValues>
         <picklistValues>
             <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>ECEAP</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>LIHEAP</fullName>
                 <default>false</default>

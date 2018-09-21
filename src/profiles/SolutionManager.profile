@@ -436,6 +436,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>C501_Service_Contact__c.C501_Service_Contact_Unique_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>C501_Service_Contact__c.C501_State_Children_s_Health_Insurance__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -458,11 +463,6 @@
         <editable>false</editable>
         <field>C501_Service_Contact__c.C501_Work_Status__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>C501_Service_Contact__c.C501_Service_Contact_Unique_Count__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -661,6 +661,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>C501_Service_Household__c.C501_Service_Household_Unique_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>C501_Service_Household__c.C501_Service__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -738,11 +743,6 @@
         <editable>false</editable>
         <field>C501_Service_Household__c.C501_Years_at_Current_Address__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>C501_Service_Household__c.C501_Service_Household_Unique_Count__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
