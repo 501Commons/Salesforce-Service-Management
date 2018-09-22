@@ -671,7 +671,7 @@
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>
         <label>Service Id</label>
-        <length>64</length>
+        <length>255</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -1063,6 +1063,10 @@
         <picklistValues>
             <picklist>C501_Program__c</picklist>
             <values>
+                <fullName>Early Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Energy Assistance</fullName>
                 <default>false</default>
             </values>
@@ -1071,6 +1075,14 @@
             <picklist>C501_Service__c</picklist>
             <values>
                 <fullName>ECEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Head Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head Start</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1277,6 +1289,10 @@
         <picklistValues>
             <picklist>C501_Program__c</picklist>
             <values>
+                <fullName>Early Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Energy Assistance</fullName>
                 <default>false</default>
             </values>
@@ -1285,6 +1301,14 @@
             <picklist>C501_Service__c</picklist>
             <values>
                 <fullName>ECEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Head Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head Start</fullName>
                 <default>false</default>
             </values>
             <values>

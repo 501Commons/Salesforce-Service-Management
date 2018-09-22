@@ -507,7 +507,7 @@
         <caseSensitive>true</caseSensitive>
         <externalId>true</externalId>
         <label>Service Id</label>
-        <length>64</length>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
