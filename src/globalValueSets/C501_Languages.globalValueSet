@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
+        <fullName>Arabic</fullName>
+        <default>false</default>
+        <label>Arabic</label>
+    </customValue>
+    <customValue>
+        <fullName>Armenian</fullName>
+        <default>false</default>
+        <label>Armenian</label>
+    </customValue>
+    <customValue>
+        <fullName>ASL</fullName>
+        <default>false</default>
+        <label>ASL</label>
+    </customValue>
+    <customValue>
+        <fullName>Cambodian</fullName>
+        <default>false</default>
+        <label>Cambodian</label>
+    </customValue>
+    <customValue>
+        <fullName>Chinese</fullName>
+        <default>false</default>
+        <label>Chinese</label>
+    </customValue>
+    <customValue>
+        <fullName>Czech</fullName>
+        <default>false</default>
+        <label>Czech</label>
+    </customValue>
+    <customValue>
         <fullName>English</fullName>
         <default>false</default>
         <label>English</label>
     </customValue>
     <customValue>
-        <fullName>Spanish</fullName>
+        <fullName>Ethiopian</fullName>
         <default>false</default>
-        <label>Spanish</label>
+        <label>Ethiopian</label>
+    </customValue>
+    <customValue>
+        <fullName>Farsi</fullName>
+        <default>false</default>
+        <label>Farsi</label>
+    </customValue>
+    <customValue>
+        <fullName>Filipino</fullName>
+        <default>false</default>
+        <label>Filipino</label>
+    </customValue>
+    <customValue>
+        <fullName>French</fullName>
+        <default>false</default>
+        <label>French</label>
+    </customValue>
+    <customValue>
+        <fullName>Hindi</fullName>
+        <default>false</default>
+        <label>Hindi</label>
+    </customValue>
+    <customValue>
+        <fullName>Korean</fullName>
+        <default>false</default>
+        <label>Korean</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
     </customValue>
     <customValue>
         <fullName>Punjabi</fullName>
@@ -21,15 +81,35 @@
         <label>Russian</label>
     </customValue>
     <customValue>
-        <fullName>ASL</fullName>
+        <fullName>Sign Language</fullName>
         <default>false</default>
-        <label>ASL</label>
+        <label>Sign Language</label>
     </customValue>
     <customValue>
-        <fullName>Other</fullName>
+        <fullName>Spanish</fullName>
         <default>false</default>
-        <label>Other</label>
+        <label>Spanish</label>
+    </customValue>
+    <customValue>
+        <fullName>Tai</fullName>
+        <default>false</default>
+        <label>Tai</label>
+    </customValue>
+    <customValue>
+        <fullName>Ukranian</fullName>
+        <default>false</default>
+        <label>Ukranian</label>
+    </customValue>
+    <customValue>
+        <fullName>Urdu</fullName>
+        <default>false</default>
+        <label>Urdu</label>
+    </customValue>
+    <customValue>
+        <fullName>Vietnamese</fullName>
+        <default>false</default>
+        <label>Vietnamese</label>
     </customValue>
     <masterLabel>Languages</masterLabel>
-    <sorted>false</sorted>
+    <sorted>true</sorted>
 </GlobalValueSet>

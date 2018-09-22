@@ -70,12 +70,11 @@
         <label>Additional Languages</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>MultiselectPicklist</type>
+        <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
             <valueSetName>C501_Languages</valueSetName>
         </valueSet>
-        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>C501_Age_Calculate__c</fullName>
