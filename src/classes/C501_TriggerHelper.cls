@@ -34,7 +34,8 @@ public with sharing class C501_TriggerHelper {
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
-					C501_Preferred_Language__c, C501_Additional_Languages__c
+					C501_Preferred_Language__c, C501_Additional_Languages__c,
+					C501_Work_Status__c, C501_Case_Worker__c
 					from Contact where Id in : triggerSCMap.keyset()] ) {
 
 			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.Id );
