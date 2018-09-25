@@ -26,6 +26,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.C501_Case_Worker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.C501_Child_Support__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -502,6 +507,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>C501_Service_Household__c.C501_BillingStreet__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>C501_Service_Household__c.C501_Case_Worker__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1434,6 +1444,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageSandboxes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageSharing</name>
     </userPermissions>
     <userPermissions>
@@ -1487,6 +1501,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>Packaging2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>Packaging2PromoteVersion</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

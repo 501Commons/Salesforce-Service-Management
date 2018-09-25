@@ -39,6 +39,17 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>C501_Case_Worker__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Worker</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Child_Support__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>

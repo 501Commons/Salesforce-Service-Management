@@ -26,6 +26,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.C501_Case_Worker__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.C501_Child_Support__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -502,6 +507,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>C501_Service_Household__c.C501_BillingStreet__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>C501_Service_Household__c.C501_Case_Worker__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

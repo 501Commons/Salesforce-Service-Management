@@ -110,6 +110,12 @@
         <default>false</default>
         <label>Vietnamese</label>
     </customValue>
+    <customValue>
+        <fullName>Somali</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Somali</label>
+    </customValue>
     <masterLabel>Languages</masterLabel>
-    <sorted>true</sorted>
+    <sorted>false</sorted>
 </GlobalValueSet>

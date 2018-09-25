@@ -22,6 +22,7 @@
         <members>Account.C501_Affordable_Care_Act_Subsidy__c</members>
         <members>Account.C501_Alimony_Other_Spousal_Support__c</members>
         <members>Account.C501_Annual_Income__c</members>
+        <members>Account.C501_Case_Worker__c</members>
         <members>Account.C501_Child_Support__c</members>
         <members>Account.C501_Childcare_Voucher__c</members>
         <members>Account.C501_Current_Address_Move_In_Year__c</members>
@@ -124,6 +125,7 @@
         <members>C501_Service_Household__c.C501_BillingPostalCode__c</members>
         <members>C501_Service_Household__c.C501_BillingState__c</members>
         <members>C501_Service_Household__c.C501_BillingStreet__c</members>
+        <members>C501_Service_Household__c.C501_Case_Worker__c</members>
         <members>C501_Service_Household__c.C501_Child_Support__c</members>
         <members>C501_Service_Household__c.C501_Childcare_Voucher__c</members>
         <members>C501_Service_Household__c.C501_Current_Address_Move_In_Year__c</members>
