@@ -626,9 +626,9 @@
                     <label>Early Learning</label>
                 </value>
                 <value>
-                    <fullName>Information Referral</fullName>
+                    <fullName>Information &amp; Referral</fullName>
                     <default>false</default>
-                    <label>Information Referral</label>
+                    <label>Information &amp; Referral</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1249,7 +1249,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Information Referral</fullName>
+                <fullName>Information %26 Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1599,7 +1599,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Information Referral</fullName>
+                <fullName>Information %26 Referral</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

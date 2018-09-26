@@ -165,7 +165,7 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		// Service speicific fields not handled in I&R
-		if (sh.C501_Program__c != 'Information Referral') {
+		if (sh.C501_Program__c != 'Information & Referral') {
 
 			if (hh.C501_SNAP__c != sh.C501_SNAP__c) {
 				updateRecord = true;
