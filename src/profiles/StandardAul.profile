@@ -990,6 +990,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Account-C501 Household Lightning Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>C501_Other_Name__c-Name Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
