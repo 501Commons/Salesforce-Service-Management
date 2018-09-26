@@ -873,7 +873,51 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armenian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cambodian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethiopian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farsi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filipino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hindi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korean</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -889,7 +933,27 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Sign Language</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ukranian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urdu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vietnamese</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1071,7 +1135,51 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armenian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cambodian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ethiopian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farsi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filipino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hindi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korean</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1087,7 +1195,27 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Sign Language</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ukranian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urdu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vietnamese</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
