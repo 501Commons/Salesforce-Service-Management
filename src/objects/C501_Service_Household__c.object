@@ -769,9 +769,9 @@
                     <label>Landlord Tenant Education</label>
                 </value>
                 <value>
-                    <fullName>Salvation Army Voucher (Island Only)</fullName>
+                    <fullName>Salvation Army Voucher</fullName>
                     <default>false</default>
-                    <label>Salvation Army Voucher (Island Only)</label>
+                    <label>Salvation Army Voucher</label>
                 </value>
                 <value>
                     <fullName>Adult Education</fullName>
@@ -784,9 +784,9 @@
                     <label>Childcare</label>
                 </value>
                 <value>
-                    <fullName>Coordinated Entry (Island Only)</fullName>
+                    <fullName>Coordinated Entry</fullName>
                     <default>false</default>
-                    <label>Coordinated Entry (Island Only)</label>
+                    <label>Coordinated Entry</label>
                 </value>
                 <value>
                     <fullName>Domestic Violence Services</fullName>
@@ -1268,7 +1268,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Coordinated Entry %28Island Only%29</fullName>
+                <fullName>Coordinated Entry</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1392,7 +1392,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Salvation Army Voucher %28Island Only%29</fullName>
+                <fullName>Salvation Army Voucher</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1618,7 +1618,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Coordinated Entry %28Island Only%29</fullName>
+                <fullName>Coordinated Entry</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1742,7 +1742,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Salvation Army Voucher %28Island Only%29</fullName>
+                <fullName>Salvation Army Voucher</fullName>
                 <default>false</default>
             </values>
             <values>
