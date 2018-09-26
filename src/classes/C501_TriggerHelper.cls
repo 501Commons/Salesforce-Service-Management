@@ -123,121 +123,126 @@ public with sharing class C501_TriggerHelper {
 		// NPSP feature set Name = REPLACE will trigger NPSP Household rename logic
 		hh.Name = 'REPLACE';
 
-		if (hh.BillingStreet != sh.C501_BillingStreet__c) {
+		if (hh.BillingStreet != sh.C501_BillingStreet__c && !String.isBlank(sh.C501_BillingStreet__c)) {
 			updateRecord = true;
 			hh.BillingStreet = sh.C501_BillingStreet__c;
 		}
-		if (hh.BillingCity != sh.C501_BillingCity__c) {
+		if (hh.BillingCity != sh.C501_BillingCity__c && !String.isBlank(sh.C501_BillingCity__c)) {
 			updateRecord = true;
 			hh.BillingCity = sh.C501_BillingCity__c;
 		}
-		if (hh.BillingState != sh.C501_BillingState__c) {
+		if (hh.BillingState != sh.C501_BillingState__c && !String.isBlank(sh.C501_BillingState__c)) {
 			updateRecord = true;
 			hh.BillingState = sh.C501_BillingState__c;
 		}
-		if (hh.BillingPostalCode != sh.C501_BillingPostalCode__c) {
+		if (hh.BillingPostalCode != sh.C501_BillingPostalCode__c && !String.isBlank(sh.C501_BillingPostalCode__c)) {
 			updateRecord = true;
 			hh.BillingPostalCode = sh.C501_BillingPostalCode__c;
 		}
-		if (hh.ShippingStreet != sh.C501_ShippingStreet__c) {
+		if (hh.ShippingStreet != sh.C501_ShippingStreet__c && !String.isBlank(sh.C501_ShippingStreet__c)) {
 			updateRecord = true;
 			hh.ShippingStreet = sh.C501_ShippingStreet__c;
 		}
-		if (hh.ShippingCity != sh.C501_ShippingCity__c) {
+		if (hh.ShippingCity != sh.C501_ShippingCity__c && !String.isBlank(sh.C501_ShippingCity__c)) {
 			updateRecord = true;
 			hh.ShippingCity = sh.C501_ShippingCity__c;
 		}
-		if (hh.ShippingState != sh.C501_ShippingState__c) {
+		if (hh.ShippingState != sh.C501_ShippingState__c && !String.isBlank(sh.C501_ShippingState__c)) {
 			updateRecord = true;
 			hh.ShippingState = sh.C501_ShippingState__c;
 		}
-		if (hh.ShippingPostalCode != sh.C501_ShippingPostalCode__c) {
+		if (hh.ShippingPostalCode != sh.C501_ShippingPostalCode__c && !String.isBlank(sh.C501_ShippingPostalCode__c)) {
 			updateRecord = true;
 			hh.ShippingPostalCode = sh.C501_ShippingPostalCode__c;
 		}
-		if (hh.C501_SNAP__c != sh.C501_SNAP__c) {
-			updateRecord = true;
-			hh.C501_SNAP__c = sh.C501_SNAP__c;
-		}
-		if (hh.C501_Other_Income__c != sh.C501_Other_Income__c) {
-			updateRecord = true;
-			hh.C501_Other_Income__c = sh.C501_Other_Income__c;
-		}
-		if (hh.C501_Earned_Income__c != sh.C501_Earned_Income__c) {
-			updateRecord = true;
-			hh.C501_Earned_Income__c = sh.C501_Earned_Income__c;
-		}
-		if (hh.C501_Self_Employed__c != sh.C501_Self_Employed__c) {
-			updateRecord = true;
-			hh.C501_Self_Employed__c = sh.C501_Self_Employed__c;
-		}
-		if (hh.C501_Unemployment_Insurance__c != sh.C501_Unemployment_Insurance__c) {
-			updateRecord = true;
-			hh.C501_Unemployment_Insurance__c = sh.C501_Unemployment_Insurance__c;
-		}
-		if (hh.C501_Child_Support__c != sh.C501_Child_Support__c) {
-			updateRecord = true;
-			hh.C501_Child_Support__c = sh.C501_Child_Support__c;
-		}
-		if (hh.C501_Pension__c != sh.C501_Pension__c) {
-			updateRecord = true;
-			hh.C501_Pension__c = sh.C501_Pension__c;
-		}
-		if (hh.C501_Retirement_Income_Social_Security__c != sh.C501_Retirement_Income_Social_Security__c) {
-			updateRecord = true;
-			hh.C501_Retirement_Income_Social_Security__c = sh.C501_Retirement_Income_Social_Security__c;
-		}
-		if (hh.C501_Supplemental_Security_Income__c != sh.C501_Supplemental_Security_Income__c) {
-			updateRecord = true;
-			hh.C501_Supplemental_Security_Income__c = sh.C501_Supplemental_Security_Income__c;
-		}
-		if (hh.C501_TANF__c != sh.C501_TANF__c) {
-			updateRecord = true;
-			hh.C501_TANF__c = sh.C501_TANF__c;
-		}
-		if (hh.C501_WIC__c != sh.C501_WIC__c) {
-			updateRecord = true;
-			hh.C501_WIC__c = sh.C501_WIC__c;
-		}
-		if (hh.C501_Household_Income_Sources__c != sh.C501_Household_Income_Sources__c) {
-			updateRecord = true;
-			hh.C501_Household_Income_Sources__c = sh.C501_Household_Income_Sources__c;
-		}
-		if (hh.C501_Annual_Income__c != sh.C501_Annual_Income__c) {
-			updateRecord = true;
-			hh.C501_Annual_Income__c = sh.C501_Annual_Income__c;
-		}
-		if (hh.C501_Housing__c != sh.C501_Housing__c) {
-			updateRecord = true;
-			hh.C501_Housing__c = sh.C501_Housing__c;
-		}
-		if (hh.C501_Household_Size__c != sh.C501_Household_Size__c) {
-			updateRecord = true;
-			hh.C501_Household_Size__c = sh.C501_Household_Size__c;
-		}
-		if (hh.C501_Household_Type__c != sh.C501_Household_Type__c) {
-			updateRecord = true;
-			hh.C501_Household_Type__c = sh.C501_Household_Type__c;
-		}
-		if (hh.Phone != sh.C501_Phone__c) {
+		if (hh.Phone != sh.C501_Phone__c && !String.isBlank(sh.C501_Phone__c)) {
 			updateRecord = true;
 			hh.Phone = sh.C501_Phone__c;
 		}
-		if (hh.npo02__HouseholdPhone__c != sh.C501_Other_Phone__c) {
+		if (hh.npo02__HouseholdPhone__c != sh.C501_Other_Phone__c && !String.isBlank(sh.C501_Other_Phone__c)) {
 			updateRecord = true;
 			hh.npo02__HouseholdPhone__c = sh.C501_Other_Phone__c;
 		}
-		if (hh.C501_Years_At_Current_Address__c != sh.C501_Years_At_Current_Address__c) {
-			updateRecord = true;
-			hh.C501_Years_At_Current_Address__c = sh.C501_Years_At_Current_Address__c;
-		}
-		if (hh.C501_Current_Address_Move_In_Year__c != sh.C501_Current_Address_Move_In_Year__c) {
-			updateRecord = true;
-			hh.C501_Current_Address_Move_In_Year__c = sh.C501_Current_Address_Move_In_Year__c;
-		}
-		if (hh.C501_Case_Worker__c != sh.C501_Case_Worker__c) {
-			updateRecord = true;
-			hh.C501_Case_Worker__c = sh.C501_Case_Worker__c;
+
+		// Service speicific fields not handled in I&R
+		if (sh.C501_Program__c != 'Information Referral') {
+
+			if (hh.C501_SNAP__c != sh.C501_SNAP__c) {
+				updateRecord = true;
+				hh.C501_SNAP__c = sh.C501_SNAP__c;
+			}
+			if (hh.C501_Other_Income__c != sh.C501_Other_Income__c) {
+				updateRecord = true;
+				hh.C501_Other_Income__c = sh.C501_Other_Income__c;
+			}
+			if (hh.C501_Earned_Income__c != sh.C501_Earned_Income__c) {
+				updateRecord = true;
+				hh.C501_Earned_Income__c = sh.C501_Earned_Income__c;
+			}
+			if (hh.C501_Self_Employed__c != sh.C501_Self_Employed__c) {
+				updateRecord = true;
+				hh.C501_Self_Employed__c = sh.C501_Self_Employed__c;
+			}
+			if (hh.C501_Unemployment_Insurance__c != sh.C501_Unemployment_Insurance__c) {
+				updateRecord = true;
+				hh.C501_Unemployment_Insurance__c = sh.C501_Unemployment_Insurance__c;
+			}
+			if (hh.C501_Child_Support__c != sh.C501_Child_Support__c) {
+				updateRecord = true;
+				hh.C501_Child_Support__c = sh.C501_Child_Support__c;
+			}
+			if (hh.C501_Pension__c != sh.C501_Pension__c) {
+				updateRecord = true;
+				hh.C501_Pension__c = sh.C501_Pension__c;
+			}
+			if (hh.C501_Retirement_Income_Social_Security__c != sh.C501_Retirement_Income_Social_Security__c) {
+				updateRecord = true;
+				hh.C501_Retirement_Income_Social_Security__c = sh.C501_Retirement_Income_Social_Security__c;
+			}
+			if (hh.C501_Supplemental_Security_Income__c != sh.C501_Supplemental_Security_Income__c) {
+				updateRecord = true;
+				hh.C501_Supplemental_Security_Income__c = sh.C501_Supplemental_Security_Income__c;
+			}
+			if (hh.C501_TANF__c != sh.C501_TANF__c) {
+				updateRecord = true;
+				hh.C501_TANF__c = sh.C501_TANF__c;
+			}
+			if (hh.C501_WIC__c != sh.C501_WIC__c) {
+				updateRecord = true;
+				hh.C501_WIC__c = sh.C501_WIC__c;
+			}
+			if (hh.C501_Household_Income_Sources__c != sh.C501_Household_Income_Sources__c) {
+				updateRecord = true;
+				hh.C501_Household_Income_Sources__c = sh.C501_Household_Income_Sources__c;
+			}
+			if (hh.C501_Annual_Income__c != sh.C501_Annual_Income__c) {
+				updateRecord = true;
+				hh.C501_Annual_Income__c = sh.C501_Annual_Income__c;
+			}
+			if (hh.C501_Housing__c != sh.C501_Housing__c) {
+				updateRecord = true;
+				hh.C501_Housing__c = sh.C501_Housing__c;
+			}
+			if (hh.C501_Household_Size__c != sh.C501_Household_Size__c) {
+				updateRecord = true;
+				hh.C501_Household_Size__c = sh.C501_Household_Size__c;
+			}
+			if (hh.C501_Household_Type__c != sh.C501_Household_Type__c) {
+				updateRecord = true;
+				hh.C501_Household_Type__c = sh.C501_Household_Type__c;
+			}
+			if (hh.C501_Years_At_Current_Address__c != sh.C501_Years_At_Current_Address__c) {
+				updateRecord = true;
+				hh.C501_Years_At_Current_Address__c = sh.C501_Years_At_Current_Address__c;
+			}
+			if (hh.C501_Current_Address_Move_In_Year__c != sh.C501_Current_Address_Move_In_Year__c) {
+				updateRecord = true;
+				hh.C501_Current_Address_Move_In_Year__c = sh.C501_Current_Address_Move_In_Year__c;
+			}
+			if (hh.C501_Case_Worker__c != sh.C501_Case_Worker__c) {
+				updateRecord = true;
+				hh.C501_Case_Worker__c = sh.C501_Case_Worker__c;
+			}
 		}
 
 		return updateRecord;
