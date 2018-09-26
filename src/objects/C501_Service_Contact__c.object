@@ -856,6 +856,19 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Service_Contact_Unique_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Contact Unique Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <label>Service Contact</label>
     <nameField>
         <label>Service Contact Name</label>

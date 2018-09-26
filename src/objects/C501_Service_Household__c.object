@@ -625,6 +625,11 @@
                     <default>false</default>
                     <label>Early Learning</label>
                 </value>
+                <value>
+                    <fullName>Information Referral</fullName>
+                    <default>false</default>
+                    <label>Information Referral</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -732,6 +737,156 @@
                     <fullName>ECEAP</fullName>
                     <default>false</default>
                     <label>ECEAP</label>
+                </value>
+                <value>
+                    <fullName>Basic Food Applications</fullName>
+                    <default>false</default>
+                    <label>Basic Food Applications</label>
+                </value>
+                <value>
+                    <fullName>Eviction Prevention Screening</fullName>
+                    <default>false</default>
+                    <label>Eviction Prevention Screening</label>
+                </value>
+                <value>
+                    <fullName>Ferry Pass</fullName>
+                    <default>false</default>
+                    <label>Ferry Pass</label>
+                </value>
+                <value>
+                    <fullName>Health Plan Finder</fullName>
+                    <default>false</default>
+                    <label>Health Plan Finder</label>
+                </value>
+                <value>
+                    <fullName>Housing Intake</fullName>
+                    <default>false</default>
+                    <label>Housing Intake</label>
+                </value>
+                <value>
+                    <fullName>Landlord Tenant Education</fullName>
+                    <default>false</default>
+                    <label>Landlord Tenant Education</label>
+                </value>
+                <value>
+                    <fullName>Salvation Army Voucher (Island Only)</fullName>
+                    <default>false</default>
+                    <label>Salvation Army Voucher (Island Only)</label>
+                </value>
+                <value>
+                    <fullName>Adult Education</fullName>
+                    <default>false</default>
+                    <label>Adult Education</label>
+                </value>
+                <value>
+                    <fullName>Childcare</fullName>
+                    <default>false</default>
+                    <label>Childcare</label>
+                </value>
+                <value>
+                    <fullName>Coordinated Entry (Island Only)</fullName>
+                    <default>false</default>
+                    <label>Coordinated Entry (Island Only)</label>
+                </value>
+                <value>
+                    <fullName>Domestic Violence Services</fullName>
+                    <default>false</default>
+                    <label>Domestic Violence Services</label>
+                </value>
+                <value>
+                    <fullName>DSHS</fullName>
+                    <default>false</default>
+                    <label>DSHS</label>
+                </value>
+                <value>
+                    <fullName>Emergency Child Care Voucher</fullName>
+                    <default>false</default>
+                    <label>Emergency Child Care Voucher</label>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                    <label>Employment</label>
+                </value>
+                <value>
+                    <fullName>Energy Assistance</fullName>
+                    <default>false</default>
+                    <label>Energy Assistance</label>
+                </value>
+                <value>
+                    <fullName>Financial Literacy</fullName>
+                    <default>false</default>
+                    <label>Financial Literacy</label>
+                </value>
+                <value>
+                    <fullName>Food Resources</fullName>
+                    <default>false</default>
+                    <label>Food Resources</label>
+                </value>
+                <value>
+                    <fullName>Head Start/ECEAP</fullName>
+                    <default>false</default>
+                    <label>Head Start/ECEAP</label>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                    <label>Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Home Improvement</fullName>
+                    <default>false</default>
+                    <label>Home Improvement</label>
+                </value>
+                <value>
+                    <fullName>Housing</fullName>
+                    <default>false</default>
+                    <label>Housing</label>
+                </value>
+                <value>
+                    <fullName>Kinship</fullName>
+                    <default>false</default>
+                    <label>Kinship</label>
+                </value>
+                <value>
+                    <fullName>Landlord Tenant</fullName>
+                    <default>false</default>
+                    <label>Landlord Tenant</label>
+                </value>
+                <value>
+                    <fullName>Mental Health</fullName>
+                    <default>false</default>
+                    <label>Mental Health</label>
+                </value>
+                <value>
+                    <fullName>Other Early Learning</fullName>
+                    <default>false</default>
+                    <label>Other Early Learning</label>
+                </value>
+                <value>
+                    <fullName>Other Legal</fullName>
+                    <default>false</default>
+                    <label>Other Legal</label>
+                </value>
+                <value>
+                    <fullName>Other Utility</fullName>
+                    <default>false</default>
+                    <label>Other Utility</label>
+                </value>
+                <value>
+                    <fullName>SEAS</fullName>
+                    <default>false</default>
+                    <label>SEAS</label>
+                </value>
+                <value>
+                    <fullName>Veterans Services</fullName>
+                    <default>false</default>
+                    <label>Veterans Services</label>
+                </value>
+                <value>
+                    <fullName>Youth Programs</fullName>
+                    <default>false</default>
+                    <label>Youth Programs</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -889,6 +1044,19 @@
         <fullName>C501_Years_at_Current_Address__c</fullName>
         <externalId>false</externalId>
         <label>Years at Current Address</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Household_Unique_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Household Unique Count</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -1080,9 +1248,37 @@
                 <fullName>Energy Assistance</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Information Referral</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>Adult Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic Food Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Childcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coordinated Entry %28Island Only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSHS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Violence Services</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>ECEAP</fullName>
                 <default>false</default>
@@ -1092,7 +1288,63 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Emergency Child Care Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eviction Prevention Screening</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ferry Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Literacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Head Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head Start%2FECEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Plan Finder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Intake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kinship</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1104,11 +1356,51 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Landlord Tenant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Tenant Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Early Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Utility</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>PSE HELP</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>PSE HELP Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salvation Army Voucher %28Island Only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Youth Programs</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1306,9 +1598,37 @@
                 <fullName>Energy Assistance</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Information Referral</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>C501_Service__c</picklist>
+            <values>
+                <fullName>Adult Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic Food Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Childcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coordinated Entry %28Island Only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSHS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Violence Services</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>ECEAP</fullName>
                 <default>false</default>
@@ -1318,7 +1638,63 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Emergency Child Care Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eviction Prevention Screening</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ferry Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Literacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Head Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Head Start%2FECEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Plan Finder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Intake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kinship</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1330,11 +1706,51 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Landlord Tenant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Tenant Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Early Learning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Utility</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>PSE HELP</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>PSE HELP Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salvation Army Voucher %28Island Only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Youth Programs</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

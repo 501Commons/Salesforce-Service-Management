@@ -475,6 +475,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>C501_Service_Contact__c.Service_Contact_Unique_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>C501_Service_Household__c.C501_Affordable_Care_Act_Subsidy__c</field>
         <readable>true</readable>
@@ -757,6 +762,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>C501_Service_Household__c.C501_Years_at_Current_Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>C501_Service_Household__c.Service_Household_Unique_Count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1277,6 +1287,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>GiveRecognitionBadge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
