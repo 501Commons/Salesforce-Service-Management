@@ -937,6 +937,10 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Somali</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Spanish</fullName>
                 <default>false</default>
             </values>
@@ -1196,6 +1200,10 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
             </values>
             <values>
                 <fullName>Sign Language</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somali</fullName>
                 <default>false</default>
             </values>
             <values>

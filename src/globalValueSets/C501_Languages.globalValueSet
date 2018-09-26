@@ -113,7 +113,6 @@
     <customValue>
         <fullName>Somali</fullName>
         <default>false</default>
-        <isActive>false</isActive>
         <label>Somali</label>
     </customValue>
     <masterLabel>Languages</masterLabel>
