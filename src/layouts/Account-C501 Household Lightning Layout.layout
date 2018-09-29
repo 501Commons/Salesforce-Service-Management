@@ -3,8 +3,7 @@
     <customButtons>npsp__Manage_Household</customButtons>
     <excludeButtons>AccountHierarchy</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
     <excludeButtons>PartnerScorecard</excludeButtons>
     <excludeButtons>Share</excludeButtons>
@@ -400,6 +399,15 @@
         <relatedList>C501_Service_Household__c.C501_Household__c</relatedList>
         <sortField>C501_Start_Date__c</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>C501_IS_Visitor__c</fields>
+        <fields>C501_IS_Visit_Date__c</fields>
+        <fields>C501_IS_Total_People__c</fields>
+        <fields>C501_IS_Points_Used__c</fields>
+        <fields>C501_IS_Checkout_Weight__c</fields>
+        <relatedList>Client_Visit__c.C501_IS_Household__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
