@@ -553,6 +553,41 @@
                     <default>false</default>
                     <label>Drop/Accept</label>
                 </value>
+                <value>
+                    <fullName>Not Eligible</fullName>
+                    <default>false</default>
+                    <label>Not Eligible</label>
+                </value>
+                <value>
+                    <fullName>Permanent Housing On Own</fullName>
+                    <default>false</default>
+                    <label>Permanent Housing On Own</label>
+                </value>
+                <value>
+                    <fullName>Not Interested</fullName>
+                    <default>false</default>
+                    <label>Not Interested</label>
+                </value>
+                <value>
+                    <fullName>P &gt; 60</fullName>
+                    <default>false</default>
+                    <label>P &gt; 60</label>
+                </value>
+                <value>
+                    <fullName>No Contact</fullName>
+                    <default>false</default>
+                    <label>No Contact</label>
+                </value>
+                <value>
+                    <fullName>Rental Assistance</fullName>
+                    <default>false</default>
+                    <label>Rental Assistance</label>
+                </value>
+                <value>
+                    <fullName>Left Area</fullName>
+                    <default>false</default>
+                    <label>Left Area</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -624,6 +659,11 @@
                     <fullName>Early Learning</fullName>
                     <default>false</default>
                     <label>Early Learning</label>
+                </value>
+                <value>
+                    <fullName>Housing</fullName>
+                    <default>false</default>
+                    <label>Housing</label>
                 </value>
                 <value>
                     <fullName>Information &amp; Referral</fullName>
@@ -737,6 +777,11 @@
                     <fullName>ECEAP</fullName>
                     <default>false</default>
                     <label>ECEAP</label>
+                </value>
+                <value>
+                    <fullName>Housing Pool</fullName>
+                    <default>false</default>
+                    <label>Housing Pool</label>
                 </value>
                 <value>
                     <fullName>Basic Food Applications</fullName>
@@ -1226,7 +1271,35 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Left Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Eligible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P %3E 60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permanent Housing On Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rental Assistance</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1246,6 +1319,10 @@
             </values>
             <values>
                 <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1341,6 +1418,10 @@
             </values>
             <values>
                 <fullName>Housing Intake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Pool</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1576,7 +1657,35 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Left Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Eligible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P %3E 60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permanent Housing On Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rental Assistance</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1596,6 +1705,10 @@
             </values>
             <values>
                 <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1691,6 +1804,10 @@
             </values>
             <values>
                 <fullName>Housing Intake</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Pool</fullName>
                 <default>false</default>
             </values>
             <values>

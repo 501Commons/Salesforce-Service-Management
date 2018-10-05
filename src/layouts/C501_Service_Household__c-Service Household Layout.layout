@@ -50,6 +50,10 @@
                 <behavior>Edit</behavior>
                 <field>C501_Outcomes__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>C501_Case_Worker__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
