@@ -569,9 +569,9 @@
                     <label>Not Interested</label>
                 </value>
                 <value>
-                    <fullName>P &gt; 60</fullName>
+                    <fullName>P Over 60</fullName>
                     <default>false</default>
-                    <label>P &gt; 60</label>
+                    <label>P Over 60</label>
                 </value>
                 <value>
                     <fullName>No Contact</fullName>
@@ -1291,7 +1291,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>P %3E 60</fullName>
+                <fullName>P Over 60</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1677,7 +1677,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>P %3E 60</fullName>
+                <fullName>P Over 60</fullName>
                 <default>false</default>
             </values>
             <values>
