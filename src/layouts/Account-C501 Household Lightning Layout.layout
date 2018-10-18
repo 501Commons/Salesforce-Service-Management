@@ -405,8 +405,6 @@
         <fields>C501_IS_Visitor__c</fields>
         <fields>C501_IS_Visit_Date__c</fields>
         <fields>C501_IS_Total_People__c</fields>
-        <fields>C501_IS_Points_Used__c</fields>
-        <fields>C501_IS_Checkout_Weight__c</fields>
         <relatedList>Client_Visit__c.C501_IS_Household__c</relatedList>
     </relatedLists>
     <relatedLists>

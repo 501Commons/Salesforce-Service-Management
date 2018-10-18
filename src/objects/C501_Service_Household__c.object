@@ -509,21 +509,6 @@
                     <label>Service Restored</label>
                 </value>
                 <value>
-                    <fullName>Accepted</fullName>
-                    <default>false</default>
-                    <label>Accepted</label>
-                </value>
-                <value>
-                    <fullName>Drop/Wait</fullName>
-                    <default>false</default>
-                    <label>Drop/Wait</label>
-                </value>
-                <value>
-                    <fullName>Abandoned</fullName>
-                    <default>false</default>
-                    <label>Abandoned</label>
-                </value>
-                <value>
                     <fullName>Enrolled</fullName>
                     <default>false</default>
                     <label>Enrolled</label>
@@ -542,16 +527,6 @@
                     <fullName>Waitlisted</fullName>
                     <default>false</default>
                     <label>Waitlisted</label>
-                </value>
-                <value>
-                    <fullName>New</fullName>
-                    <default>false</default>
-                    <label>New</label>
-                </value>
-                <value>
-                    <fullName>Drop/Accept</fullName>
-                    <default>false</default>
-                    <label>Drop/Accept</label>
                 </value>
                 <value>
                     <fullName>Not Eligible</fullName>
@@ -938,6 +913,31 @@
                     <default>false</default>
                     <label>Youth Programs</label>
                 </value>
+                <value>
+                    <fullName>Bus Pass</fullName>
+                    <default>false</default>
+                    <label>Bus Pass</label>
+                </value>
+                <value>
+                    <fullName>Diapers</fullName>
+                    <default>false</default>
+                    <label>Diapers</label>
+                </value>
+                <value>
+                    <fullName>Dump Pass</fullName>
+                    <default>false</default>
+                    <label>Dump Pass</label>
+                </value>
+                <value>
+                    <fullName>Emergency Food Box</fullName>
+                    <default>false</default>
+                    <label>Emergency Food Box</label>
+                </value>
+                <value>
+                    <fullName>Shower Pass</fullName>
+                    <default>false</default>
+                    <label>Shower Pass</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1232,27 +1232,11 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
-                <fullName>Abandoned</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Accepted</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Disconnect Averted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Drop%2FAccept</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Drop%2FWait</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1277,10 +1261,6 @@
             </values>
             <values>
                 <fullName>Left Area</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1350,6 +1330,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Bus Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Childcare</fullName>
                 <default>false</default>
             </values>
@@ -1362,7 +1346,15 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Diapers</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Domestic Violence Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dump Pass</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1375,6 +1367,10 @@
             </values>
             <values>
                 <fullName>Emergency Child Care Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Food Box</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1483,6 +1479,10 @@
             </values>
             <values>
                 <fullName>Salvation Army Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shower Pass</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1622,27 +1622,11 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
-                <fullName>Abandoned</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Accepted</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Disconnect Averted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Drop%2FAccept</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Drop%2FWait</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1670,10 +1654,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-            <values> over
                 <fullName>No Contact</fullName>
                 <default>false</default>
             </values>
@@ -1740,6 +1720,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Bus Pass</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Childcare</fullName>
                 <default>false</default>
             </values>
@@ -1752,7 +1736,15 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Diapers</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Domestic Violence Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dump Pass</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1765,6 +1757,10 @@
             </values>
             <values>
                 <fullName>Emergency Child Care Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Food Box</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1873,6 +1869,10 @@
             </values>
             <values>
                 <fullName>Salvation Army Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shower Pass</fullName>
                 <default>false</default>
             </values>
             <values>
