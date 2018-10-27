@@ -233,6 +233,7 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>C501_Intake_Programs</members>
         <members>C501_Languages</members>
         <members>Y_N_U</members>
         <name>GlobalValueSet</name>

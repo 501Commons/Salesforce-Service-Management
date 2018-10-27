@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Energy Assistance</fullName>
+        <default>false</default>
+        <label>Energy Assistance</label>
+    </customValue>
+    <customValue>
+        <fullName>Early Learning</fullName>
+        <default>false</default>
+        <label>Early Learning</label>
+    </customValue>
+    <customValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <label>Housing</label>
+    </customValue>
+    <customValue>
+        <fullName>Information &amp; Referral</fullName>
+        <default>false</default>
+        <label>Information &amp; Referral</label>
+    </customValue>
+    <masterLabel>Programs</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
