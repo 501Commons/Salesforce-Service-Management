@@ -628,29 +628,7 @@
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Energy Assistance</fullName>
-                    <default>false</default>
-                    <label>Energy Assistance</label>
-                </value>
-                <value>
-                    <fullName>Early Learning</fullName>
-                    <default>false</default>
-                    <label>Early Learning</label>
-                </value>
-                <value>
-                    <fullName>Housing</fullName>
-                    <default>false</default>
-                    <label>Housing</label>
-                </value>
-                <value>
-                    <fullName>Information &amp; Referral</fullName>
-                    <default>false</default>
-                    <label>Information &amp; Referral</label>
-                </value>
-            </valueSetDefinition>
+            <valueSetName>C501_Intake_Programs</valueSetName>
         </valueSet>
     </fields>
     <fields>
