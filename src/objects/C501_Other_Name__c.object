@@ -66,9 +66,10 @@
         <externalId>false</externalId>
         <label>Contact</label>
         <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Other Names</relationshipLabel>
         <relationshipName>C501_Previous_Names</relationshipName>
         <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>

@@ -3,7 +3,8 @@
     <customButtons>npsp__Manage_Household</customButtons>
     <excludeButtons>AccountHierarchy</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
     <excludeButtons>PartnerScorecard</excludeButtons>
     <excludeButtons>Share</excludeButtons>
@@ -22,6 +23,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>npe01__One2OneContact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>C501_Merge_Target__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -302,16 +307,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>npsp__Manage_Household</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
@@ -366,6 +361,16 @@
             <actionType>ProductivityAction</actionType>
             <sortOrder>12</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>npsp__Manage_Household</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedContent>
         <relatedContentItems>
@@ -388,6 +393,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>npsp__Address__c.npsp__Household_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>C501_Account_Merge__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

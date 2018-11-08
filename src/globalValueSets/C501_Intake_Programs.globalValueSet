@@ -11,15 +11,21 @@
         <label>Early Learning</label>
     </customValue>
     <customValue>
-        <fullName>Housing</fullName>
-        <default>false</default>
-        <label>Housing</label>
-    </customValue>
-    <customValue>
         <fullName>Information &amp; Referral</fullName>
         <default>false</default>
         <label>Information &amp; Referral</label>
     </customValue>
-    <masterLabel>Programs</masterLabel>
+    <customValue>
+        <fullName>Housing Pool</fullName>
+        <default>false</default>
+        <label>Housing Pool</label>
+    </customValue>
+    <customValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Housing</label>
+    </customValue>
+    <masterLabel>C501 Intake Programs</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
