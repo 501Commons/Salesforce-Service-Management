@@ -1289,7 +1289,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Housing</fullName>
+                <fullName>Housing Pool</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1679,7 +1679,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Housing</fullName>
+                <fullName>Housing Pool</fullName>
                 <default>false</default>
             </values>
             <values>
