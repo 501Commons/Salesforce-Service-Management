@@ -861,6 +861,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.C501_FirstName_Initial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.C501_HIV_AIDS__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1461,6 +1466,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageSandboxes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageSharing</name>
     </userPermissions>
     <userPermissions>
@@ -1514,6 +1523,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>Packaging2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>Packaging2PromoteVersion</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

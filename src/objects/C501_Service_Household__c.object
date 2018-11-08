@@ -568,36 +568,6 @@
                     <default>false</default>
                     <label>Left Area</label>
                 </value>
-                <value>
-                    <fullName>Abandoned</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Abandoned</label>
-                </value>
-                <value>
-                    <fullName>Accepted</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Accepted</label>
-                </value>
-                <value>
-                    <fullName>Drop/Accept</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Drop/Accept</label>
-                </value>
-                <value>
-                    <fullName>Drop/Wait</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Drop/Wait</label>
-                </value>
-                <value>
-                    <fullName>New</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>New</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -1319,6 +1289,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Information %26 Referral</fullName>
                 <default>false</default>
             </values>
@@ -1702,6 +1676,10 @@
             </values>
             <values>
                 <fullName>Energy Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
                 <default>false</default>
             </values>
             <values>

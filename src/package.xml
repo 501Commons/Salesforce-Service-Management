@@ -194,6 +194,7 @@
         <members>Contact.C501_Education_Level__c</members>
         <members>Contact.C501_Employment_Based__c</members>
         <members>Contact.C501_Ethnicity__c</members>
+        <members>Contact.C501_FirstName_Initial__c</members>
         <members>Contact.C501_HIV_AIDS__c</members>
         <members>Contact.C501_Has_Social_Security_Number__c</members>
         <members>Contact.C501_Health_Insurance__c</members>
