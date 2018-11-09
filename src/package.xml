@@ -221,6 +221,7 @@
         <members>Contact.C501_White__c</members>
         <members>Contact.C501_Work_Status__c</members>
         <members>Contact.Gender__c</members>
+        <members>Contact.C501_Text_Messages_OK__c</members>
         <name>CustomField</name>
     </types>
     <types>

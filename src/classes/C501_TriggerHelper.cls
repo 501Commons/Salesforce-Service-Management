@@ -29,7 +29,7 @@ public with sharing class C501_TriggerHelper {
 				[select 
 					Account.Id, Account.npe01__One2OneContact__c,
 					AccountId, Id, Name,
-					FirstName, LastName, MiddleName,
+					FirstName, LastName, MiddleName, C501_FirstName_Initial__c,
 					Birthdate, C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
@@ -267,6 +267,10 @@ public with sharing class C501_TriggerHelper {
 				updateRecord = true;
 				c.FirstName = sc.C501_First_Name__c;
 			}
+		}
+		if (c.FirstName.left(1) != c.C501_FirstName_Initial__c) {
+			updateRecord = true;
+			c.C501_FirstName_Initial__c = c.FirstName.left(1);
 		}
 		if (!String.IsEmpty(sc.C501_Last_Name_Other__c)) {
 			if (c.LastName != sc.C501_Last_Name_Other__c) {
