@@ -268,6 +268,16 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         </valueSet>
     </fields>
     <fields>
+        <fullName>C501_FirstName_Initial__c</fullName>
+        <externalId>false</externalId>
+        <label>FirstName Initial</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_HIV_AIDS__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Disabling Condition picklist</description>
@@ -417,16 +427,6 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <fields>
-        <fullName>C501_FirstName_Initial__c</fullName>
-        <externalId>false</externalId>
-        <label>FirstName Initial</label>
-        <length>1</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>    
     <fields>
         <fullName>C501_Native_Hawaiian_Pacific_Islander__c</fullName>
         <defaultValue>false</defaultValue>
