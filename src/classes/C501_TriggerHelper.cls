@@ -23,8 +23,26 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		list<Contact> cToUpdate = new list<Contact>();
+		Map<Id, List<String>> cOtherNames = new Map<Id, List<String>>();
 		map<Id, Account> aToUpdate = new map<Id, Account>();
 
+		// Get all related Other Names
+		for ( C501_Other_Name__c cOtherName : 
+				[select 
+					C501_Contact__c, C501_Other_Name__c
+				from C501_Other_Name__c
+				where C501_Contact__c in : triggerSCMap.keyset()] ) {
+
+			List<String> listOtherNames = new List<String>();
+			if (cOtherNames.containsKey(cOtherName.C501_Contact__c)) {
+				listOtherNames = cOtherNames.remove(cOtherName.C501_Contact__c);
+			}
+
+			listOtherNames.add(cOtherName.C501_Other_Name__c);
+			cOtherNames.put(cOtherName.C501_Contact__c, listOtherNames);
+		}
+
+		List<C501_Other_Name__c> cOtherNamesInsert = new List<C501_Other_Name__c>();
 		for ( Contact c : 
 				[select 
 					Account.Id, Account.npe01__One2OneContact__c,
@@ -36,7 +54,8 @@ public with sharing class C501_TriggerHelper {
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
 					C501_Preferred_Language__c, C501_Additional_Languages__c,
 					C501_Work_Status__c, C501_Case_Worker__c
-					from Contact where Id in : triggerSCMap.keyset()] ) {
+				from Contact
+				where Id in : triggerSCMap.keyset()] ) {
 
 			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.Id );
 
@@ -46,7 +65,7 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Copy Fields and add to update if successful 
-			if (copyFieldsContact( c, scGroup[0] ))
+			if (copyFieldsContact( c, scGroup[0], cOtherNames.get(c.Id), cOtherNamesInsert))
 				cToUpdate.add( c );
 
 			// Check to update Account Primary Contact
@@ -67,6 +86,10 @@ public with sharing class C501_TriggerHelper {
 
 		if (!aToUpdate.values().isEmpty())
 			update aToUpdate.values();
+
+		if (!cOtherNamesInsert.isEmpty()) {
+			insert cOtherNamesInsert;
+		}
 	}
 
 	public void updateAggregateHousehold( list<C501_Service_Household__c> shList, map<id, C501_Service_Household__c> oldMap, Boolean isDelete ) {
@@ -116,7 +139,7 @@ public with sharing class C501_TriggerHelper {
 			update hhToUpdate;
 	}
 
-	private Boolean copyFieldsAccount( Account hh, C501_Service_Household__c sh ) {
+	private Boolean copyFieldsAccount( Account hh, C501_Service_Household__c sh) {
 
 		Boolean updateRecord = false;
 
@@ -252,14 +275,36 @@ public with sharing class C501_TriggerHelper {
 		return updateRecord;
 	}
 
-	private Boolean copyFieldsContact( Contact c, C501_Service_Contact__c sc ) {
+	private Boolean copyFieldsContact( Contact c, C501_Service_Contact__c sc, List<String> otherNames, List<C501_Other_Name__c> cOtherNamesInsert) {
 
 		Boolean updateRecord = false;
 
 		if (!String.IsEmpty(sc.C501_Nickname__c)) {
+
 			if (c.FirstName != sc.C501_Nickname__c) {
 				updateRecord = true;
 				c.FirstName = sc.C501_Nickname__c;
+			}
+
+			// Check to create other name records
+			if (otherNames == null || !otherNames.contains(sc.C501_First_Name__c)) {
+				cOtherNamesInsert.add(
+					new C501_Other_Name__c (
+						C501_Contact__c = c.Id,
+						C501_Other_Name__c = sc.C501_First_Name__c,
+						C501_IsPreferred__c = false,
+						C501_Start_Date__c = date.today()
+				));
+			}
+
+			if (otherNames == null || !otherNames.contains(sc.C501_Nickname__c)) {
+				cOtherNamesInsert.add(
+					new C501_Other_Name__c (
+						C501_Contact__c = c.Id,
+						C501_Other_Name__c = sc.C501_Nickname__c,
+						C501_IsPreferred__c = true,
+						C501_Start_Date__c = date.today()
+				));
 			}
 		}
 		else {
@@ -276,6 +321,26 @@ public with sharing class C501_TriggerHelper {
 			if (c.LastName != sc.C501_Last_Name_Other__c) {
 				updateRecord = true;
 				c.LastName = sc.C501_Last_Name_Other__c;
+			}
+
+			// Check to create other name records
+			if (otherNames == null || !otherNames.contains(sc.C501_Last_Name__c)) {
+				cOtherNamesInsert.add(
+					new C501_Other_Name__c (
+						C501_Contact__c = c.Id,
+						C501_Other_Name__c = sc.C501_Last_Name__c,
+						C501_IsPreferred__c = false,
+						C501_Start_Date__c = date.today()
+				));
+			}
+			if (otherNames == null || !otherNames.contains(sc.C501_Last_Name_Other__c)) {
+				cOtherNamesInsert.add(
+					new C501_Other_Name__c (
+						C501_Contact__c = c.Id,
+						C501_Other_Name__c = sc.C501_Last_Name_Other__c,
+						C501_IsPreferred__c = true,
+						C501_Start_Date__c = date.today()
+				));
 			}
         }
 		else {
