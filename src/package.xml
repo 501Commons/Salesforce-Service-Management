@@ -86,6 +86,7 @@
         <members>C501_Service_Contact__c.C501_Employment_Based__c</members>
         <members>C501_Service_Contact__c.C501_Ethnicity__c</members>
         <members>C501_Service_Contact__c.C501_First_Name__c</members>
+        <members>C501_Service_Contact__c.C501_FirstName_Initial__c</members>
         <members>C501_Service_Contact__c.C501_Gender__c</members>
         <members>C501_Service_Contact__c.C501_HIV_AIDS__c</members>
         <members>C501_Service_Contact__c.C501_Health_Insurance__c</members>
@@ -253,16 +254,7 @@
     </types>
     <types>
         <members>Admin</members>
-        <members>Chatter External User</members>
-        <members>Chatter Free User</members>
-        <members>Chatter Moderator User</members>
-        <members>ContractManager</members>
-        <members>MarketingProfile</members>
-        <members>ReadOnly</members>
         <members>Service Admin</members>
-        <members>SolutionManager</members>
-        <members>Standard</members>
-        <members>StandardAul</members>
         <name>Profile</name>
     </types>
     <types>

@@ -23,6 +23,7 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		list<Contact> cToUpdate = new list<Contact>();
+		list<C501_Service_Contact__c> scToUpdate = new list<C501_Service_Contact__c>();
 		Map<Id, List<String>> cOtherNames = new Map<Id, List<String>>();
 		map<Id, Account> aToUpdate = new map<Id, Account>();
 
@@ -65,8 +66,10 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Copy Fields and add to update if successful 
-			if (copyFieldsContact( c, scGroup[0], cOtherNames.get(c.Id), cOtherNamesInsert))
+			if (copyFieldsContact( c, scGroup[0], cOtherNames.get(c.Id), cOtherNamesInsert)) {
 				cToUpdate.add( c );
+				scToUpdate.add( scGroup[0] );
+			}
 
 			// Check to update Account Primary Contact
 			if (scGroup[0].C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
@@ -83,6 +86,9 @@ public with sharing class C501_TriggerHelper {
 
 		if (!cToUpdate.isEmpty())
 			update cToUpdate;
+
+		if (!scToUpdate.isEmpty())
+			update scToUpdate;
 
 		if (!aToUpdate.values().isEmpty())
 			update aToUpdate.values();
@@ -316,6 +322,10 @@ public with sharing class C501_TriggerHelper {
 		if (c.FirstName.left(1) != c.C501_FirstName_Initial__c) {
 			updateRecord = true;
 			c.C501_FirstName_Initial__c = c.FirstName.left(1);
+		}
+		if (sc.C501_First_Name__c.left(1) != sc.C501_FirstName_Initial__c) {
+			updateRecord = true;
+			sc.C501_FirstName_Initial__c = sc.C501_First_Name__c.left(1);
 		}
 		if (!String.IsEmpty(sc.C501_Last_Name_Other__c)) {
 			if (c.LastName != sc.C501_Last_Name_Other__c) {

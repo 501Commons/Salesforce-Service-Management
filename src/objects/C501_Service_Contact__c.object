@@ -361,6 +361,16 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>C501_FirstName_Initial__c</fullName>
+        <externalId>false</externalId>
+        <label>FirstName Initial</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Gender__c</fullName>
         <description>CoreId/Module4; for Module4, combine T options into Other
 
