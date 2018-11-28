@@ -181,6 +181,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.C501_Trigger_Ignore_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.C501_Unemployment_Insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -475,6 +480,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>C501_Service_Contact__c.C501_Trigger_Ignore_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>C501_Service_Contact__c.C501_White__c</field>
         <readable>false</readable>
@@ -742,6 +752,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>C501_Service_Household__c.C501_TANF__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>C501_Service_Household__c.C501_Trigger_Ignore_Change__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

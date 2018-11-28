@@ -811,6 +811,14 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Trigger_Ignore_Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger Ignore Change</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>C501_White__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Race picklist</description>

@@ -556,6 +556,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Trigger_Ignore_Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Trigger Ignore Change</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>C501_Unemployment_Insurance__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>

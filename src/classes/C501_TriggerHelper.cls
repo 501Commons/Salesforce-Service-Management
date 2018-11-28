@@ -41,7 +41,8 @@ public with sharing class C501_TriggerHelper {
 				C501_Program__c = 'Information & Referral',
 				C501_Household__c = contact.AccountId,
 				C501_Start_Date__c = date.today(),
-				C501_End_Date__c = date.today()
+				C501_End_Date__c = date.today(),
+				C501_Trigger_Ignore_Change__c = true
 			);
 
 			if (accounts.containsKey(contact.AccountId)) {
@@ -59,6 +60,7 @@ public with sharing class C501_TriggerHelper {
 		for (C501_Service_Household__c serviceHousehold :insertServiceHouseholds) {
 
 			serviceHousehold.C501_Service_Id__c = serviceHousehold.Id;
+			serviceHousehold.C501_Trigger_Ignore_Change__c = true;
 			serviceHouseholds.put(serviceHousehold.C501_Household__c, serviceHousehold);
 			updateServiceHouseholds.add(serviceHousehold);
 		}
@@ -78,7 +80,8 @@ public with sharing class C501_TriggerHelper {
 				C501_Service_Id__c = serviceHousehold.C501_Service_Id__c,
 				C501_Contact__c = contact.Id,
 				C501_Contact_Id__c = 'TEMP: ' + contact.Id,
-				C501_Service_Household_Id__c = serviceHousehold.Id
+				C501_Service_Household_Id__c = serviceHousehold.Id,
+				C501_Trigger_Ignore_Change__c = true
 			);
 
 			copyFieldsContact2ServiceContact(contact, serviceContact);
@@ -93,6 +96,7 @@ public with sharing class C501_TriggerHelper {
 		for (C501_Service_Contact__c serviceContact :insertServiceContacts) {
 
 			serviceContact.C501_Contact_Id__c = serviceContact.Id;
+			serviceContact.C501_Trigger_Ignore_Change__c = true;
 			updateServiceContacts.add(serviceContact);
 		}
 
@@ -102,7 +106,50 @@ public with sharing class C501_TriggerHelper {
 	}
 
 	public void onChangeAccount( list<Account> aList, map<id, Account> oldMap, Boolean isDelete ) {
+		
+		List<Account> accounts = new List<Account>();
+		for (Account account :aList) {
+			if (account.C501_Trigger_Ignore_Change__c) {
+				account.C501_Trigger_Ignore_Change__c = false;
+			}
+			else {
+			   accounts.add(account);
+			}
+		}
 
+		// Create Service Households
+		List<C501_Service_Household__c> insertServiceHouseholds = new List<C501_Service_Household__c>();
+		for (Account account :accounts) {
+
+			C501_Service_Household__c serviceHousehold = new C501_Service_Household__c (
+				Name = 'Information & Referral (Change Request)',
+				C501_Service_Id__c = 'TEMP:' + account.Id,
+				C501_Program__c = 'Information & Referral',
+				C501_Household__c = account.Id,
+				C501_Start_Date__c = date.today(),
+				C501_End_Date__c = date.today(),
+				C501_Trigger_Ignore_Change__c = true
+			);
+
+			copyFieldsAccount2ServiceAccount(account, serviceHousehold);
+			insertServiceHouseholds.add(serviceHousehold);
+		}
+
+		if (!insertServiceHouseholds.isEmpty()) {
+			insert insertServiceHouseholds;
+		}
+
+		List<C501_Service_Household__c> updateServiceHouseholds = new List<C501_Service_Household__c>();
+		for (C501_Service_Household__c serviceHousehold :insertServiceHouseholds) {
+
+			serviceHousehold.C501_Service_Id__c = serviceHousehold.Id;
+			serviceHousehold.C501_Trigger_Ignore_Change__c = true;
+			updateServiceHouseholds.add(serviceHousehold);
+		}
+
+		if (!updateServiceHouseholds.isEmpty()) {
+			update updateServiceHouseholds;
+		}
 	}
 
 	public void updateAggregateContact( list<C501_Service_Contact__c> scList, map<id, C501_Service_Contact__c> oldMap, Boolean isDelete ) {
@@ -112,13 +159,18 @@ public with sharing class C501_TriggerHelper {
 		if ( scList != null ) {
 			for ( C501_Service_Contact__c sc :scList ) {
 
-				// Save most recent Service Contact as the master for updating contact
-				if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
-					triggerSCMap.put(sc.C501_Contact__c, sc);
-				} else {
-					if (sc.CreatedDate > triggerSCMap.get(sc.C501_Contact__c).CreatedDate) {
-						triggerSCMap.remove(sc.C501_Contact__c);
+				if (sc.C501_Trigger_Ignore_Change__c) {
+					sc.C501_Trigger_Ignore_Change__c = false;
+				}
+				else {
+					// Save most recent Service Contact as the master for updating contact
+					if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
 						triggerSCMap.put(sc.C501_Contact__c, sc);
+					} else {
+						if (sc.CreatedDate > triggerSCMap.get(sc.C501_Contact__c).CreatedDate) {
+							triggerSCMap.remove(sc.C501_Contact__c);
+							triggerSCMap.put(sc.C501_Contact__c, sc);
+						}
 					}
 				}
 			}
@@ -215,17 +267,22 @@ public with sharing class C501_TriggerHelper {
 		if ( shList != null ) {
 
 			for ( C501_Service_Household__c sh :shList ) {
-				// Save most recent Service Contact as the master for updating contact
-				if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
-					triggerSHMap.put(sh.C501_Household__c, sh);
-				} else {
-					if (sh.CreatedDate > triggerSHMap.get(sh.C501_Household__c).CreatedDate) {
-						triggerSHMap.remove(sh.C501_Household__c);
+				if (sh.C501_Trigger_Ignore_Change__c) {
+					sh.C501_Trigger_Ignore_Change__c = false;
+				}
+				else {
+					// Save most recent Service Contact as the master for updating contact
+					if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
 						triggerSHMap.put(sh.C501_Household__c, sh);
-					}
+					} else {
+						if (sh.CreatedDate > triggerSHMap.get(sh.C501_Household__c).CreatedDate) {
+							triggerSHMap.remove(sh.C501_Household__c);
+							triggerSHMap.put(sh.C501_Household__c, sh);
+						}
 
-					// ToDo - Handle Merge Logic Household
-					// handleMergeAccount();
+						// ToDo - Handle Merge Logic Household
+						// handleMergeAccount();
+					}
 				}
 			}
 		}
