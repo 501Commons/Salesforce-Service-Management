@@ -7,6 +7,17 @@ public with sharing class C501_TriggerHelper {
 		return instance;
 	}
 
+	public void onChangeContact( list<Contact> cList, map<id, Contact> oldMap, Boolean isDelete ) {
+		
+		for (Contact contact :cList) {
+			
+		}
+	}
+
+	public void onChangeAccount( list<Account> aList, map<id, Account> oldMap, Boolean isDelete ) {
+
+	}
+
 	public void updateAggregateContact( list<C501_Service_Contact__c> scList, map<id, C501_Service_Contact__c> oldMap, Boolean isDelete ) {
 
 		map<String, C501_Service_Contact__c> triggerSCMap = new map<String, C501_Service_Contact__c>();
@@ -331,13 +342,15 @@ public with sharing class C501_TriggerHelper {
 				c.FirstName = sc.C501_First_Name__c;
 			}
 		}
-		if (c.FirstName.left(1) != c.C501_FirstName_Initial__c) {
-			updateRecord = true;
-			c.C501_FirstName_Initial__c = c.FirstName.left(1);
-		}
-		if (sc.C501_First_Name__c.left(1) != sc.C501_FirstName_Initial__c) {
+		if (!String.isEmpty(sc.C501_First_Name__c) &&
+			(String.isEmpty(sc.C501_FirstName_Initial__c) || sc.C501_First_Name__c.left(1) != sc.C501_FirstName_Initial__c)) { 
 			updateRecord = true;
 			sc.C501_FirstName_Initial__c = sc.C501_First_Name__c.left(1);
+		}
+		if (!String.isEmpty(c.FirstName) &&
+			(String.isEmpty(c.C501_FirstName_Initial__c) ||  c.FirstName.left(1) != c.C501_FirstName_Initial__c)) { 
+			updateRecord = true;
+			c.C501_FirstName_Initial__c = c.FirstName.left(1);
 		}
 		if (!String.IsEmpty(sc.C501_Last_Name_Other__c)) {
 			if (c.LastName != sc.C501_Last_Name_Other__c) {

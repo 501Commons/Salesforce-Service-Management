@@ -6,6 +6,8 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>C501AccountTrigger</members>
+        <members>C501ContactTrigger</members>
         <members>C501ServiceContactTrigger</members>
         <members>C501ServiceHouseholdTrigger</members>
         <name>ApexTrigger</name>
@@ -221,6 +223,7 @@
         <members>Contact.C501_State_Children_s_Health_Insurance__c</members>
         <members>Contact.C501_State_Health_Insurance_for_Adults__c</members>
         <members>Contact.C501_Substance_Abuse__c</members>
+        <members>Contact.C501_Trigger_Ignore_Change__c</members>
         <members>Contact.C501_White__c</members>
         <members>Contact.C501_Work_Status__c</members>
         <members>Contact.Gender__c</members>
