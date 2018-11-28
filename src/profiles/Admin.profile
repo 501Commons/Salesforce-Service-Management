@@ -996,6 +996,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.C501_Trigger_Ignore_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.C501_White__c</field>
         <readable>true</readable>
     </fieldPermissions>

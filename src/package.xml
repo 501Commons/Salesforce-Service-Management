@@ -55,6 +55,7 @@
         <members>Account.C501_Social_Security_Disability_Income__c</members>
         <members>Account.C501_Supplemental_Security_Income__c</members>
         <members>Account.C501_TANF__c</members>
+        <members>Account.C501_Trigger_Ignore_Change__c</members>
         <members>Account.C501_Unemployment_Insurance__c</members>
         <members>Account.C501_VA_Non_Service_Disability_Pension__c</members>
         <members>Account.C501_VA_Service_Connected_Disability__c</members>
@@ -120,6 +121,7 @@
         <members>C501_Service_Contact__c.C501_State_Children_s_Health_Insurance__c</members>
         <members>C501_Service_Contact__c.C501_State_Health_Insurance_for_Adults__c</members>
         <members>C501_Service_Contact__c.C501_Substance_Abuse__c</members>
+        <members>C501_Service_Contact__c.C501_Trigger_Ignore_Change__c</members>
         <members>C501_Service_Contact__c.C501_White__c</members>
         <members>C501_Service_Contact__c.C501_Work_Status__c</members>
         <members>C501_Service_Household__c.C501_Affordable_Care_Act_Subsidy__c</members>
@@ -174,6 +176,7 @@
         <members>C501_Service_Household__c.C501_Sub_Service__c</members>
         <members>C501_Service_Household__c.C501_Supplemental_Security_Income__c</members>
         <members>C501_Service_Household__c.C501_TANF__c</members>
+        <members>C501_Service_Household__c.C501_Trigger_Ignore_Change__c</members>
         <members>C501_Service_Household__c.C501_Unemployment_Insurance__c</members>
         <members>C501_Service_Household__c.C501_VA_Non_Service_Disability_Pension__c</members>
         <members>C501_Service_Household__c.C501_VA_Service_Connected_Disability__c</members>

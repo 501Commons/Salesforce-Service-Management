@@ -612,6 +612,15 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Trigger_Ignore_Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Ignore the change in trigger</description>
+        <externalId>false</externalId>
+        <label>Trigger Ignore Change</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>C501_White__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Race picklist</description>
