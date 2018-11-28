@@ -92,7 +92,7 @@
         <members>C501_Service_Contact__c.C501_Health_Insurance__c</members>
         <members>C501_Service_Contact__c.C501_Immigration_Status__c</members>
         <members>C501_Service_Contact__c.C501_Insurance_Unknown_Not_Reported__c</members>
-        <members>C501_Service_Contact__c.C501_Is_In_Household</members>
+        <members>C501_Service_Contact__c.C501_Is_In_Household__c</members>
         <members>C501_Service_Contact__c.C501_Last_Name_Other__c</members>
         <members>C501_Service_Contact__c.C501_Last_Name__c</members>
         <members>C501_Service_Contact__c.C501_Medicaid__c</members>
@@ -202,6 +202,7 @@
         <members>Contact.C501_Health_Insurance__c</members>
         <members>Contact.C501_Immigration_Status__c</members>
         <members>Contact.C501_Insurance_Unknown_Not_Reported__c</members>
+        <members>Contact.C501_Is_In_Household__c</members>
         <members>Contact.C501_Medicaid__c</members>
         <members>Contact.C501_Medicare__c</members>
         <members>Contact.C501_Mental_Health_Problem__c</members>

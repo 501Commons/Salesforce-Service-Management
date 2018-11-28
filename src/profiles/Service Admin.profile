@@ -901,6 +901,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.C501_Is_In_Household__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.C501_Medicaid__c</field>
         <readable>true</readable>
     </fieldPermissions>

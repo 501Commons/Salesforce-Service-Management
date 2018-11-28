@@ -357,6 +357,14 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Is_In_Household__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is In Household</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>C501_Medicaid__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Module4</description>
