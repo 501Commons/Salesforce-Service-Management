@@ -58,7 +58,7 @@ public with sharing class C501_TriggerHelper {
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
 					C501_Preferred_Language__c, C501_Additional_Languages__c,
-					C501_Work_Status__c, C501_Case_Worker__c
+					C501_Work_Status__c, C501_Case_Worker__c, C501_Is_In_Household__c
 				from Contact
 				where Id in : triggerSCMap.keyset()] ) {
 
@@ -378,6 +378,10 @@ public with sharing class C501_TriggerHelper {
 		if (c.Birthdate != sc.C501_Birthdate__c) {
 			updateRecord = true;
 			c.Birthdate = sc.C501_Birthdate__c;
+		}
+		if (c.C501_Is_In_Household__c != sc.C501_Is_In_Household__c) {
+			updateRecord = true;
+			c.C501_Is_In_Household__c = sc.C501_Is_In_Household__c;
 		}
 		if (c.C501_Partial_Social_Security_Id__c != sc.C501_Partial_Social_Security_Id__c) {
 			updateRecord = true;

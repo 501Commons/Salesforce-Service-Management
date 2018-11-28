@@ -479,7 +479,7 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
     </fields>
     <fields>
         <fullName>C501_Is_In_Household__c</fullName>
-        <defaultValue>false</defaultValue>
+        <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <label>Is In Household</label>
         <trackTrending>false</trackTrending>
