@@ -361,6 +361,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>C501_Service_Contact__c.C501_Is_In_Household__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>C501_Service_Contact__c.C501_Last_Name_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>

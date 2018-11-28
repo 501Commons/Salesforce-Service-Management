@@ -478,6 +478,14 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Is_In_Household__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is In Household</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>C501_Last_Name_Other__c</fullName>
         <externalId>false</externalId>
         <label>Last Name Other</label>
