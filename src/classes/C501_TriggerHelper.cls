@@ -9,21 +9,25 @@ public with sharing class C501_TriggerHelper {
 
 	public void updateAggregateContact( list<C501_Service_Contact__c> scList, map<id, C501_Service_Contact__c> oldMap, Boolean isDelete ) {
 
-		map<String, list<C501_Service_Contact__c>> triggerSCMap = new map<String, list<C501_Service_Contact__c>>();
+		map<String, C501_Service_Contact__c> triggerSCMap = new map<String, C501_Service_Contact__c>();
 		
 		if ( scList != null ) {
-			// Avoid SOQL query limits by collecting all the required info in the trigger from a single SOQL call
 			for ( C501_Service_Contact__c sc :scList ) {
+
+				// Save most recent Service Contact as the master for updating contact
 				if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
-					triggerSCMap.put(sc.C501_Contact__c, new list<C501_Service_Contact__c>{ sc });
+					triggerSCMap.put(sc.C501_Contact__c, sc);
 				} else {
-					triggerSCMap.get(sc.C501_Contact__c).add(sc);
+					if (sc.CreatedDate > triggerSCMap.get(sc.C501_Contact__c).CreatedDate) {
+						triggerSCMap.remove(sc.C501_Contact__c);
+						triggerSCMap.put(sc.C501_Contact__c, sc);
+					}
 				}
 			}
 		}
 
 		list<Contact> cToUpdate = new list<Contact>();
-		list<C501_Service_Contact__c> scToUpdate = new list<C501_Service_Contact__c>();
+		map<Id, C501_Service_Contact__c> scToUpdate = new map<Id, C501_Service_Contact__c>();
 		Map<Id, List<String>> cOtherNames = new Map<Id, List<String>>();
 		map<Id, Account> aToUpdate = new map<Id, Account>();
 
@@ -58,7 +62,7 @@ public with sharing class C501_TriggerHelper {
 				from Contact
 				where Id in : triggerSCMap.keyset()] ) {
 
-			list<C501_Service_Contact__c> scGroup = triggerSCMap.get( c.Id );
+			C501_Service_Contact__c sc = triggerSCMap.get( c.Id );
 
 			if (isDelete) {
 				// ToDo - Add Delete Support - maybe just a no action since probably delete is just triggered by automation
@@ -66,13 +70,13 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Copy Fields and add to update if successful 
-			if (copyFieldsContact( c, scGroup[0], cOtherNames.get(c.Id), cOtherNamesInsert)) {
+			if (copyFieldsContact( c, sc, cOtherNames.get(c.Id), cOtherNamesInsert)) {
 				cToUpdate.add( c );
-				scToUpdate.add( scGroup[0] );
+				scToUpdate.put(c.Id, sc);
 			}
 
 			// Check to update Account Primary Contact
-			if (scGroup[0].C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
+			if (sc.C501_Primary_Contact__c && c.Account.npe01__One2OneContact__c != c.Id) {
 				c.Account.npe01__One2OneContact__c = c.Id;
 				if (!aToUpdate.containsKey(c.Account.Id)) {
 					aToUpdate.put( c.Account.Id, c.Account );
@@ -87,28 +91,36 @@ public with sharing class C501_TriggerHelper {
 		if (!cToUpdate.isEmpty())
 			update cToUpdate;
 
-		if (!scToUpdate.isEmpty())
-			update scToUpdate;
-
 		if (!aToUpdate.values().isEmpty())
 			update aToUpdate.values();
 
 		if (!cOtherNamesInsert.isEmpty()) {
 			insert cOtherNamesInsert;
 		}
+
+		for (C501_Service_Contact__c sc :scList) {
+			if (scToUpdate.containsKey(sc.C501_Contact__c)) {
+				C501_Service_Contact__c scUpdate = scToUpdate.get(sc.C501_Contact__c);
+				sc.C501_FirstName_Initial__c = scUpdate.C501_FirstName_Initial__c;
+			}
+		}
 	}
 
 	public void updateAggregateHousehold( list<C501_Service_Household__c> shList, map<id, C501_Service_Household__c> oldMap, Boolean isDelete ) {
 
-		map<id, list<C501_Service_Household__c>> triggerSHMap = new map<id, list<C501_Service_Household__c>>();
+		map<id, C501_Service_Household__c> triggerSHMap = new map<id, C501_Service_Household__c>();
 		
 		if ( shList != null ) {
-			// Avoid SOQL query limits by collecting all the required info in the trigger from a single SOQL call
+
 			for ( C501_Service_Household__c sh :shList ) {
+				// Save most recent Service Contact as the master for updating contact
 				if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
-					triggerSHMap.put(sh.C501_Household__c, new list<C501_Service_Household__c>{ sh });
+					triggerSHMap.put(sh.C501_Household__c, sh);
 				} else {
-					triggerSHMap.get(sh.C501_Household__c).add(sh);
+					if (sh.CreatedDate > triggerSHMap.get(sh.C501_Household__c).CreatedDate) {
+						triggerSHMap.remove(sh.C501_Household__c);
+						triggerSHMap.put(sh.C501_Household__c, sh);
+					}
 
 					// ToDo - Handle Merge Logic Household
 					// handleMergeAccount();
@@ -129,7 +141,7 @@ public with sharing class C501_TriggerHelper {
 					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c, C501_Case_Worker__c
 					from Account where id in : triggerSHMap.keyset()] ) {
 
-			list<C501_Service_Household__c> shGroup = triggerSHMap.get( hh.Id );
+			C501_Service_Household__c sh = triggerSHMap.get( hh.Id );
 
 			if (isDelete) {
 				// ToDo - Add Delete Support - maybe just a no action since probably delete is just triggered by automation
@@ -137,7 +149,7 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Copy Fields and add to update if successful 
-			if (copyFieldsAccount( hh, shGroup[0] ))
+			if (copyFieldsAccount( hh, sh ))
 				hhToUpdate.add( hh );
 		}
 
