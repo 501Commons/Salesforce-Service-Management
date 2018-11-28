@@ -326,6 +326,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>C501_Service_Contact__c.C501_FirstName_Initial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>C501_Service_Contact__c.C501_First_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -866,11 +871,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>C501_Service_Contact__c.C501_FirstName_Initial__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Contact.C501_HIV_AIDS__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1060,7 +1060,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>C501_Service_Household__c.C501_Service_Household</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

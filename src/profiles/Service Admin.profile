@@ -326,6 +326,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>C501_Service_Contact__c.C501_FirstName_Initial__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>C501_Service_Contact__c.C501_First_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -862,11 +867,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.C501_FirstName_Initial__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>C501_Service_Contact__c.C501_FirstName_Initial__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
