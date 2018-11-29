@@ -9,6 +9,10 @@ public with sharing class C501_TriggerHelper {
 
 	public void onChangeContact( list<Contact> cList, map<id, Contact> oldMap, Boolean isDelete ) {
 		
+		if ( cList == null || cList.isEmpty()) {
+			return;
+		}
+
 		List<Contact> contacts = new List<Contact>();
 		Set<Id> accountIds = new Set<Id>();
 		for (Contact contact :cList) {
@@ -106,7 +110,11 @@ public with sharing class C501_TriggerHelper {
 	}
 
 	public void onChangeAccount( list<Account> aList, map<id, Account> oldMap, Boolean isDelete ) {
-		
+
+		if ( aList == null || aList.isEmpty()) {
+			return;
+		}
+
 		List<Account> accounts = new List<Account>();
 		for (Account account :aList) {
 			if (account.C501_Trigger_Ignore_Change__c) {
@@ -154,23 +162,25 @@ public with sharing class C501_TriggerHelper {
 
 	public void updateAggregateContact( list<C501_Service_Contact__c> scList, map<id, C501_Service_Contact__c> oldMap, Boolean isDelete ) {
 
+		if ( scList == null || scList.isEmpty()) {
+			return;
+		}
+
 		map<String, C501_Service_Contact__c> triggerSCMap = new map<String, C501_Service_Contact__c>();
 		
-		if ( scList != null ) {
-			for ( C501_Service_Contact__c sc :scList ) {
+		for ( C501_Service_Contact__c sc :scList ) {
 
-				if (sc.C501_Trigger_Ignore_Change__c) {
-					sc.C501_Trigger_Ignore_Change__c = false;
-				}
-				else {
-					// Save most recent Service Contact as the master for updating contact
-					if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
+			if (sc.C501_Trigger_Ignore_Change__c) {
+				sc.C501_Trigger_Ignore_Change__c = false;
+			}
+			else {
+				// Save most recent Service Contact as the master for updating contact
+				if (!triggerSCMap.containsKey(sc.C501_Contact__c)) {
+					triggerSCMap.put(sc.C501_Contact__c, sc);
+				} else {
+					if (sc.CreatedDate > triggerSCMap.get(sc.C501_Contact__c).CreatedDate) {
+						triggerSCMap.remove(sc.C501_Contact__c);
 						triggerSCMap.put(sc.C501_Contact__c, sc);
-					} else {
-						if (sc.CreatedDate > triggerSCMap.get(sc.C501_Contact__c).CreatedDate) {
-							triggerSCMap.remove(sc.C501_Contact__c);
-							triggerSCMap.put(sc.C501_Contact__c, sc);
-						}
 					}
 				}
 			}
@@ -262,27 +272,28 @@ public with sharing class C501_TriggerHelper {
 
 	public void updateAggregateHousehold( list<C501_Service_Household__c> shList, map<id, C501_Service_Household__c> oldMap, Boolean isDelete ) {
 
+		if ( shList == null || shList.isEmpty()) {
+			return;
+		}
+
 		map<id, C501_Service_Household__c> triggerSHMap = new map<id, C501_Service_Household__c>();
 		
-		if ( shList != null ) {
-
-			for ( C501_Service_Household__c sh :shList ) {
-				if (sh.C501_Trigger_Ignore_Change__c) {
-					sh.C501_Trigger_Ignore_Change__c = false;
-				}
-				else {
-					// Save most recent Service Contact as the master for updating contact
-					if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
+		for ( C501_Service_Household__c sh :shList ) {
+			if (sh.C501_Trigger_Ignore_Change__c) {
+				sh.C501_Trigger_Ignore_Change__c = false;
+			}
+			else {
+				// Save most recent Service Contact as the master for updating contact
+				if (!triggerSHMap.containsKey(sh.C501_Household__c)) {
+					triggerSHMap.put(sh.C501_Household__c, sh);
+				} else {
+					if (sh.CreatedDate > triggerSHMap.get(sh.C501_Household__c).CreatedDate) {
+						triggerSHMap.remove(sh.C501_Household__c);
 						triggerSHMap.put(sh.C501_Household__c, sh);
-					} else {
-						if (sh.CreatedDate > triggerSHMap.get(sh.C501_Household__c).CreatedDate) {
-							triggerSHMap.remove(sh.C501_Household__c);
-							triggerSHMap.put(sh.C501_Household__c, sh);
-						}
-
-						// ToDo - Handle Merge Logic Household
-						// handleMergeAccount();
 					}
+
+					// ToDo - Handle Merge Logic Household
+					// handleMergeAccount();
 				}
 			}
 		}
