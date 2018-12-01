@@ -608,6 +608,11 @@
                     <default>false</default>
                     <label>Institution</label>
                 </value>
+                <value>
+                    <fullName>NP Over 30</fullName>
+                    <default>false</default>
+                    <label>NP Over 30</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -1314,6 +1319,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>NP Over 30</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>NP Over 60</fullName>
                 <default>false</default>
             </values>
@@ -1733,6 +1742,10 @@
             </values>
             <values>
                 <fullName>Left Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NP Over 30</fullName>
                 <default>false</default>
             </values>
             <values>
