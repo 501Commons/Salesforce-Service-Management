@@ -593,6 +593,21 @@
                     <default>false</default>
                     <label>Housing Lab</label>
                 </value>
+                <value>
+                    <fullName>NP Over 60</fullName>
+                    <default>false</default>
+                    <label>NP Over 60</label>
+                </value>
+                <value>
+                    <fullName>Case Management</fullName>
+                    <default>false</default>
+                    <label>Case Management</label>
+                </value>
+                <value>
+                    <fullName>Institution</fullName>
+                    <default>false</default>
+                    <label>Institution</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -1243,6 +1258,10 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Change in Household Makeup</fullName>
                 <default>false</default>
             </values>
@@ -1283,11 +1302,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Institution</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Jail%2FPrison</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Left Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NP Over 60</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1653,6 +1680,10 @@
         <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Change in Household Makeup</fullName>
                 <default>false</default>
             </values>
@@ -1693,11 +1724,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Institution</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Jail%2FPrison</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Left Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NP Over 60</fullName>
                 <default>false</default>
             </values>
             <values>
