@@ -13,6 +13,11 @@ public with sharing class C501_TriggerHelper {
 			return;
 		}
 
+		// TBD - for now ignore deletes
+		if (isDelete) {
+			return;
+		}
+
 		List<Contact> contacts = new List<Contact>();
 		Set<Id> accountIds = new Set<Id>();
 		for (Contact contact :cList) {
@@ -50,8 +55,10 @@ public with sharing class C501_TriggerHelper {
 			);
 
 			if (accounts.containsKey(contact.AccountId)) {
-				copyFieldsAccount2ServiceAccount(accounts.get(contact.AccountId), serviceHousehold);
-				insertServiceHouseholds.add(serviceHousehold);
+				// Check to make sure monitored contact field changed
+				if (copyFieldsContact2ServiceContact(contact, oldMap.get(contact.Id), new C501_Service_Contact__c())) {
+					insertServiceHouseholds.add(serviceHousehold);
+				}
 			}
 		}
 
@@ -77,19 +84,23 @@ public with sharing class C501_TriggerHelper {
 		List<C501_Service_Contact__c> insertServiceContacts = new List<C501_Service_Contact__c>();
 		for (contact contact :contacts) {
 
-			C501_Service_Household__c serviceHousehold = serviceHouseholds.get(contact.AccountId);
+			if (serviceHouseholds.containsKey(contact.AccountId)) {
 
-			C501_Service_Contact__c serviceContact = new C501_Service_Contact__c (
-				Name = contact.LastName,
-				C501_Service_Id__c = serviceHousehold.C501_Service_Id__c,
-				C501_Contact__c = contact.Id,
-				C501_Contact_Id__c = 'TEMP: ' + contact.Id,
-				C501_Service_Household_Id__c = serviceHousehold.Id,
-				C501_Trigger_Ignore_Change__c = true
-			);
+				C501_Service_Household__c serviceHousehold = serviceHouseholds.get(contact.AccountId);
 
-			copyFieldsContact2ServiceContact(contact, serviceContact);
-			insertServiceContacts.add(serviceContact);
+				C501_Service_Contact__c serviceContact = new C501_Service_Contact__c (
+					Name = contact.LastName,
+					C501_Service_Id__c = serviceHousehold.C501_Service_Id__c,
+					C501_Contact__c = contact.Id,
+					C501_Contact_Id__c = 'TEMP: ' + contact.Id,
+					C501_Service_Household_Id__c = serviceHousehold.Id,
+					C501_Trigger_Ignore_Change__c = true
+				);
+
+				if (copyFieldsContact2ServiceContact(contact, oldMap.get(contact.Id), serviceContact)) {
+					insertServiceContacts.add(serviceContact);
+				}
+			}
 		}
 
 		if (!insertServiceContacts.isEmpty()) {
@@ -115,6 +126,21 @@ public with sharing class C501_TriggerHelper {
 			return;
 		}
 
+		// TBD - for now ignore deletes
+		if (isDelete) {
+			return;
+		}
+
+		// Output Info
+
+		for (Account account :aList) {
+			system.debug('***** C501_TriggerHelper::onChangeAccount aList: ' + String.valueOf(account));
+		}
+		for (Account account :oldMap.values()) {
+			system.debug('***** C501_TriggerHelper::onChangeAccount oldMap: ' + String.valueOf(account));
+		}
+
+
 		List<Account> accounts = new List<Account>();
 		for (Account account :aList) {
 			if (account.C501_Trigger_Ignore_Change__c) {
@@ -139,8 +165,9 @@ public with sharing class C501_TriggerHelper {
 				C501_Trigger_Ignore_Change__c = true
 			);
 
-			copyFieldsAccount2ServiceAccount(account, serviceHousehold);
-			insertServiceHouseholds.add(serviceHousehold);
+			if (copyFieldsAccount2ServiceAccount(account, oldMap.get(account.Id), serviceHousehold)) {
+				insertServiceHouseholds.add(serviceHousehold);
+			}
 		}
 
 		if (!insertServiceHouseholds.isEmpty()) {
@@ -627,44 +654,91 @@ public with sharing class C501_TriggerHelper {
 		return updateRecord;
 	}
 
-	private void copyFieldsContact2ServiceContact( Contact c, C501_Service_Contact__c sc) {
+	private Boolean copyFieldsContact2ServiceContact( Contact c, Contact cOld, C501_Service_Contact__c sc) {
 
-		sc.C501_First_Name__c = c.FirstName;
-		sc.C501_FirstName_Initial__c = c.C501_FirstName_Initial__c;
-		sc.C501_Last_Name__c = c.LastName;
-		sc.C501_Middle_Name__c = c.MiddleName;
-		sc.C501_Birthdate__c = c.Birthdate;
-		sc.C501_Is_In_Household__c = c.C501_Is_In_Household__c;
-		sc.C501_Partial_Social_Security_Id__c = c.C501_Partial_Social_Security_Id__c;
-		sc.C501_Order__c = c.C501_Order__c;
-		sc.C501_Age__c = c.C501_Age__c;
-		sc.C501_Military_Status__c = c.C501_Military_Status__c;
-		sc.C501_Disabling_Condition_Special_Needs__c = c.C501_Disabling_Condition_Special_Needs__c;
-		sc.C501_Education_Level__c = c.C501_Education_Level__c;
-		sc.C501_Developmental_Disability__c = c.C501_Developmental_Disability__c;
-		sc.C501_Medicare__c = c.C501_Medicare__c;
-		sc.C501_Medicaid__c = c.C501_Medicaid__c;
-		sc.C501_Health_Insurance__c = c.C501_Health_Insurance__c;
-		sc.C501_Race__c = c.C501_Race__c;
-		sc.C501_Ethnicity__c = c.C501_Ethnicity__c;
-		sc.C501_Gender__c = c.Gender__c;
-		sc.C501_Preferred_Language__c = c.C501_Preferred_Language__c;
-		sc.C501_Additional_Languages__c = c.C501_Additional_Languages__c;
-		sc.C501_Work_Status__c = c.C501_Work_Status__c;
-		sc.C501_Case_Worker__c = c.C501_Case_Worker__c;
+		// Check for Change Request monitored field
+		if (c.FirstName != cOld.FirstName
+			|| c.C501_FirstName_Initial__c != c.C501_FirstName_Initial__c
+			|| c.LastName != c.LastName
+			|| c.MiddleName != c.MiddleName
+			|| c.Birthdate != c.Birthdate
+			|| c.C501_Is_In_Household__c != c.C501_Is_In_Household__c
+			|| c.C501_Partial_Social_Security_Id__c != c.C501_Partial_Social_Security_Id__c
+			|| c.C501_Order__c != c.C501_Order__c
+			|| c.C501_Age__c != c.C501_Age__c
+			|| c.C501_Military_Status__c != c.C501_Military_Status__c
+			|| c.C501_Disabling_Condition_Special_Needs__c != c.C501_Disabling_Condition_Special_Needs__c
+			|| c.C501_Education_Level__c != c.C501_Education_Level__c
+			|| c.C501_Developmental_Disability__c != c.C501_Developmental_Disability__c
+			|| c.C501_Medicare__c != c.C501_Medicare__c
+			|| c.C501_Medicaid__c != c.C501_Medicaid__c
+			|| c.C501_Health_Insurance__c != c.C501_Health_Insurance__c
+			|| c.C501_Race__c != c.C501_Race__c
+			|| c.C501_Ethnicity__c != c.C501_Ethnicity__c
+			|| c.Gender__c != c.Gender__c
+			|| c.C501_Preferred_Language__c != c.C501_Preferred_Language__c
+			|| c.C501_Additional_Languages__c != c.C501_Additional_Languages__c
+			|| c.C501_Work_Status__c != c.C501_Work_Status__c
+			|| c.C501_Case_Worker__c != c.C501_Case_Worker__c) {
+
+			sc.C501_First_Name__c = c.FirstName;
+			sc.C501_FirstName_Initial__c = c.C501_FirstName_Initial__c;
+			sc.C501_Last_Name__c = c.LastName;
+			sc.C501_Middle_Name__c = c.MiddleName;
+			sc.C501_Birthdate__c = c.Birthdate;
+			sc.C501_Is_In_Household__c = c.C501_Is_In_Household__c;
+			sc.C501_Partial_Social_Security_Id__c = c.C501_Partial_Social_Security_Id__c;
+			sc.C501_Order__c = c.C501_Order__c;
+			sc.C501_Age__c = c.C501_Age__c;
+			sc.C501_Military_Status__c = c.C501_Military_Status__c;
+			sc.C501_Disabling_Condition_Special_Needs__c = c.C501_Disabling_Condition_Special_Needs__c;
+			sc.C501_Education_Level__c = c.C501_Education_Level__c;
+			sc.C501_Developmental_Disability__c = c.C501_Developmental_Disability__c;
+			sc.C501_Medicare__c = c.C501_Medicare__c;
+			sc.C501_Medicaid__c = c.C501_Medicaid__c;
+			sc.C501_Health_Insurance__c = c.C501_Health_Insurance__c;
+			sc.C501_Race__c = c.C501_Race__c;
+			sc.C501_Ethnicity__c = c.C501_Ethnicity__c;
+			sc.C501_Gender__c = c.Gender__c;
+			sc.C501_Preferred_Language__c = c.C501_Preferred_Language__c;
+			sc.C501_Additional_Languages__c = c.C501_Additional_Languages__c;
+			sc.C501_Work_Status__c = c.C501_Work_Status__c;
+			sc.C501_Case_Worker__c = c.C501_Case_Worker__c;
+
+			return true;
+		}
+
+		return false;
 	}
 
-	private void copyFieldsAccount2ServiceAccount( Account hh, C501_Service_Household__c sh) {
+	private Boolean copyFieldsAccount2ServiceAccount( Account hh, Account hhOld, C501_Service_Household__c sh) {
 
-		sh.C501_BillingStreet__c = hh.BillingStreet;
-		sh.C501_BillingCity__c = hh.BillingCity;
-		sh.C501_BillingState__c = hh.BillingState;
-		sh.C501_BillingPostalCode__c = hh.BillingPostalCode;
-		sh.C501_ShippingStreet__c = hh.ShippingStreet;
-		sh.C501_ShippingCity__c = hh.ShippingCity;
-		sh.C501_ShippingState__c = hh.ShippingState;
-		sh.C501_ShippingPostalCode__c = hh.ShippingPostalCode;
-		sh.C501_Phone__c = hh.Phone;
-		sh.C501_Other_Phone__c = hh.npo02__HouseholdPhone__c;
+		// Check for Change Request monitored field
+		if (hh.BillingStreet != hhOld.BillingStreet
+			|| hh.BillingCity != hhOld.BillingCity
+			|| hh.BillingState != hhOld.BillingState
+			|| hh.BillingPostalCode != hhOld.BillingPostalCode
+			|| hh.ShippingStreet != hhOld.ShippingStreet
+			|| hh.ShippingCity != hhOld.ShippingCity
+			|| hh.ShippingState != hhOld.ShippingState
+			|| hh.ShippingPostalCode != hhOld.ShippingPostalCode
+			|| hh.Phone != hhOld.Phone
+			|| hh.npo02__HouseholdPhone__c != hhOld.npo02__HouseholdPhone__c) {
+
+			sh.C501_BillingStreet__c = hh.BillingStreet;
+			sh.C501_BillingCity__c = hh.BillingCity;
+			sh.C501_BillingState__c = hh.BillingState;
+			sh.C501_BillingPostalCode__c = hh.BillingPostalCode;
+			sh.C501_ShippingStreet__c = hh.ShippingStreet;
+			sh.C501_ShippingCity__c = hh.ShippingCity;
+			sh.C501_ShippingState__c = hh.ShippingState;
+			sh.C501_ShippingPostalCode__c = hh.ShippingPostalCode;
+			sh.C501_Phone__c = hh.Phone;
+			sh.C501_Other_Phone__c = hh.npo02__HouseholdPhone__c;
+
+			return true;
+		}
+
+		return false;
 	}
 }
