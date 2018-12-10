@@ -806,6 +806,12 @@
                     <label>Bus Pass (Daily)</label>
                 </value>
                 <value>
+                    <fullName>Childcare</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Childcare</label>
+                </value>
+                <value>
                     <fullName>Coordinated Entry</fullName>
                     <default>false</default>
                     <label>Coordinated Entry</label>
@@ -831,6 +837,12 @@
                     <label>Dump Pass</label>
                 </value>
                 <value>
+                    <fullName>Early Head Start</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Early Head Start</label>
+                </value>
+                <value>
                     <fullName>Early Learning</fullName>
                     <default>false</default>
                     <label>Early Learning</label>
@@ -839,6 +851,12 @@
                     <fullName>ECEAP</fullName>
                     <default>false</default>
                     <label>ECEAP</label>
+                </value>
+                <value>
+                    <fullName>Emergency Child Care Voucher</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Emergency Child Care Voucher</label>
                 </value>
                 <value>
                     <fullName>Emergency Food Box</fullName>
@@ -901,6 +919,11 @@
                     <label>Home Improvement</label>
                 </value>
                 <value>
+                    <fullName>Homeless Verification Form Given to Client</fullName>
+                    <default>false</default>
+                    <label>Homeless Verification Form Given to Client</label>
+                </value>
+                <value>
                     <fullName>Housing Assessment</fullName>
                     <default>false</default>
                     <label>Housing Assessment</label>
@@ -951,6 +974,12 @@
                     <label>Other</label>
                 </value>
                 <value>
+                    <fullName>Other Early Learning</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other Early Learning</label>
+                </value>
+                <value>
                     <fullName>Other Legal</fullName>
                     <default>false</default>
                     <label>Other Legal</label>
@@ -974,6 +1003,12 @@
                     <fullName>Salvation Army Voucher</fullName>
                     <default>false</default>
                     <label>Salvation Army Voucher</label>
+                </value>
+                <value>
+                    <fullName>SEAS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SEAS</label>
                 </value>
                 <value>
                     <fullName>Shower Pass</fullName>
@@ -1525,6 +1560,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Homeless Verification Form Given to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Housing Assessment</fullName>
                 <default>false</default>
             </values>
@@ -1955,6 +1994,10 @@
             </values>
             <values>
                 <fullName>Home Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeless Verification Form Given to Client</fullName>
                 <default>false</default>
             </values>
             <values>
