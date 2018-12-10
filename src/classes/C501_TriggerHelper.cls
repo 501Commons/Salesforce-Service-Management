@@ -45,9 +45,8 @@ public with sharing class C501_TriggerHelper {
 		for (Contact contact :contacts) {
 
 			C501_Service_Household__c serviceHousehold = new C501_Service_Household__c (
-				Name = 'Information & Referral (Change Request)',
+				Name = 'Change Request by ' + UserInfo.getName(),
 				C501_Service_Id__c = 'TEMP:' + contact.AccountId,
-				C501_Program__c = 'Information & Referral',
 				C501_Household__c = contact.AccountId,
 				C501_Start_Date__c = date.today(),
 				C501_End_Date__c = date.today(),
@@ -89,7 +88,7 @@ public with sharing class C501_TriggerHelper {
 				C501_Service_Household__c serviceHousehold = serviceHouseholds.get(contact.AccountId);
 
 				C501_Service_Contact__c serviceContact = new C501_Service_Contact__c (
-					Name = contact.LastName,
+					Name = 'Change Request by ' + UserInfo.getName(),
 					C501_Service_Id__c = serviceHousehold.C501_Service_Id__c,
 					C501_Contact__c = contact.Id,
 					C501_Contact_Id__c = 'TEMP: ' + contact.Id,
@@ -156,9 +155,8 @@ public with sharing class C501_TriggerHelper {
 		for (Account account :accounts) {
 
 			C501_Service_Household__c serviceHousehold = new C501_Service_Household__c (
-				Name = 'Information & Referral (Change Request)',
+				Name = 'Change Request by ' + UserInfo.getName(),
 				C501_Service_Id__c = 'TEMP:' + account.Id,
-				C501_Program__c = 'Information & Referral',
 				C501_Household__c = account.Id,
 				C501_Start_Date__c = date.today(),
 				C501_End_Date__c = date.today(),

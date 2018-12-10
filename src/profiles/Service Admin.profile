@@ -551,6 +551,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>C501_Service_Household__c.C501_Created_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>C501_Service_Household__c.C501_Current_Address_Move_In_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -622,6 +627,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>C501_Service_Household__c.C501_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>C501_Service_Household__c.C501_Location__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

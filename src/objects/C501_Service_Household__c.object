@@ -156,6 +156,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>C501_Created_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Created By</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Current_Address_Move_In_Year__c</fullName>
         <externalId>false</externalId>
         <label>Current Address Move In Year</label>
@@ -436,6 +446,35 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>C501_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bellingham</fullName>
+                    <default>false</default>
+                    <label>Bellingham</label>
+                </value>
+                <value>
+                    <fullName>East Whatcom</fullName>
+                    <default>false</default>
+                    <label>East Whatcom</label>
+                </value>
+                <value>
+                    <fullName>Island</fullName>
+                    <default>false</default>
+                    <label>Island</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>C501_NonCash_Income_Unknown__c</fullName>
@@ -1261,6 +1300,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>C501_Location__c</picklist>
+            <values>
+                <fullName>Bellingham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Whatcom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Island</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>C501_Outcomes__c</picklist>
             <values>
                 <fullName>Case Management</fullName>
@@ -1683,6 +1737,21 @@
             </values>
             <values>
                 <fullName>Unknown%2FNot Reported</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C501_Location__c</picklist>
+            <values>
+                <fullName>Bellingham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Whatcom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Island</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
