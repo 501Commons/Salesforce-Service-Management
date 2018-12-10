@@ -926,11 +926,6 @@
                     <label>Home Improvement</label>
                 </value>
                 <value>
-                    <fullName>Housing</fullName>
-                    <default>false</default>
-                    <label>Housing</label>
-                </value>
-                <value>
                     <fullName>Kinship</fullName>
                     <default>false</default>
                     <label>Kinship</label>
@@ -1539,10 +1534,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Housing</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Housing Intake</fullName>
                 <default>false</default>
             </values>
@@ -1977,10 +1968,6 @@
             </values>
             <values>
                 <fullName>Home Improvement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Housing</fullName>
                 <default>false</default>
             </values>
             <values>
