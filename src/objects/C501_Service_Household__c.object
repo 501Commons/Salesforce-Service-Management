@@ -976,11 +976,6 @@
                     <label>Youth Programs</label>
                 </value>
                 <value>
-                    <fullName>Bus Pass</fullName>
-                    <default>false</default>
-                    <label>Bus Pass</label>
-                </value>
-                <value>
                     <fullName>Diapers</fullName>
                     <default>false</default>
                     <label>Diapers</label>
@@ -999,6 +994,11 @@
                     <fullName>Shower Pass</fullName>
                     <default>false</default>
                     <label>Shower Pass</label>
+                </value>
+                <value>
+                    <fullName>Bus Pass (Daily)</fullName>
+                    <default>false</default>
+                    <label>Bus Pass (Daily)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1451,7 +1451,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Bus Pass</fullName>
+                <fullName>Bus Pass %28Daily%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1892,7 +1892,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Bus Pass</fullName>
+                <fullName>Bus Pass %28Daily%29</fullName>
                 <default>false</default>
             </values>
             <values>
