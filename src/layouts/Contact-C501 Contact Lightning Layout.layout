@@ -104,6 +104,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>C501_Birthdate_Searchable__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>C501_Age_Calculate__c</field>
             </layoutItems>
             <layoutItems>
