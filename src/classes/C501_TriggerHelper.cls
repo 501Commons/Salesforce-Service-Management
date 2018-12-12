@@ -238,7 +238,8 @@ public with sharing class C501_TriggerHelper {
 					Account.Id, Account.npe01__One2OneContact__c,
 					AccountId, Id, Name,
 					FirstName, LastName, MiddleName, C501_FirstName_Initial__c,
-					Birthdate, C501_Partial_Social_Security_Id__c, C501_Order__c,
+					Birthdate, C501_IS_Birthdate_Searchable__c, C501_IS_Other_Names_Searchable__c,
+					C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
@@ -255,7 +256,9 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Copy Fields and add to update if successful 
-			if (copyFieldsContact( c, sc, cOtherNames.get(c.Id), cOtherNamesInsert)) {
+			if (copyFieldsContact( c, sc,
+				cOtherNames.containsKey(c.Id) ? cOtherNames.get(c.Id) : new List<String>(),
+				cOtherNamesInsert)) {
 
 				// Set flag so contact trigger does not process the change
 				c.C501_Trigger_Ignore_Change__c = true;
@@ -509,7 +512,7 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Check to create other name records
-			if (otherNames == null || !otherNames.contains(sc.C501_First_Name__c)) {
+			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_First_Name__c)) {
 				cOtherNamesInsert.add(
 					new C501_Other_Name__c (
 						C501_Contact__c = c.Id,
@@ -519,7 +522,7 @@ public with sharing class C501_TriggerHelper {
 				));
 			}
 
-			if (otherNames == null || !otherNames.contains(sc.C501_Nickname__c)) {
+			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Nickname__c)) {
 				cOtherNamesInsert.add(
 					new C501_Other_Name__c (
 						C501_Contact__c = c.Id,
@@ -552,7 +555,7 @@ public with sharing class C501_TriggerHelper {
 			}
 
 			// Check to create other name records
-			if (otherNames == null || !otherNames.contains(sc.C501_Last_Name__c)) {
+			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Last_Name__c)) {
 				cOtherNamesInsert.add(
 					new C501_Other_Name__c (
 						C501_Contact__c = c.Id,
@@ -561,7 +564,7 @@ public with sharing class C501_TriggerHelper {
 						C501_Start_Date__c = date.today()
 				));
 			}
-			if (otherNames == null || !otherNames.contains(sc.C501_Last_Name_Other__c)) {
+			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Last_Name_Other__c)) {
 				cOtherNamesInsert.add(
 					new C501_Other_Name__c (
 						C501_Contact__c = c.Id,
@@ -577,6 +580,19 @@ public with sharing class C501_TriggerHelper {
 				c.LastName = sc.C501_Last_Name__c;
 			}
 		}
+
+		String searchableOtherNames = '';
+		for (String otherName :otherNames) {
+			searchableOtherNames += OtherName + ' ';
+		}
+		for (C501_Other_Name__c otherName :cOtherNamesInsert) {
+			searchableOtherNames += OtherName.C501_Other_Name__c + ' ';
+		}
+		if (c.C501_IS_Other_Names_Searchable__c != searchableOtherNames) {
+			updateRecord = true;
+			c.C501_IS_Other_Names_Searchable__c = searchableOtherNames;
+		}
+
 		if (c.MiddleName != sc.C501_Middle_Name__c) {
 			updateRecord = true;
 			c.MiddleName = sc.C501_Middle_Name__c;
@@ -585,7 +601,7 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.Birthdate = sc.C501_Birthdate__c;
 		}
-		if (c.Birthdate.format() != c.C501_IS_Birthdate_Searchable__c) {
+		if (c.Birthdate != null && c.Birthdate.format() != c.C501_IS_Birthdate_Searchable__c) {
 			updateRecord = true;
 			c.C501_IS_Birthdate_Searchable__c = c.Birthdate.format();
 		}

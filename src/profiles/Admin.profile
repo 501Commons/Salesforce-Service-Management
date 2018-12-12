@@ -921,6 +921,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.C501_IS_Other_Names_Searchable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.C501_Immigration_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -323,6 +323,16 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>C501_IS_Other_Names_Searchable__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Names Searchable</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>C501_Immigration_Status__c</fullName>
         <description>CoreId</description>
         <externalId>false</externalId>
