@@ -188,9 +188,9 @@
         <members>Contact.C501_Additional_Languages__c</members>
         <members>Contact.C501_Age_Calculate__c</members>
         <members>Contact.C501_Age__c</members>
+        <members>Contact.C501_IS_Other_Names_Searchable</members>
         <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
         <members>Contact.C501_Asian__c</members>
-        <members>Contact.C501_Birthdate_Searchable__c</members>
         <members>Contact.C501_Black_or_African_American__c</members>
         <members>Contact.C501_Case_Worker__c</members>
         <members>Contact.C501_Chronic_Health_Condition__c</members>
@@ -208,6 +208,7 @@
         <members>Contact.C501_HIV_AIDS__c</members>
         <members>Contact.C501_Has_Social_Security_Number__c</members>
         <members>Contact.C501_Health_Insurance__c</members>
+        <members>Contact.C501_IS_Birthdate_Searchable__c</members>
         <members>Contact.C501_Immigration_Status__c</members>
         <members>Contact.C501_Insurance_Unknown_Not_Reported__c</members>
         <members>Contact.C501_Is_In_Household__c</members>

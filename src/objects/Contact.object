@@ -68,16 +68,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>C501_Birthdate_Searchable__c</fullName>
-        <externalId>false</externalId>
-        <formula>SUBSTITUTE(TEXT(Birthdate), &quot;-&quot;, &quot; &quot;)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Birthdate Searchable</label>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>C501_Black_or_African_American__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Race picklist</description>
@@ -321,6 +311,16 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
             <restricted>true</restricted>
             <valueSetName>Y_N_U</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>C501_IS_Birthdate_Searchable__c</fullName>
+        <externalId>false</externalId>
+        <label>Birthdate Searchable</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>C501_Immigration_Status__c</fullName>

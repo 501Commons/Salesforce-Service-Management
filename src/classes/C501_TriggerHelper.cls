@@ -585,6 +585,10 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.Birthdate = sc.C501_Birthdate__c;
 		}
+		if (c.Birthdate.format() != c.C501_IS_Birthdate_Searchable__c) {
+			updateRecord = true;
+			c.C501_IS_Birthdate_Searchable__c = c.Birthdate.format();
+		}
 		if (c.C501_Is_In_Household__c != sc.C501_Is_In_Household__c) {
 			updateRecord = true;
 			c.C501_Is_In_Household__c = sc.C501_Is_In_Household__c;
