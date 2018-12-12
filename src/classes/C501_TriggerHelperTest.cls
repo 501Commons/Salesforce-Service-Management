@@ -72,10 +72,10 @@ public with sharing class C501_TriggerHelperTest {
 
 		// Call update to execute trigger
 		sc.C501_Last_Name__c = 'C501_Service_Contact__c.C501_Last_Name__c';
-		sc.C501_Nickname__c = 'C501_Service_Contact__c.C501_Nickname__c';
+		sc.C501_Nickname__c = 'NickName';
 		sc.C501_First_Name__c = 'C501_Service_Contact__c.C501_First_Name__c';
 		sc.C501_FirstName_Initial__c = 'C';
-		sc.C501_Last_Name_Other__c = 'C501_Service_Contact__c.C501_Last_Name_Other__c';
+		sc.C501_Last_Name_Other__c = 'OtherLastName';
 		sc.C501_Last_Name__c = 'C501_Service_Contact__c.C501_Last_Name__c';
 		sc.C501_Middle_Name__c = 'C501_Middle_Name__c';
 		sc.C501_Birthdate__c = date.today();

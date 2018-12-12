@@ -590,7 +590,7 @@ public with sharing class C501_TriggerHelper {
 		}
 		if (c.C501_IS_Other_Names_Searchable__c != searchableOtherNames) {
 			updateRecord = true;
-			c.C501_IS_Other_Names_Searchable__c = searchableOtherNames;
+			c.C501_IS_Other_Names_Searchable__c = searchableOtherNames.left(128);
 		}
 
 		if (c.MiddleName != sc.C501_Middle_Name__c) {
