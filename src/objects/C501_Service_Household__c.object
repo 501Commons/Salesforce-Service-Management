@@ -839,7 +839,6 @@
                 <value>
                     <fullName>Early Head Start</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>Early Head Start</label>
                 </value>
                 <value>
@@ -1508,6 +1507,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Early Head Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Early Learning</fullName>
                 <default>false</default>
             </values>
@@ -1942,6 +1945,10 @@
             </values>
             <values>
                 <fullName>ECEAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Head Start</fullName>
                 <default>false</default>
             </values>
             <values>
