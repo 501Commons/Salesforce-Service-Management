@@ -338,6 +338,9 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>C501_First_Name__c</fields>
+        <fields>C501_Birthdate__c</fields>
+        <fields>C501_Gender__c</fields>
         <fields>C501_Order__c</fields>
         <relatedList>C501_Service_Contact__c.C501_Service_Household_Id__c</relatedList>
         <sortField>C501_Order__c</sortField>
