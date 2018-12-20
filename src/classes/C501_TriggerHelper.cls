@@ -13,6 +13,13 @@ public with sharing class C501_TriggerHelper {
 			return;
 		}
 
+		// Ignore if more than 1 change record which means import action or change request by db.* user which is an automation user (exception if unit test execution)
+		if ((cList.size() > 1 ||
+			(UserInfo.getName() <> null) ? UserInfo.getName().contains('db.') : false)
+			&& !cList[0].LastName.contains('C501_TriggerHelperTest')) {
+			return;
+		}
+
 		// TBD - for now ignore deletes
 		if (isDelete) {
 			return;
@@ -122,6 +129,13 @@ public with sharing class C501_TriggerHelper {
 	public void onChangeAccount( list<Account> aList, map<id, Account> oldMap, Boolean isDelete ) {
 
 		if ( aList == null || aList.isEmpty()) {
+			return;
+		}
+
+		// Ignore if more than 1 change record which means import action or change request by db.* user which is an automation user (exception if unit test execution)
+		if ((aList.size() > 1 ||
+			(UserInfo.getName() <> null) ? UserInfo.getName().contains('db.') : false)
+			&& !aList[0].Name.contains('C501_TriggerHelperTest')) {
 			return;
 		}
 

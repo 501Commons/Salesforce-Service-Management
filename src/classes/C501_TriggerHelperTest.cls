@@ -5,13 +5,13 @@ public with sharing class C501_TriggerHelperTest {
 	private static void testTriggers() {
 
 		Account hh = new Account (
-			Name = 'Account.Name',
+			Name = 'C501_TriggerHelperTest',
 			C501_Service_Id__c = 'sh1'
 		);
 		insert hh;
 
 		Contact c = new Contact(
-			LastName = 'Contact.LastName',
+			LastName = 'C501_TriggerHelperTest',
 			C501_Contact_Id__c = 'sc1',
 			C501_Service_Id__c = hh.C501_Service_Id__c,
 			AccountId = hh.Id
