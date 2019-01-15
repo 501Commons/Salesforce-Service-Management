@@ -8,6 +8,7 @@
     <types>
         <members>C501AccountTrigger</members>
         <members>C501ContactTrigger</members>
+        <members>C501OtherNameTrigger</members>
         <members>C501ServiceContactTrigger</members>
         <members>C501ServiceHouseholdTrigger</members>
         <name>ApexTrigger</name>

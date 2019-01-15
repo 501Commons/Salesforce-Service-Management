@@ -7,6 +7,51 @@ public with sharing class C501_TriggerHelper {
 		return instance;
 	}
 
+	public void onChangeOtherName( list<C501_Other_Name__c> cList) {
+		
+		if ( cList == null || cList.isEmpty()) {
+			return;
+		}
+
+		Set<Id> contactIds = new Set<Id>();
+		for (C501_Other_Name__c cOtherName : cList) {
+			contactIds.Add(cOtherName.C501_Contact__c);
+		}
+
+		// Get all related Other Names
+		Map<Id, List<String>> cOtherNames = new Map<Id, List<String>>();
+		for ( C501_Other_Name__c cOtherName : 
+				[select 
+					C501_Contact__c, C501_Other_Name__c
+				from C501_Other_Name__c
+				where C501_Contact__c in : contactIds] ) {
+
+			List<String> listOtherNames = new List<String>();
+			if (cOtherNames.containsKey(cOtherName.C501_Contact__c)) {
+				listOtherNames = cOtherNames.remove(cOtherName.C501_Contact__c);
+			}
+
+			listOtherNames.add(cOtherName.C501_Other_Name__c);
+			cOtherNames.put(cOtherName.C501_Contact__c, listOtherNames);
+		}
+
+		List<Contact> updateContacts = [SELECT Id, C501_IS_Other_Names_Searchable__c FROM Contact WHERE Id in :contactIds];
+		for (Contact updateContact :updateContacts) {
+
+			if (cOtherNames.containsKey(updateContact.Id)) {
+				// C501_IS_Other_Names_Searchable__c is used in the Intake Application for global search to find a contact
+				String searchableOtherNames = String.join(cOtherNames.get(updateContact.Id), ' ');
+				if (updateContact.C501_IS_Other_Names_Searchable__c != searchableOtherNames) {
+					updateContact.C501_IS_Other_Names_Searchable__c = searchableOtherNames.left(128);
+				}
+			}
+		}
+
+		if (!updateContacts.isEmpty()) {
+			update updateContacts;
+		}
+	}
+
 	public void onChangeContact( list<Contact> cList, map<id, Contact> oldMap, Boolean isDelete ) {
 		
 		if ( cList == null || cList.isEmpty()) {
@@ -246,7 +291,6 @@ public with sharing class C501_TriggerHelper {
 			cOtherNames.put(cOtherName.C501_Contact__c, listOtherNames);
 		}
 
-		List<C501_Other_Name__c> cOtherNamesInsert = new List<C501_Other_Name__c>();
 		for ( Contact c : 
 				[select 
 					Account.Id, Account.npe01__One2OneContact__c,
@@ -271,8 +315,7 @@ public with sharing class C501_TriggerHelper {
 
 			// Copy Fields and add to update if successful 
 			if (copyFieldsContact( c, sc,
-				cOtherNames.containsKey(c.Id) ? cOtherNames.get(c.Id) : new List<String>(),
-				cOtherNamesInsert)) {
+				cOtherNames.containsKey(c.Id) ? cOtherNames.get(c.Id) : new List<String>())) {
 
 				// Set flag so contact trigger does not process the change
 				c.C501_Trigger_Ignore_Change__c = true;
@@ -299,10 +342,6 @@ public with sharing class C501_TriggerHelper {
 
 		if (!aToUpdate.values().isEmpty())
 			update aToUpdate.values();
-
-		if (!cOtherNamesInsert.isEmpty()) {
-			insert cOtherNamesInsert;
-		}
 
 		for (C501_Service_Contact__c sc :scList) {
 			if (scToUpdate.containsKey(sc.C501_Contact__c)) {
@@ -514,7 +553,7 @@ public with sharing class C501_TriggerHelper {
 		return updateRecord;
 	}
 
-	private Boolean copyFieldsContact( Contact c, C501_Service_Contact__c sc, List<String> otherNames, List<C501_Other_Name__c> cOtherNamesInsert) {
+	private Boolean copyFieldsContact( Contact c, C501_Service_Contact__c sc, List<String> otherNames) {
 
 		Boolean updateRecord = false;
 
@@ -523,27 +562,6 @@ public with sharing class C501_TriggerHelper {
 			if (c.FirstName != sc.C501_Nickname__c) {
 				updateRecord = true;
 				c.FirstName = sc.C501_Nickname__c;
-			}
-
-			// Check to create other name records
-			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_First_Name__c)) {
-				cOtherNamesInsert.add(
-					new C501_Other_Name__c (
-						C501_Contact__c = c.Id,
-						C501_Other_Name__c = sc.C501_First_Name__c,
-						C501_IsPreferred__c = false,
-						C501_Start_Date__c = date.today()
-				));
-			}
-
-			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Nickname__c)) {
-				cOtherNamesInsert.add(
-					new C501_Other_Name__c (
-						C501_Contact__c = c.Id,
-						C501_Other_Name__c = sc.C501_Nickname__c,
-						C501_IsPreferred__c = true,
-						C501_Start_Date__c = date.today()
-				));
 			}
 		}
 		else {
@@ -567,26 +585,6 @@ public with sharing class C501_TriggerHelper {
 				updateRecord = true;
 				c.LastName = sc.C501_Last_Name_Other__c;
 			}
-
-			// Check to create other name records
-			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Last_Name__c)) {
-				cOtherNamesInsert.add(
-					new C501_Other_Name__c (
-						C501_Contact__c = c.Id,
-						C501_Other_Name__c = sc.C501_Last_Name__c,
-						C501_IsPreferred__c = false,
-						C501_Start_Date__c = date.today()
-				));
-			}
-			if (otherNames.isEmpty() || !otherNames.contains(sc.C501_Last_Name_Other__c)) {
-				cOtherNamesInsert.add(
-					new C501_Other_Name__c (
-						C501_Contact__c = c.Id,
-						C501_Other_Name__c = sc.C501_Last_Name_Other__c,
-						C501_IsPreferred__c = true,
-						C501_Start_Date__c = date.today()
-				));
-			}
         }
 		else {
 			if (c.LastName != sc.C501_Last_Name__c) {
@@ -595,13 +593,8 @@ public with sharing class C501_TriggerHelper {
 			}
 		}
 
-		String searchableOtherNames = '';
-		for (String otherName :otherNames) {
-			searchableOtherNames += OtherName + ' ';
-		}
-		for (C501_Other_Name__c otherName :cOtherNamesInsert) {
-			searchableOtherNames += OtherName.C501_Other_Name__c + ' ';
-		}
+		// C501_IS_Other_Names_Searchable__c is used in the Intake Application for global search to find a contact
+		String searchableOtherNames = String.join(otherNames, ' ');
 		if (c.C501_IS_Other_Names_Searchable__c != searchableOtherNames) {
 			updateRecord = true;
 			c.C501_IS_Other_Names_Searchable__c = searchableOtherNames.left(128);

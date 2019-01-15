@@ -96,5 +96,14 @@ public with sharing class C501_TriggerHelperTest {
 		Contact c_update = [select LastName, FirstName from Contact where id =: c.id];
 		System.assertEquals(c_update.LastName, sc.C501_Last_Name_Other__c);
 		System.assertEquals(c_update.FirstName, sc.C501_Nickname__c);
+
+		C501_Other_Name__c otherName = new C501_Other_Name__c(
+			C501_Contact__c = c.Id,
+			C501_IsPreferred__c = true,
+			C501_Other_Name__c = 'Nickname',
+			C501_Start_Date__c = date.today(),
+			C501_Type__c = 'Nickname'
+		);
+		insert otherName;
 	}
 }
