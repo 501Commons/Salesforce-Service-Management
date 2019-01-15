@@ -230,11 +230,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>C501_Other_Name__c.C501_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>C501_Service_Contact__c.C501_Additional_Languages__c</field>
         <readable>false</readable>

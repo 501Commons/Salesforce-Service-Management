@@ -18,7 +18,7 @@
                 <field>C501_Other_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>C501_Type__c</field>
             </layoutItems>
             <layoutItems>
