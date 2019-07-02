@@ -968,6 +968,11 @@
                     <label>Mental Health</label>
                 </value>
                 <value>
+                    <fullName>Notary</fullName>
+                    <default>false</default>
+                    <label>Notary</label>
+                </value>
+                <value>
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
@@ -1603,6 +1608,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Notary</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Other</fullName>
                 <default>false</default>
             </values>
@@ -2041,6 +2050,10 @@
             </values>
             <values>
                 <fullName>Mental Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notary</fullName>
                 <default>false</default>
             </values>
             <values>
