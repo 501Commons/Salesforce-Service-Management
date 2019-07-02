@@ -115,6 +115,11 @@
         <default>false</default>
         <label>Somali</label>
     </customValue>
+    <customValue>
+        <fullName>Polish</fullName>
+        <default>false</default>
+        <label>Polish</label>
+    </customValue>
     <masterLabel>Languages</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

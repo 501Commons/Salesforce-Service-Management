@@ -964,6 +964,10 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 <default>false</default>
             </values>
             <values>
+                <fullName>Polish</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Punjabi</fullName>
                 <default>false</default>
             </values>
@@ -1227,6 +1231,10 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
             </values>
             <values>
                 <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Polish</fullName>
                 <default>false</default>
             </values>
             <values>

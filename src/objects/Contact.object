@@ -706,9 +706,6 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
     </fields>
     <fields>
         <fullName>Gender__c</fullName>
-        <description>CoreId/Module4; for Module4, combine T options into Other
-
-This field is configured in NPSP Settings &gt; Relationships &gt; Relationships as the Gender field. Do not delete this field unless you remove the reference or select another Gender field there.</description>
         <externalId>false</externalId>
         <label>Gender</label>
         <required>false</required>
@@ -718,29 +715,39 @@ This field is configured in NPSP Settings &gt; Relationships &gt; Relationships 
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Female</fullName>
-                    <default>false</default>
-                    <label>Female</label>
-                </value>
-                <value>
                     <fullName>Male</fullName>
                     <default>false</default>
                     <label>Male</label>
                 </value>
                 <value>
-                    <fullName>Transgender</fullName>
+                    <fullName>Female</fullName>
                     <default>false</default>
-                    <label>Transgender</label>
-                </value>
-                <value>
-                    <fullName>Refused</fullName>
-                    <default>false</default>
-                    <label>Refused</label>
+                    <label>Female</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
                     <label>Other</label>
+                </value>
+                <value>
+                    <fullName>No Response</fullName>
+                    <default>false</default>
+                    <label>No Response</label>
+                </value>
+                <value>
+                    <fullName>Queer</fullName>
+                    <default>false</default>
+                    <label>Queer</label>
+                </value>
+                <value>
+                    <fullName>Trans</fullName>
+                    <default>false</default>
+                    <label>Trans</label>
+                </value>
+                <value>
+                    <fullName>Prefer not to disclose</fullName>
+                    <default>false</default>
+                    <label>Prefer not to disclose</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

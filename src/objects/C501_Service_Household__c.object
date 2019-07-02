@@ -652,6 +652,11 @@
                     <default>false</default>
                     <label>NP Over 30</label>
                 </value>
+                <value>
+                    <fullName>Referred</fullName>
+                    <default>false</default>
+                    <label>Referred</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -1434,6 +1439,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Referred</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Rental Assistance</fullName>
                 <default>false</default>
             </values>
@@ -1876,6 +1885,10 @@
             </values>
             <values>
                 <fullName>Permanent Housing On Own</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referred</fullName>
                 <default>false</default>
             </values>
             <values>
