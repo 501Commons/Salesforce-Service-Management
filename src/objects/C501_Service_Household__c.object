@@ -519,7 +519,6 @@
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -672,6 +671,11 @@
                     <default>false</default>
                     <label>P&gt;90</label>
                 </value>
+                <value>
+                    <fullName>Client returned to home</fullName>
+                    <default>false</default>
+                    <label>Client returned to home</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
@@ -802,9 +806,8 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
-                <sorted>true</sorted>
+                <sorted>false</sorted>
                 <value>
                     <fullName>Adult Education</fullName>
                     <default>false</default>
@@ -824,12 +827,6 @@
                     <fullName>Bus Pass (Daily)</fullName>
                     <default>false</default>
                     <label>Bus Pass (Daily)</label>
-                </value>
-                <value>
-                    <fullName>Childcare</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Childcare</label>
                 </value>
                 <value>
                     <fullName>Coordinated Entry</fullName>
@@ -870,12 +867,6 @@
                     <fullName>ECEAP</fullName>
                     <default>false</default>
                     <label>ECEAP</label>
-                </value>
-                <value>
-                    <fullName>Emergency Child Care Voucher</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Emergency Child Care Voucher</label>
                 </value>
                 <value>
                     <fullName>Emergency Food Box</fullName>
@@ -998,12 +989,6 @@
                     <label>Other</label>
                 </value>
                 <value>
-                    <fullName>Other Early Learning</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Other Early Learning</label>
-                </value>
-                <value>
                     <fullName>Other Legal</fullName>
                     <default>false</default>
                     <label>Other Legal</label>
@@ -1027,12 +1012,6 @@
                     <fullName>Salvation Army Voucher</fullName>
                     <default>false</default>
                     <label>Salvation Army Voucher</label>
-                </value>
-                <value>
-                    <fullName>SEAS</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>SEAS</label>
                 </value>
                 <value>
                     <fullName>Shower Pass</fullName>
@@ -1371,6 +1350,10 @@
             </values>
             <values>
                 <fullName>Change in Household Makeup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client returned to home</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1832,6 +1815,10 @@
             </values>
             <values>
                 <fullName>Change in Household Makeup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client returned to home</fullName>
                 <default>false</default>
             </values>
             <values>
