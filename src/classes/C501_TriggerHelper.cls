@@ -7,6 +7,24 @@ public with sharing class C501_TriggerHelper {
 		return instance;
 	}
 
+    private static Boolean fCheckedIsSandbox = false;
+    public static Boolean IsSandbox {
+        get {
+            if (!fCheckedIsSandbox) {
+                IsSandbox = true;
+                List<Organization> organizations = [SELECT IsSandbox FROM Organization LIMIT 1];
+                if (!organizations.isEmpty()) {
+                    IsSandbox = Boolean.valueOf(organizations[0].IsSandbox);
+                }
+                fCheckedIsSandbox = true;
+            }
+
+            return IsSandbox;
+        }
+
+        set;
+    }
+
 	public void onChangeOtherName( list<C501_Other_Name__c> cList) {
 		
 		if ( cList == null || cList.isEmpty()) {
@@ -53,20 +71,26 @@ public with sharing class C501_TriggerHelper {
 	}
 
 	public void onChangeContact( list<Contact> cList, map<id, Contact> oldMap, Boolean isDelete ) {
-		
+
+
 		if ( cList == null || cList.isEmpty()) {
 			return;
 		}
 
-		// Ignore if more than 1 change record which means import action or change request by db.* user which is an automation user (exception if unit test execution)
+		// Ignore if more than 1 change record which means import action or change request by db.* user which is an automation user (exception - running a test or sandbox)
 		if ((cList.size() > 1 ||
 			(UserInfo.getName() <> null) ? UserInfo.getName().contains('db.') : false)
-			&& !cList[0].LastName.contains('C501_TriggerHelperTest')) {
+			&& !C501_TriggerHelper.IsSandbox
+			&& !Test.isRunningTest()) {
+			
+			System.debug(LoggingLevel.DEBUG, '*****C501_TriggerHelper::onChangeContact - Trigger Event Ignored');
 			return;
 		}
 
 		// TBD - for now ignore deletes
 		if (isDelete) {
+			
+			System.debug(LoggingLevel.DEBUG, '*****C501_TriggerHelper::onChangeContact - Trigger Delete Event Ignored');
 			return;
 		}
 
@@ -106,6 +130,7 @@ public with sharing class C501_TriggerHelper {
 			);
 
 			if (accounts.containsKey(contact.AccountId)) {
+
 				// Check to make sure monitored contact field changed
 				if (copyFieldsContact2ServiceContact(contact, oldMap.get(contact.Id), new C501_Service_Contact__c())) {
 					insertServiceHouseholds.add(serviceHousehold);
