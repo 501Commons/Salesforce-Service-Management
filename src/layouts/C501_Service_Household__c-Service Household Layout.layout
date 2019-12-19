@@ -117,7 +117,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>C501_Federal_Poverty_Level__c</field>
+                <field>SM_Federal_Poverty_Level__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

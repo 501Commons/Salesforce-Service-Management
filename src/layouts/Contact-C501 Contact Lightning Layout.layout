@@ -96,7 +96,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>C501_Age__c</field>
+                <field>SM_Age__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -540,11 +540,11 @@
     </relatedLists>
     <relatedLists>
         <fields>CREATED_DATE</fields>
-        <fields>User__c</fields>
-        <fields>Field__c</fields>
-        <fields>Merge_Value__c</fields>
-        <fields>Ignore_Value__c</fields>
-        <relatedList>C501_Merge_Contact_History__c.Contact__c</relatedList>
+        <fields>c501mm__User__c</fields>
+        <fields>c501mm__Field__c</fields>
+        <fields>c501mm__Merge_Value__c</fields>
+        <fields>c501mm__Ignore_Value__c</fields>
+        <relatedList>c501mm__C501_Merge_Contact_History__c.c501mm__Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

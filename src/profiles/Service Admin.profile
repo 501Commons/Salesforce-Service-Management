@@ -56,7 +56,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.C501_Federal_Poverty_Level__c</field>
+        <field>Account.SM_Federal_Poverty_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -241,7 +241,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>C501_Service_Contact__c.C501_Age__c</field>
+        <field>C501_Service_Contact__c.SM_Age__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -571,7 +571,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>C501_Service_Household__c.C501_Federal_Poverty_Level__c</field>
+        <field>C501_Service_Household__c.SM_Federal_Poverty_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -811,7 +811,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.C501_Age__c</field>
+        <field>Contact.SM_Age__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

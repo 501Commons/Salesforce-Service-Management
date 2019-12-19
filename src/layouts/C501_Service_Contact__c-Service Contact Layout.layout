@@ -68,7 +68,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>C501_Age__c</field>
+                <field>SM_Age__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

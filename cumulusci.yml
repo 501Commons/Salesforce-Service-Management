@@ -5,5 +5,5 @@ project:
         api_version: '42.0'
     dependencies:
         - github: https://github.com/SalesforceFoundation/Cumulus
-        - github: https://github.com/daveb-501commons/Salesforce-Intake-Services        
+        - github: https://github.com/501commons/Salesforce-Mass-Merge        
 

@@ -81,7 +81,7 @@ public with sharing class C501_TriggerHelperTest {
 		sc.C501_Birthdate__c = date.today();
 		sc.C501_Partial_Social_Security_Id__c = 'xxx-xx-xxxx';
 		sc.C501_Primary_Contact__c = true;
-		sc.C501_Age__c = 10;
+		sc.SM_Age__c = 10;
 		sc.C501_Military_Status__c = 'Unknown/Not Reported';
 		sc.C501_Disabling_Condition_Special_Needs__c = 'Unknown/Not Reported';
 		sc.C501_Education_Level__c = 'Unknown/Not Reported';

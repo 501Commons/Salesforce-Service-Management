@@ -422,11 +422,11 @@
     </relatedLists>
     <relatedLists>
         <fields>CREATED_DATE</fields>
-        <fields>User__c</fields>
-        <fields>Field__c</fields>
-        <fields>Merge_Value__c</fields>
-        <fields>Ignore_Value__c</fields>
-        <relatedList>C501_Merge_Account_History__c.Account__c</relatedList>
+        <fields>c501mm__User__c</fields>
+        <fields>c501mm__Field__c</fields>
+        <fields>c501mm__Merge_Value__c</fields>
+        <fields>c501mm__Ignore_Value__c</fields>
+        <relatedList>c501mm__C501_Merge_Account_History__c.c501mm__Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

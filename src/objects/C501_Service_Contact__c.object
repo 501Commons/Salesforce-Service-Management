@@ -92,7 +92,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>C501_Age__c</fullName>
+        <fullName>SM_Age__c</fullName>
         <description>Age at the time of service.</description>
         <externalId>false</externalId>
         <inlineHelpText>Age at the time of service.</inlineHelpText>

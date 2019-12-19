@@ -323,7 +323,7 @@ public with sharing class C501_TriggerHelper {
 					FirstName, LastName, MiddleName, C501_FirstName_Initial__c,
 					Birthdate, C501_IS_Birthdate_Searchable__c, C501_IS_Other_Names_Searchable__c,
 					C501_Partial_Social_Security_Id__c, C501_Order__c,
-					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
+					SM_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
 					C501_Developmental_Disability__c, C501_Medicaid__c, C501_Medicare__c,
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
 					C501_Preferred_Language__c, C501_Additional_Languages__c,
@@ -650,9 +650,9 @@ public with sharing class C501_TriggerHelper {
 			updateRecord = true;
 			c.C501_Order__c = sc.C501_Order__c;
 		}
-		if (c.C501_Age__c != sc.C501_Age__c) {
+		if (c.SM_Age__c != sc.SM_Age__c) {
 			updateRecord = true;
-			c.C501_Age__c = sc.C501_Age__c;
+			c.SM_Age__c = sc.SM_Age__c;
 		}
 		if (c.C501_Military_Status__c != sc.C501_Military_Status__c) {
 			updateRecord = true;
@@ -725,7 +725,7 @@ public with sharing class C501_TriggerHelper {
 			|| c.C501_Is_In_Household__c != cOld.C501_Is_In_Household__c
 			|| c.C501_Partial_Social_Security_Id__c != cOld.C501_Partial_Social_Security_Id__c
 			|| c.C501_Order__c != cOld.C501_Order__c
-			|| c.C501_Age__c != cOld.C501_Age__c
+			|| c.SM_Age__c != cOld.SM_Age__c
 			|| c.C501_Military_Status__c != cOld.C501_Military_Status__c
 			|| c.C501_Disabling_Condition_Special_Needs__c != cOld.C501_Disabling_Condition_Special_Needs__c
 			|| c.C501_Education_Level__c != cOld.C501_Education_Level__c
@@ -749,7 +749,7 @@ public with sharing class C501_TriggerHelper {
 			sc.C501_Is_In_Household__c = c.C501_Is_In_Household__c;
 			sc.C501_Partial_Social_Security_Id__c = c.C501_Partial_Social_Security_Id__c;
 			sc.C501_Order__c = c.C501_Order__c;
-			sc.C501_Age__c = c.C501_Age__c;
+			sc.SM_Age__c = c.SM_Age__c;
 			sc.C501_Military_Status__c = c.C501_Military_Status__c;
 			sc.C501_Disabling_Condition_Special_Needs__c = c.C501_Disabling_Condition_Special_Needs__c;
 			sc.C501_Education_Level__c = c.C501_Education_Level__c;

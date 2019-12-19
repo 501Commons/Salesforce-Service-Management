@@ -31,7 +31,7 @@
         <members>Account.C501_Current_Address_Move_In_Year__c</members>
         <members>Account.C501_EITC__c</members>
         <members>Account.C501_Earned_Income__c</members>
-        <members>Account.C501_Federal_Poverty_Level__c</members>
+        <members>Account.SM_Federal_Poverty_Level__c</members>
         <members>Account.C501_HUD_VASH__c</members>
         <members>Account.C501_Household_Income_Level__c</members>
         <members>Account.C501_Household_Income_Sources__c</members>
@@ -71,7 +71,7 @@
         <members>C501_Other_Name__c.C501_Type__c</members>
         <members>C501_Service_Contact__c.C501_Additional_Languages__c</members>
         <members>C501_Service_Contact__c.C501_Age_Calculate__c</members>
-        <members>C501_Service_Contact__c.C501_Age__c</members>
+        <members>C501_Service_Contact__c.SM_Age__c</members>
         <members>C501_Service_Contact__c.C501_American_Indian_or_Alaska_Native__c</members>
         <members>C501_Service_Contact__c.C501_Asian__c</members>
         <members>C501_Service_Contact__c.C501_Birthdate__c</members>
@@ -140,7 +140,7 @@
         <members>C501_Service_Household__c.C501_EITC__c</members>
         <members>C501_Service_Household__c.C501_Earned_Income__c</members>
         <members>C501_Service_Household__c.C501_End_Date__c</members>
-        <members>C501_Service_Household__c.C501_Federal_Poverty_Level__c</members>
+        <members>C501_Service_Household__c.SM_Federal_Poverty_Level__c</members>
         <members>C501_Service_Household__c.C501_HUD_VASH__c</members>
         <members>C501_Service_Household__c.C501_Household_Income_Sources__c</members>
         <members>C501_Service_Household__c.C501_Household_Size__c</members>
@@ -188,7 +188,7 @@
         <members>C501_Service_Household__c.C501_Years_at_Current_Address__c</members>
         <members>Contact.C501_Additional_Languages__c</members>
         <members>Contact.C501_Age_Calculate__c</members>
-        <members>Contact.C501_Age__c</members>
+        <members>Contact.SM_Age__c</members>
         <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
         <members>Contact.C501_Asian__c</members>
         <members>Contact.C501_Black_or_African_American__c</members>
