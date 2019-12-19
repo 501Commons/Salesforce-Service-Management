@@ -63,6 +63,7 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>C501_Additional_Languages__c</fullName>
         <description>CoreId</description>
@@ -84,19 +85,6 @@
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Age Calculated is generated from the Birthdate field.</inlineHelpText>
         <label>Age Calculated</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>SM_Age__c</fullName>
-        <description>Age at the time of service.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Age at the time of service.</inlineHelpText>
-        <label>Age</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -881,6 +869,19 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>SM_Age__c</fullName>
+        <description>Age at the time of service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Age at the time of service.</inlineHelpText>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Service_Contact_Unique_Count__c</fullName>

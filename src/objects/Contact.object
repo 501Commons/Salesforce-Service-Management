@@ -37,19 +37,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>SM_Age__c</fullName>
-        <description>Age is the Age at the time of the most current service.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Age is the Age at the time of the most current service.</inlineHelpText>
-        <label>Age</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>C501_American_Indian_or_Alaska_Native__c</fullName>
         <defaultValue>false</defaultValue>
         <description>CoreId/Module4 - will be used to select a value from the Race picklist</description>
@@ -379,6 +366,7 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
     <fields>
         <fullName>C501_Is_In_Household__c</fullName>
         <defaultValue>true</defaultValue>
+        <description>Created by 501 Commons</description>
         <externalId>false</externalId>
         <label>Is In Household</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -751,5 +739,18 @@ Criteria: Age 14 – 24, Not attending school, Not employed; Perhaps set with fo
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>SM_Age__c</fullName>
+        <description>Age is the Age at the time of the most current service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Age is the Age at the time of the most current service.</inlineHelpText>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>
