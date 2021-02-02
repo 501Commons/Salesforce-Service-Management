@@ -25,10 +25,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>C501_Is_In_Household__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>C501_Case_Worker__c</field>
             </layoutItems>
             <layoutItems>
@@ -68,7 +64,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SM_Age__c</field>
+                <field>C501_Age__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -237,6 +233,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>C501_Service_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>C501_Is_In_Household__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

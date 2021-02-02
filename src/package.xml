@@ -62,7 +62,6 @@
         <members>Account.C501_WIC__c</members>
         <members>Account.C501_Worker_s_Compensation__c</members>
         <members>Account.C501_Years_at_Current_Address__c</members>
-        <members>Account.SM_Federal_Poverty_Level__c</members>
         <members>C501_Other_Name__c.C501_Contact__c</members>
         <members>C501_Other_Name__c.C501_End_Date__c</members>
         <members>C501_Other_Name__c.C501_IsPreferred__c</members>
@@ -124,7 +123,6 @@
         <members>C501_Service_Contact__c.C501_Trigger_Ignore_Change__c</members>
         <members>C501_Service_Contact__c.C501_White__c</members>
         <members>C501_Service_Contact__c.C501_Work_Status__c</members>
-        <members>C501_Service_Contact__c.SM_Age__c</members>
         <members>C501_Service_Household__c.C501_Affordable_Care_Act_Subsidy__c</members>
         <members>C501_Service_Household__c.C501_Alimony_Other_Spousal_Support__c</members>
         <members>C501_Service_Household__c.C501_Annual_Income__c</members>
@@ -185,7 +183,6 @@
         <members>C501_Service_Household__c.C501_WIC__c</members>
         <members>C501_Service_Household__c.C501_Worker_s_Compensation__c</members>
         <members>C501_Service_Household__c.C501_Years_at_Current_Address__c</members>
-        <members>C501_Service_Household__c.SM_Federal_Poverty_Level__c</members>
         <members>Contact.C501_Additional_Languages__c</members>
         <members>Contact.C501_Age_Calculate__c</members>
         <members>Contact.C501_American_Indian_or_Alaska_Native__c</members>
@@ -234,7 +231,7 @@
         <members>Contact.C501_White__c</members>
         <members>Contact.C501_Work_Status__c</members>
         <members>Contact.Gender__c</members>
-        <members>Contact.SM_Age__c</members>
+        <members>Contact.Other_First_Name__c</members>
         <name>CustomField</name>
     </types>
     <types>

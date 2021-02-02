@@ -60,10 +60,9 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>C501_Additional_Languages__c</fullName>
         <description>CoreId</description>
@@ -85,6 +84,19 @@
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Age Calculated is generated from the Birthdate field.</inlineHelpText>
         <label>Age Calculated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C501_Age__c</fullName>
+        <description>Age at the time of service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Age at the time of service.</inlineHelpText>
+        <label>Age</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -871,19 +883,6 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         </valueSet>
     </fields>
     <fields>
-        <fullName>SM_Age__c</fullName>
-        <description>Age at the time of service.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Age at the time of service.</inlineHelpText>
-        <label>Age</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Service_Contact_Unique_Count__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
@@ -897,6 +896,11 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
         <unique>false</unique>
     </fields>
     <label>Service Contact</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Service Contact Name</label>
         <type>Text</type>
@@ -1350,7 +1354,12 @@ IMPORTANT: Do not save the full Social Security Number.  If the full number is r
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchResultsAdditionalFields>C501_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>C501_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>C501_Service_Household_Id__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
