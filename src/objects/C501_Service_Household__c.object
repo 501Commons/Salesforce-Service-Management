@@ -1116,6 +1116,26 @@
                     <default>false</default>
                     <label>Child Care</label>
                 </value>
+                <value>
+                    <fullName>LIHEAP COVID</fullName>
+                    <default>false</default>
+                    <label>LIHEAP COVID</label>
+                </value>
+                <value>
+                    <fullName>LIHEAP COVID Denied</fullName>
+                    <default>false</default>
+                    <label>LIHEAP COVID Denied</label>
+                </value>
+                <value>
+                    <fullName>PSE HELP COVID</fullName>
+                    <default>false</default>
+                    <label>PSE HELP COVID</label>
+                </value>
+                <value>
+                    <fullName>PSE HELP COVID Denied</fullName>
+                    <default>false</default>
+                    <label>PSE HELP COVID Denied</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1829,6 +1849,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>LIHEAP COVID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIHEAP COVID Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>LIHEAP Denied</fullName>
                 <default>false</default>
             </values>
@@ -1862,6 +1890,14 @@
             </values>
             <values>
                 <fullName>PSE HELP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP COVID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP COVID Denied</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2326,6 +2362,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>LIHEAP COVID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIHEAP COVID Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>LIHEAP Denied</fullName>
                 <default>false</default>
             </values>
@@ -2359,6 +2403,14 @@
             </values>
             <values>
                 <fullName>PSE HELP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP COVID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSE HELP COVID Denied</fullName>
                 <default>false</default>
             </values>
             <values>
