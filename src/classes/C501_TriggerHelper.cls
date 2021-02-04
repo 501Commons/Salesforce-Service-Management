@@ -39,10 +39,10 @@ public with sharing class C501_TriggerHelper {
 		// Get all related Other Names
 		Map<Id, List<String>> cOtherNames = new Map<Id, List<String>>();
 		for ( C501_Other_Name__c cOtherName : 
-				[select 
+				[SELECT 
 					C501_Contact__c, C501_Other_Name__c
-				from C501_Other_Name__c
-				where C501_Contact__c in : contactIds] ) {
+				FROM C501_Other_Name__c
+				WHERE C501_Contact__c in : contactIds] ) {
 
 			List<String> listOtherNames = new List<String>();
 			if (cOtherNames.containsKey(cOtherName.C501_Contact__c)) {
@@ -108,11 +108,11 @@ public with sharing class C501_TriggerHelper {
 
 		Map<Id, Account> accounts = new Map<Id, Account>();
 		for ( Account hh : 
-			[select Id, Name, 
+			[SELECT Id, Name, 
 				BillingStreet, BillingCity, BillingState, BillingPostalCode,
 				ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode,
 				Phone, npo02__HouseholdPhone__c
-				from Account where id in :accountIds] ) {
+			FROM Account where id in :accountIds] ) {
 					accounts.put(hh.Id, hh);
 				}
 
@@ -302,10 +302,10 @@ public with sharing class C501_TriggerHelper {
 
 		// Get all related Other Names
 		for ( C501_Other_Name__c cOtherName : 
-				[select 
+				[SELECT 
 					C501_Contact__c, C501_Other_Name__c
-				from C501_Other_Name__c
-				where C501_Contact__c in : triggerSCMap.keyset()] ) {
+				FROM C501_Other_Name__c
+				WHERE C501_Contact__c in : triggerSCMap.keyset()] ) {
 
 			List<String> listOtherNames = new List<String>();
 			if (cOtherNames.containsKey(cOtherName.C501_Contact__c)) {
@@ -317,10 +317,10 @@ public with sharing class C501_TriggerHelper {
 		}
 
 		for ( Contact c : 
-				[select 
+				[SELECT 
 					Account.Id, Account.npe01__One2OneContact__c,
 					AccountId, Id, Name,
-					FirstName, LastName, MiddleName, C501_FirstName_Initial__c,
+					FirstName, LastName, MiddleName, C501_FirstName_Initial__c, Other_First_Name__c,
 					Birthdate, C501_IS_Birthdate_Searchable__c, C501_IS_Other_Names_Searchable__c,
 					C501_Partial_Social_Security_Id__c, C501_Order__c,
 					C501_Age__c, C501_Military_Status__c, C501_Disabling_Condition_Special_Needs__c,
@@ -328,8 +328,8 @@ public with sharing class C501_TriggerHelper {
 					C501_Education_Level__c, C501_Health_Insurance__c, C501_Race__c, C501_Ethnicity__c, Gender__c,
 					C501_Preferred_Language__c, C501_Additional_Languages__c,
 					C501_Work_Status__c, C501_Case_Worker__c, C501_Is_In_Household__c
-				from Contact
-				where Id in : triggerSCMap.keyset()] ) {
+				FROM Contact
+				WHERE Id IN : triggerSCMap.keyset()] ) {
 
 			C501_Service_Contact__c sc = triggerSCMap.get( c.Id );
 
@@ -407,7 +407,7 @@ public with sharing class C501_TriggerHelper {
 		list<Account> hhToUpdate = new list<Account>();
 
 		for ( Account hh : 
-				[select Id, Name, 
+				[SELECT Id, Name, 
 					BillingStreet, BillingCity, BillingState, BillingPostalCode,
 					ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode,
 					C501_SNAP__c, C501_Other_Income__c, C501_Earned_Income__c, C501_Self_Employed__c, C501_Unemployment_Insurance__c, C501_Child_Support__c,
@@ -416,7 +416,7 @@ public with sharing class C501_TriggerHelper {
 					C501_VA_Service_Connected_Disability__c, C501_Worker_s_Compensation__c,
 					C501_Household_Size__c, C501_Household_Type__c, Phone, npo02__HouseholdPhone__c,
 					C501_Years_At_Current_Address__c, C501_Current_Address_Move_In_Year__c, C501_Case_Worker__c
-					from Account where id in : triggerSHMap.keyset()] ) {
+				FROM Account where id IN : triggerSHMap.keyset()] ) {
 
 			C501_Service_Household__c sh = triggerSHMap.get( hh.Id );
 
