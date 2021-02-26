@@ -1136,6 +1136,26 @@
                     <default>false</default>
                     <label>PSE HELP COVID Denied</label>
                 </value>
+                <value>
+                    <fullName>CWH</fullName>
+                    <default>false</default>
+                    <label>CWH</label>
+                </value>
+                <value>
+                    <fullName>CWH Denied</fullName>
+                    <default>false</default>
+                    <label>CWH Denied</label>
+                </value>
+                <value>
+                    <fullName>WEAF</fullName>
+                    <default>false</default>
+                    <label>WEAF</label>
+                </value>
+                <value>
+                    <fullName>WEAF Denied</fullName>
+                    <default>false</default>
+                    <label>WEAF Denied</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1733,6 +1753,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>CWH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWH Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Coordinated Entry</fullName>
                 <default>false</default>
             </values>
@@ -1922,6 +1950,14 @@
             </values>
             <values>
                 <fullName>Veterans Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WEAF Denied</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2246,6 +2282,14 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>CWH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CWH Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Coordinated Entry</fullName>
                 <default>false</default>
             </values>
@@ -2435,6 +2479,14 @@
             </values>
             <values>
                 <fullName>Veterans Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WEAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WEAF Denied</fullName>
                 <default>false</default>
             </values>
             <values>
